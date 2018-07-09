@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>STiBaRC</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+<script type="text/javascript">
+
+if(("standalone" in window.navigator) && window.navigator.standalone){
+
+var noddy, remotes = false;
+
+document.addEventListener('click', function(event) {
+
+noddy = event.target;
+
+while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+noddy = noddy.parentNode;
+}
+
+if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes))
+{
+event.preventDefault();
+document.location.href = noddy.href;
+}
+
+},false);
+}
+</script>
+    <link href="css/user.css" rel="stylesheet" />
+    <script src="js/logout.js"></script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+body {
+    overflow-y: scroll;
+    background-color: #98DFF3;
+    word-wrap: break-word;
+}
+
+#mainblobshitwithlist {
+    background-color: #FFFFFF;
+    word-wrap: break-word;
+}
+
+#header {
+    text-align: center;
+    background-color: #49B9CA;
+    word-wrap: break-word;
+}
+
+#chatframe {
+    height: 50%;
+    width: 25%;
+    position: sticky;
+    bottom: 0;
+    right: 0;
+    float: right;
+}
+
+#chattoggle {
+    height: 10%;
+    width: 35%;
+    //background-color: #D7D7D7;
+    bottom: 0;
+    float: right;
+}
+
+#messenger {
+    background-color: #49B9CA;
+    height: 60vh;
+    width: 100%;
+}
+
+footer {
+    background-color: #49B9CA;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+a:link {
+    color: #000000;
+}
+
+a:visited {
+    color: #000000;
+}
+
+a:hover {
+    color: #000000;
+}
+
+a:active {
+    color: #000000;
+}

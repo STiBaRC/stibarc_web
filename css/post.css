@@ -1,0 +1,74 @@
+#poststuff {
+    background-color: #FFFFFF;
+    word-wrap: break-word;
+}
+
+#content {
+    white-space:pre-wrap;
+}
+
+#comment {
+    background-color: #98DFF3;
+    word-wrap: break-word;
+}
+
+#image {
+    width: 50%;
+}
+
+.replyto {
+	color: #d7d7d7;
+	font-size: 80%;
+}
+
+body {
+    touch-action: manipulation;
+    background-color: #98DFF3;
+    word-wrap: break-word;
+    overflow-y: scroll;
+}
+
+#chatframe {
+    height: 50%;
+    width: 25%;
+    position: sticky;
+    bottom: 0;
+    right: 0;
+    float: right;
+}
+
+#chattoggle {
+    height: 10%;
+    width: 35%;
+    //background-color: #D7D7D7;
+    bottom: 0;
+    float: right;
+}
+
+#messenger {
+    background-color: #49B9CA;
+    height: 60vh;
+    width: 100%;
+}
+
+footer {
+    background-color: #49B9CA;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+a:link {
+    color: #000000;
+}
+
+a:visited {
+    color: #000000;
+}
+
+a:hover {
+    color: #000000;
+}
+
+a:active {
+    color: #000000;
+}

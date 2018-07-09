@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>STiBaRC</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+<link rel="icon" type="image/png" href="icon.png">
+<script type="text/javascript">
+
+if(("standalone" in window.navigator) && window.navigator.standalone){
+
+var noddy, remotes = false;
+
+document.addEventListener('click', function(event) {
+
+noddy = event.target;
+
+while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+noddy = noddy.parentNode;
+}
+
+if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes))
+{
+event.preventDefault();
+document.location.href = noddy.href;
+}
+
+},false);
+}
+</script>
+<link href="css/user.css" rel="stylesheet" />
+<script src="js/user.js"></script>
+<script src="js/chat.js"></script>
+</head>
+<body>
+<br/>
+<div id="userstuffs">
+<div id="username">Username: Loading...</div>
+<div id="rank">Rank: Loading...</div>
+<div id="name">Real name: Loading...</div>
+<div id="email">Email: Loading...</div>
+<div id="bday">Birthday: Loading...</div>
+<div id="bio" style="display:none">Bio:<div id="biobio"></div></div>
+Posts:
+<ul id="posts">
+<li>Loading...</li>
+</ul>
+</div>
+<footer>
+<div id="footerout"><a href="index.html">Home</a><br /></div>
+<div id="footerin" style="display:none"><a href="index.html">Home</a> - <a href="logout.html">Logout</a><br /></div>
+Official president: Aldeenyo (Alden Savon)<br/>
+Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br/>
+Icon by Alex Savon<br/>
+&copy; 2018 STiBaRC
+</footer>
+<div id="chatframe">
+<button id="chattoggle" onclick="togglechat()">Messenger</button>
+</div>
+</body>
+</html>
+
+

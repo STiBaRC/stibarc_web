@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>Register - STiBaRC</title>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+<link rel="icon" type="image/png" href="icon.png">
+<script type="text/javascript">
+
+if(("standalone" in window.navigator) && window.navigator.standalone){
+
+var noddy, remotes = false;
+
+document.addEventListener('click', function(event) {
+
+noddy = event.target;
+
+while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+noddy = noddy.parentNode;
+}
+
+if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes))
+{
+event.preventDefault();
+document.location.href = noddy.href;
+}
+
+},false);
+}
+</script>
+<link href="css/register.css" rel="stylesheet" />
+<script src="js/register.js"></script>
+</head>
+<body>
+<div id="pword" style="display: none">Passwords must match!<br/><br/></div>
+<div id="blank" style="display: none">Username or password cannot be blank!<br/><br/></div>
+<div id="err" style="display: none">Error registering!<br/><br/></div>
+Name: <input type="text" id="name"><br/>
+Show name: <input type="checkbox" id="showname"><br/>
+Username* (plz no spaces): <input type="text" id="username"><br/>
+Password*: <input type="password" id="password"><br/>
+Repeat password*: <input type="password" id="password2"><br/>
+Email: <input type="text" id="email"><br/>
+Show email: <input type="checkbox" id="showemail"><br/>
+Birthday: <input type="text" id="bday"><br/>
+Show birthday: <input type="checkbox" id="showbday"><br/>
+<button id="send">Register</button><br/><br/>
+<i>* indicating required field</i><br/>
+<a href="privacy.html">Privacy policy</a>
+</body>
+</html>

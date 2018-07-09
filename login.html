@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+<link rel="icon" type="image/png" href="icon.png">
+<title>Login - STiBaRC</title>
+<script type="text/javascript">
+
+if(("standalone" in window.navigator) && window.navigator.standalone){
+
+var noddy, remotes = false;
+
+document.addEventListener('click', function(event) {
+
+noddy = event.target;
+
+while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+noddy = noddy.parentNode;
+}
+
+if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes))
+{
+event.preventDefault();
+document.location.href = noddy.href;
+}
+
+},false);
+}
+</script>
+<link href="css/login.css" rel="stylesheet" />
+<script src="js/login.js"></script>
+</head>
+<body>
+<div id="badnamepass" style="display: none">Invalid username or password!<br/><br/></div>
+<div id="blank" style="display: none">Username or password cannot be blank!<br/><br/></div>
+Username: <input id="username" type="text"/><br/><br/>
+Password: <input id="password" type="password"/><br/><br/>
+<button id="login">Login</button><br/><br/>
+<footer>
+<a href="index.html">Home</a>
+</footer>
+</body>
+</html>
