@@ -52,6 +52,10 @@ body {
     text-decoration: none;
 }
 
+.right {
+    text-align: right;
+}
+
 footer {
     background-color: #49B9CA;
     text-align: center;
