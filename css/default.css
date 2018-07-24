@@ -53,7 +53,7 @@ body {
 }
 
 .buttons {
-    float: right;
+    text-align: right;
 }
 
 footer {
