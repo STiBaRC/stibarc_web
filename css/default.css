@@ -53,12 +53,12 @@ body {
 }
 
 .buttons {
-    text-align: right;
+    float: right;
 }
 
 #logo {
-    text-align: left;
-    width: 6%;
+    float: left;
+    width: 8%;
 }
 
 footer {
