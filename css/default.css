@@ -44,7 +44,7 @@ body {
     width: 100%;
 }
 
-#button {
+.button {
     background-color: white;
     padding: 6px;
     border-radius: 5px;
