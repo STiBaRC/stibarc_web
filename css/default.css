@@ -44,6 +44,14 @@ body {
     width: 100%;
 }
 
+#button {
+    background-color: white;
+    padding: 6px;
+    border-radius: 5px;
+    width: 100%;
+    text-decoration: none;
+}
+
 footer {
     background-color: #49B9CA;
     text-align: center;
