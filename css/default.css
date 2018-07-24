@@ -2,17 +2,23 @@ body {
     overflow-y: scroll;
     background-color: #98DFF3;
     word-wrap: break-word;
+    font-family: Helvetica Neue;
+    line-height: 1.41;
 }
 
 #mainblobshitwithlist {
     background-color: #FFFFFF;
     word-wrap: break-word;
+    padding: 15px;
+    border-radius: 15px;
 }
 
 #header {
     text-align: center;
     background-color: #49B9CA;
     word-wrap: break-word;
+    padding: 15px;
+    border-radius: 15px;
 }
 
 #chatframe {
@@ -38,10 +44,20 @@ body {
     width: 100%;
 }
 
+#button {
+    background-color: white;
+    padding: 6px;
+    border-radius: 5px;
+    width: 100%;
+    text-decoration: none;
+}
+
 footer {
     background-color: #49B9CA;
     text-align: center;
     word-wrap: break-word;
+    padding: 15px;
+    border-radius: 15px;
 }
 
 a:link {
