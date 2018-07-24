@@ -53,12 +53,18 @@ body {
 }
 
 .buttons {
+    display:inline-block;
     float: right;
 }
 
 #logo {
+    display:inline-block;
     float: left;
-    width: 8%;
+    width: 10%;
+}
+
+span {
+    display:inline-block;
 }
 
 footer {
