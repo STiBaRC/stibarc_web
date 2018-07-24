@@ -56,6 +56,10 @@ body {
     text-align: right;
 }
 
+#logo {
+    text-align: left;
+}
+
 footer {
     background-color: #49B9CA;
     text-align: center;
