@@ -4,9 +4,10 @@
 <meta charset="utf-8" />
 <title>STiBaRC</title>
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+<link rel="stylesheet" href="css/global.css">
 <link href="css/default.css" rel="stylesheet">
 <link rel="icon" type="image/png" href="icon.png">
-<meta name="keywords" content="facebook,twitter,stibarc,reddit,so this is basically a reddit clone,hackernews,google+" />
+<meta name="keywords" content="stibarc,so this is basically a reddit clone" />
 <meta name="description" content="STiBaRC is a simple social media site that allows simple text posting (with no character limits) and single image posting. The last 20 posts on the site always have an equal chance of being seen on the homepage, regardless of popularity, content quality, or comments.">
 <!--Apple Crap-->
 <link rel="apple-touch-icon" href="icon.png">
@@ -38,6 +39,7 @@ document.location.href = noddy.href;
 <!--End Apple Crap-->
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-title" content="STiBaRC">
+<script src="js/global.js"></script>
 <script src="js/notifs.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/main.js"></script>
@@ -59,7 +61,7 @@ Please visit the <a href="http://legacy.stibarc.gq">legacy site</a> if JavaScrip
 </span>
 </div><br/>
 <div id="mainblobshitwithlist">
-  <h3>Recent posts:</h3>
+  <h2>Recent posts:</h2>
 <ul id="shitlist">
 <li>Loading...</li>
 <!--BEGIN CHAT-->
@@ -79,7 +81,7 @@ Please visit the <a href="http://legacy.stibarc.gq">legacy site</a> if JavaScrip
 <!--CHAT ENDED BY unknown-->
 <!--https://stibarc.gq/post.html?id=170-->
 </ul>
-<div style="display:none;text-align:center" id="loadmorecontainer"><a href="javascript:;" id="loadmore">&#x25BC; Load more &#x25BC;</a></div>
+<div id="loadmorecontainer" class="darkbutton"><a href="javascript:;" id="loadmore">&#x25BC; Load more &#x25BC;</a></div>
 </div>
 <br/>
 <footer>

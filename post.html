@@ -28,13 +28,15 @@ document.location.href = noddy.href;
 },false);
 }
 </script>
+<link rel="stylesheet" href="css/global.css">
 <link href="css/post.css" rel="stylesheet" />
+<script src="js/global.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/post.js"></script>
 </head>
 <body>
 <div id="poststuff">
-<h3 id="title">Loading...</h3>
+<h2 id="title">Loading...</h2>
 <div id="dateandstuff">Loading...</div><div id="edited" style="display:none"><i>Edited</i></div><br/>
 <div id="content">
 Loading...
@@ -46,22 +48,22 @@ Loading...
 <br/><button id="editlink" style="display:none">Edit post</button>
 <br/>
 <div id="comments">
-Comments:
+  <h4>Comments:</h4>
 </div>
 <div id="postout">
 Log in to post a comment!
 </div>
 <div id="postin" style="display:none">
 <div id="wait" style="display: none">Please wait x more seconds before commenting again<br/><br/></div>
-New comment:<br/>
+<h4>New comment:</h4>
 <textarea id="comtent" name="comtent" rows="5" cols="35"></textarea><br/>
 <button id="commentbutton">Submit</button>
 </div>
 </div>
 <br/>
 <footer>
-<div id="footerout"><a href="index.html">Home</a> - <a href="privacy.html">Privacy</a><br /></div>
-<div id="footerin" style="display:none"><a href="index.html">Home</a> - <a href="logout.html">Logout</a> - <a href="privacy.html">Privacy</a><br /></div>
+<div id="footerout"><a href="index.html" class="button">Home</a> <a href="privacy.html" class="button">Privacy</a><br /></div>
+<div id="footerin" style="display:none"><a href="index.html" class="button">Home</a> <a href="logout.html" class="button">Logout</a> <a href="privacy.html" class="button">Privacy</a><br/></div>
 Official president: Aldeenyo (Alden Savon)<br/>
 Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br />
 Icon by Alex Savon<br/>

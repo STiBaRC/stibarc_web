@@ -1,11 +1,10 @@
-body {
-	background-color: #98DFF3;
-	word-wrap: break-word;
-}
 #userstuffs {
 	background-color: #FFFFFF;
 	word-wrap: break-word;
+	padding: 15px; 
+	border-radius: 15px;
 }
+
 #chatframe {
     height: 50%;
     width: 25%;
@@ -18,7 +17,7 @@ body {
 #chattoggle {
     height: 10%;
     width: 35%;
-    //background-color: #D7D7D7;
+    /*background-color: #D7D7D7;*/
     bottom: 0;
     float: right;
 }
@@ -28,24 +27,13 @@ body {
     height: 60vh;
     width: 100%;
 }
-footer {
-	background-color: #49B9CA;
-	text-align: center;
-	word-wrap: break-word;
-}
 #bio {
 	background-color: #F0F0F0;
 	word-wrap: break-word;
+	padding: 10px; 
+	border-radius: 10px:
 }
-a:link {
-    color: #000000;
-}
-a:visited {
-    color: #000000;
-}
-a:hover {
-    color: #000000;
-}
-a:active {
-    color: #000000;
+
+.button {
+	font-weight: bold;
 }

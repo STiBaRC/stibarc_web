@@ -1,0 +1,40 @@
+body {
+	background-color: #98DFF3;
+	word-wrap: break-word;
+	touch-action: manipulation;
+	overflow-y: auto;
+	font-family: Georgia, serif;
+	line-height: 1.41;
+}
+
+.button {
+	text-decoration: none; 
+	background-color: white; 
+	padding: 6px; 
+	border-radius: 5px; 
+	font-weight: bold:
+}
+
+a:link {
+    color: #000000;
+}
+
+a:visited {
+    color: #000000;
+}
+
+a:hover {
+    color: #000000;
+}
+
+a:active {
+    color: #000000;
+}
+
+footer {
+	background-color: #49B9CA;
+	text-align: center;
+	word-wrap: break-word;
+	padding: 15px; 
+	border-radius: 15px;
+}

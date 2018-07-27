@@ -1,32 +1,15 @@
 body {
 	text-align: center;
-	background-color: #98DFF3;
-	word-wrap: break-word;
 }
+
 #header {
 	text-align: center;
 	background-color: #49B9CA;
 	word-wrap: break-word;
 }
+
 #searchstuff {
 	text-align: left;
 	background-color: #FFFFFF;
 	word-wrap: break-word;
-}
-footer {
-	background-color: #49B9CA;
-	text-align: center;
-	word-wrap: break-word;
-}
-a:link {
-    color: #000000;
-}
-a:visited {
-    color: #000000;
-}
-a:hover {
-    color: #000000;
-}
-a:active {
-    color: #000000;
 }

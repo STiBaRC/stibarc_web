@@ -28,27 +28,29 @@ document.location.href = noddy.href;
 },false);
 }
 </script>
+<link rel="stylesheet" href="css/global.css">
 <link href="css/user.css" rel="stylesheet" />
+<script src="js/global.js"></script>
 <script src="js/user.js"></script>
 <script src="js/chat.js"></script>
 </head>
 <body>
 <br/>
 <div id="userstuffs">
-<div id="username">Username: Loading...</div>
+<h2 id="username">Loading...</h2>
 <div id="rank">Rank: Loading...</div>
 <div id="name">Real name: Loading...</div>
 <div id="email">Email: Loading...</div>
 <div id="bday">Birthday: Loading...</div>
-<div id="bio" style="display:none">Bio:<div id="biobio"></div></div>
-Posts:
+  <div id="bio" style="display:none"><h4>Bio:</h4><div id="biobio"></div></div>
+  <h4>Posts:</h4>
 <ul id="posts">
 <li>Loading...</li>
 </ul>
-</div>
+</div><br/>
 <footer>
-<div id="footerout"><a href="index.html">Home</a> - <a href="privacy.html">Privacy</a><br /></div>
-<div id="footerin" style="display:none"><a href="index.html">Home</a> - <a href="logout.html">Logout</a> - <a href="privacy.html">Privacy</a><br /></div>
+<div id="footerout"><a href="index.html" class="button">Home</a> <a href="privacy.html" class="button">Privacy</a><br /></div>
+<div id="footerin" style="display:none"><a href="index.html" class="button">Home</a> <a href="logout.html" class="button">Logout</a> <a href="privacy.html" class="button">Privacy</a><br /></div>
 Official president: Aldeenyo (Alden Savon)<br/>
 Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br/>
 Icon by Alex Savon<br/>
@@ -59,5 +61,3 @@ Icon by Alex Savon<br/>
 </div>
 </body>
 </html>
-
-

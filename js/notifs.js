@@ -1,4 +1,4 @@
-var checkNotifs = function() {
+function checkNotifs() {
 	var perms = window.localStorage.getItem("notifs");
 	if (perms == "granted") {
 		var xmlHttp = new XMLHttpRequest();
@@ -28,7 +28,7 @@ var checkNotifs = function() {
 	}
 }
 
-var checkNotifsUser = function(user) {
+function checkNotifsUser(user) {
 	var perms = window.localStorage.getItem("notifs");
 	if (perms == "granted") {
 		var xmlHttp = new XMLHttpRequest();
@@ -61,7 +61,7 @@ var checkNotifsUser = function(user) {
 }
 
 
-var setupNotifs = function() {
+function setupNotifs() {
 	if (Notification.permission == "default") {
 		var perms = window.localStorage.getItem("notifs");
 		if (perms == "" || perms == undefined || perms == null) {
@@ -80,14 +80,14 @@ var setupNotifs = function() {
 	}
 }
 
-var doCheck = function() {
+function doCheck() {
 	checkNotifs();
 	if (window.localStorage.getItem("username") != null && window.localStorage.getItem("username") != undefined && window.localStorage.getItem("username") != "") {
 		checkNotifsUser(window.localStorage.getItem("username"));
 	}
 }
 
-var startNotifs = function() {
+function startNotifs() {
 	setupNotifs();
 	setInterval(doCheck, 500);
 }

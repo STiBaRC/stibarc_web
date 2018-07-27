@@ -1,6 +1,8 @@
 #poststuff {
     background-color: #FFFFFF;
     word-wrap: break-word;
+    padding: 15px;
+    border-radius: 15px;
 }
 
 #content {
@@ -10,6 +12,8 @@
 #comment {
     background-color: #98DFF3;
     word-wrap: break-word;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 #image {
@@ -17,15 +21,20 @@
 }
 
 .replyto {
-	color: #d7d7d7;
-	font-size: 80%;
+    color: #d7d7d7;
+    font-size: 80%;
+    text-decoration: none;
+    background-color: white;
+    padding: 3px;
+    border-radius: 3px;
 }
 
-body {
-    touch-action: manipulation;
-    background-color: #98DFF3;
-    word-wrap: break-word;
-    overflow-y: scroll;
+.button {
+    color: #d7d7d7;
+    text-decoration: none;
+    background-color: white;
+    padding: 6px;
+    border-radius: 5px;
 }
 
 #chatframe {
@@ -52,23 +61,6 @@ body {
 }
 
 footer {
-    background-color: #49B9CA;
-    text-align: center;
-    word-wrap: break-word;
-}
-
-a:link {
-    color: #000000;
-}
-
-a:visited {
-    color: #000000;
-}
-
-a:hover {
-    color: #000000;
-}
-
-a:active {
-    color: #000000;
+    padding: 15px;
+    border-radius: 15px;
 }
