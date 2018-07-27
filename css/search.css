@@ -2,12 +2,16 @@
     text-align: center;
     background-color: #FFFFFF;
     word-wrap: break-word;
+    padding: 15px;
+    border-radius: 15px;
 }
 
 #main2 {
     text-align: left;
     background-color: #FFFFFF;
     word-wrap: break-word;
+    padding: 15px;
+    border-radius: 15px;
 }
 
 #chatframe {
