@@ -70,9 +70,14 @@
 }
     
 #logo {
-    display:inline-block;
+    display: inline-block;
     float: left;
-    width: 10%;
+    width: 20%;
+}
+@media only screen and (max-width: 1281px) {
+  #logo {
+    width: 100vw;
+  }
 }
 
 span {
@@ -86,6 +91,8 @@ footer {
     padding: 15px;
     border-radius: 15px;
 }
+
+
 
 
 
