@@ -1,4 +1,3 @@
-﻿feather.replace();
 function toLink(item) {
 	try {
 		var i = item.indexOf(':');
