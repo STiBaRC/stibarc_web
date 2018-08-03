@@ -8,7 +8,7 @@ var togglechat = function() {
 		if (document.getElementById("messenger").style.display == "none") {
 			document.getElementById("messenger").style.display = "";
 		} else {
-			document.getElementById("messenger").style.display = "none"
+			document.getElementById("messenger").style.display = "none";
 		}
 	}
 }

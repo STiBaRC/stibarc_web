@@ -1,4 +1,5 @@
-﻿function toLink(item) {
+﻿feather.replace();
+function toLink(item) {
 	try {
 		var i = item.indexOf(':');
 		var splits = [item.slice(0, i), item.slice(i + 1)];
