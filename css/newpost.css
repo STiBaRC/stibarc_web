@@ -1,3 +1,18 @@
 body {
-	text-align: center;
+    background-color: #98DFF3;
+    word-wrap: break-word;
+    text-align: center;
+    font-family: Georgia;
+}
+a:link {
+    color: #000000;
+}
+a:visited {
+    color: #000000;
+}
+a:hover {
+    color: #000000;
+}
+a:active {
+    color: #000000;
 }
