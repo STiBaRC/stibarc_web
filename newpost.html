@@ -28,20 +28,21 @@ document.location.href = noddy.href;
 },false);
 }
 </script>
-<link rel="stylesheet" href="css/global.css">
 <link href="css/newpost.css" rel="stylesheet" />
-<script src="js/global.js"></script>
 <script src="js/newpost.js"></script>
 </head>
 <body>
 <div id="wait" style="display: none">Please wait x more seconds before posting again<br/><br/></div>
-Title: <input type="text" id="title"><br/>
-Content: <textarea name="content" id="content" rows="20" cols="70"></textarea><br/><br/>
+<div id="mainshit">
+<h2>New post:</h2>
+<h4>Title</h4> <input type="text" id="title"><br/><br>
+<h4>Content</h4> <textarea name="content" id="content" rows="20" cols="70"></textarea><br/><br/>
 <div id="error" style="display:none">Error uploading image!</div>
-<div id="imageadd">Attach image: <input type="file" id="file" name="file" accept="image/*" /></div>
+<div id="imageadd"><h4>Attach image</h4> <input type="file" id="file" name="file" accept="image/*" /></div>
 <div id="pleasewait" style="display:none">Please wait for image to upload...</div>
 <progress id="imageprogress" style="display:none"></progress>
-<div id="imageadded" style="display:none">Image added <button id="removeimage">remove</button></div><br/>
+<div id="imageadded" style="display:none">Image added <button id="removeimage">remove</button></div><br/><br>
 <button id="send">Submit</button>
+</div>
 </body>
 </html>
