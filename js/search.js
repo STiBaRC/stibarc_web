@@ -22,7 +22,7 @@ function search() {
 	if (q != "") {
 		var xmlHttp = new XMLHttpRequest();
 		xmlHttp.open("post", "https://api.stibarc.gq/postsearch.sjs", false);
-		xmlHttp.send("q="+q);
+		xmlHttp.send("q="+encodeURIComponent(q));
 		if (xmlHttp.responseText.split("\n")[0] != "No results" && xmlHttp.responseText != "") {
 			var tmp = xmlHttp.responseText.split("\n");
 			document.getElementById("list").innerHTML = "";
