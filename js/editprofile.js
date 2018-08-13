@@ -19,4 +19,20 @@ window.onload = function() {
     window.localStorage.removeItem("sess");
     window.location.href = "index.html";
   }
+  document.getElementById("submit").onclick = function(evt) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST","https://api.stibarc.gq/updateprofile.sjs",true);
+    var showemail = document.getElementById("showemail").checked;
+    if (showemail == false) {showemail="";}
+    var showname = document.getElementById("showname").checked;
+    if (showname == false) {showname="";}
+    var showbday = document.getElementById("showbday").checked;
+    if (showbday == false) {showbday="";}
+    var showbio = document.getElementById("showbio").checked;
+    if (showbio == false) {showbio="";}
+    xhr.send("sess"+sess+"&email="+encodeURIComponent(document.getElementById("email").value)+"&name="+encodeURIComponent(document.getElementById("name").value)+"&birthday="+encodeURIComponent(document.getElementById("birthday").value)+"&bio="+encodeURIComponent(document.getElementById("bio").value)+"&showemail="+showemail+"&showname="+showname+"&showbday="+showbday+"&showbio="+showbio);
+    xhr.onload = function(e) {
+      window.location.href = "index.html";
+    }
+  }
 }
