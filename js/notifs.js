@@ -13,8 +13,7 @@ function checkNotifs() {
 				text = text.concat(tmp[i]+"\n");
 			}
 			text = text.concat(tmp[tmp.length-3]);
-			if (text === undefined) {
-			} else {
+			if (text !== undefined && tmp[1] !== undefined) {
 				window.localStorage.setItem("lastNotifID", tmp[0]);
 				var notification = new Notification("STiBaRC", {body: text,requireInteraction:true,icon:'icon.png'});
 				notification.onclick = function(evt) {
@@ -45,8 +44,7 @@ function checkNotifsUser(user) {
 				}
 				text = text.concat(tmp[tmp.length-3]);
 				window.localStorage.setItem("lastUserNotifID", tmp[0].concat(tmp[tmp.length-2]));
-				if (text === undefined) {
-				} else {
+				if (text !== undefined && tmp[1] !== undefined) {
 					var notification = new Notification(tmp[1], {body: text,requireInteraction:true,icon:'icon.png'});
 					notification.onclick = function(evt) {
 						notification.close();
