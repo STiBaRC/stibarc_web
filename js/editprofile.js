@@ -1,4 +1,4 @@
-document.onload = function() {
+window.onload = function() {
   var sess = window.localStorage.getItem("sess");
   if (sess != undefined && sess != "") {
     var xhr = new XMLHttpRequest();
