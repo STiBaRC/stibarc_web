@@ -20,6 +20,7 @@ window.onload = function() {
     window.location.href = "index.html";
   }
   document.getElementById("submit").onclick = function(evt) {
+    var sess = window.localStorage.getItem("sess");
     var xhr = new XMLHttpRequest();
     xhr.open("POST","https://api.stibarc.gq/updateprofile.sjs",true);
     var showemail = document.getElementById("showemail").checked;
