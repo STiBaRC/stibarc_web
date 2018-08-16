@@ -57,6 +57,9 @@ function loadMore() {
 }
 
 window.onload = function () {
+	if (location.protocol == "http:") {
+		location.protocol = "https:"
+	}
 	var offline = false;
 	//var cookie = toJSON(document.cookie);
 	var sess = window.localStorage.getItem("sess");
