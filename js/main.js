@@ -9,17 +9,6 @@ function toLink(item) {
 	}
 }
 
-//Unused
-/*var checkId = function () {
-	var id = window.localStorage.getItem("appID");
-	if (id == null || id == "" || id == undefined) {
-		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.open("GET", "https://api.stibarc.gq/getappid.sjs", false);
-		xmlHttp.send(null);
-		window.localStorage.setItem("appID", xmlHttp.responseText);
-	}
-}*/
-
 function checkSess() {
 	var sess = window.localStorage.getItem("sess");
 	var xmlHttp = new XMLHttpRequest();
@@ -57,11 +46,7 @@ function loadMore() {
 }
 
 window.onload = function () {
-	if (location.protocol == "http:") {
-		location.protocol = "https:"
-	}
 	var offline = false;
-	//var cookie = toJSON(document.cookie);
 	var sess = window.localStorage.getItem("sess");
 	if (sess != undefined && sess != null && sess != "") {
 		checkSess();
