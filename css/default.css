@@ -36,6 +36,13 @@
     width: 100%;
 }
 
+.post {
+	background-color: #98DFF3;
+    word-wrap: break-word;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .button {
     display: inline;
     background-color: white;
@@ -96,9 +103,3 @@ footer {
     padding: 15px;
     border-radius: 15px;
 }
-
-
-
-
-
-
