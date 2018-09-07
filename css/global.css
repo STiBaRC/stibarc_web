@@ -3,7 +3,7 @@ body {
 	word-wrap: break-word;
 	touch-action: manipulation;
 	overflow-y: auto;
-	font-family: Georgia, serif;
+	font-family: Verdana,sans-serif;
 	line-height: 1.41;
 }
 
