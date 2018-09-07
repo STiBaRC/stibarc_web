@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+<link rel="icon" type="image/png" href="icon.png">
+<title>Settings</title>
+<script type="text/javascript">
+if(("standalone" in window.navigator) && window.navigator.standalone){
+var noddy, remotes = false;
+document.addEventListener('click', function(event) {
+noddy = event.target;
+while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+noddy = noddy.parentNode;
+}
+if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes))
+{
+event.preventDefault();
+document.location.href = noddy.href;
+}
+},false);
+}
+</script>
+<meta http-equiv="Content-Security-Policy" content="default-src *; style-src *  'unsafe-inline'; script-src *  'unsafe-inline'; media-src *">
+<meta http-equiv="X-XSS-Protection" content="0">
+<link rel="stylesheet" href="css/global.css">
+<link href="css/settings.css" rel="stylesheet" />
+<div id="privacies">
+<h2>Coming Soon!</h2>
+</div>
+</body>
+<br>
+<footer><a href="index.html" class="button" style="font-weight: bold">Home</a>
+<br><br>
+Official president: Aldeenyo (Alden Savon)<br/>
+Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br/>
+Icon by Alex Savon<br/>
+&copy; 2018 STiBaRC<br/>
+
+</footer>
+
+</html>
