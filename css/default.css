@@ -83,7 +83,6 @@
     
 #logo {
     display: inline-block;
-    float: left;
     width: 20%;
 }
 @media only screen and (max-width: 1281px) {
