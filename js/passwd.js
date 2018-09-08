@@ -9,7 +9,7 @@ window.onload = function() {
     if (npass == npass2 && npass != "" && npass != undefined) {
       var xhr = new XMLHttpRequest();
       xhr.open("post","https://api.stibarc.gq/updatepasswd.sjs",true);
-      xhr.send("sess="+sess+"&old="+encodeURIComponent(opass)+"&new="+encodeURICompontent(npass)+"&new2="+encodeURICompontent(npass));
+      xhr.send("sess="+sess+"&old="+encodeURIComponent(opass)+"&new="+encodeURIComponent(npass)+"&new2="+encodeURIComponent(npass));
       xhr.onload = function(e) {
         if (xhr.responseText.split("\n")[0] == "Updated") {
           location.href = "/";
