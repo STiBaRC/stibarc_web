@@ -35,29 +35,40 @@ document.location.href = noddy.href;
 <div id="pword" style="display: none">Passwords must match!<br/><br/></div>
 <div id="blank" style="display: none">Username or password cannot be blank!<br/><br/></div>
 <div id="err" style="display: none">Error registering!<br/><br/></div>
-Name: <input type="text" id="name"><br/>
-Show name: <input type="checkbox" id="showname"><br/>
-Username* (please no spaces): <input type="text" id="username"><br/>
-Password*: <input type="password" id="password"><br/>
-Repeat password*: <input type="password" id="password2"><br/>
-Email: <input type="text" id="email"><br/>
-Show email: <input type="checkbox" id="showemail"><br/>
-Birthday: <input type="text" id="bday"><br/>
-Show birthday: <input type="checkbox" id="showbday"><br/>
-<button id="send">Register</button><br/><br/>
-<i>* indicating required field</i><br/>
-<a href="privacy.html">Privacy policy</a>
-<br>
+<div id="mainshit">
+<h2>Register:</h2>
+<h4>Name:</h4> <input type="text" id="name">
+<input type="checkbox" id="showname">
+<i style="font-size:70%">Show?</i><br>
+ <br>
+    <h4>Username* (please no spaces):</h4> <input type="text" id="username"><br><br>
+    <h4>Password*:</h4> <input type="password" id="password"><br>
+    <h4 style="font-size:70%">Repeat password*:</h4> <input type="password" id="password2"><br><br>
+<h4>Email:</h4> <input type="text" id="email">
+<input type="checkbox" id="showemail"><i style="font-size:70%">Show?</i><br><br>
+    <h4>Birthday:</h4> <input type="text" id="bday">
+<input type="checkbox" id="showbday"><i style="font-size:70%">Show?</i><br><br>
+<button id="send">Register</button><br><br>
+<i>* indicating required field</i>
 </div>
-</body>
-<br>
-<footer><a href="index.html" class="button" style="font-weight: bold">Home</a>
-<br><br>
-Official president: Aldeenyo (Alden Savon)<br/>
-Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br/>
-Icon by Alex Savon<br/>
-&copy; 2018 STiBaRC<br/>
 
+
+
+<br>
+<footer>
+<div id="footerout"><a href="index.html" class="button">Home</a> <a href="privacy.html" class="button">Privacy</a><br></div>
+<div id="footerin" style="display:none"><a href="index.html" class="button">Home</a> <a href="mailto:herronjo110@gmail.com?subject=STiBaRC%20User%20Verification%20Request" class="button">Request user verification</a> <a href="logout.html" class="button">Logout</a> <a href="privacy.html" class="button">Privacy</a><br></div>
+<br>
+Official president: Aldeenyo (Alden Savon)<br>
+Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br>
+Icon by Alex Savon<br>
+© 2018 STiBaRC<br>
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="P7AHE4MUXP2TA">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
 </footer>
 
 </html>

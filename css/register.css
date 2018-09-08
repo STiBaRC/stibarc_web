@@ -8,3 +8,10 @@ body {
 	border-radius: 15px;
 	word-wrap: break-word;
 }
+
+#mainshit {
+    background-color: #FFFFFF;
+    word-wrap: break-word;
+    padding: 15px;
+    border-radius: 15px;
+}
