@@ -84,12 +84,12 @@ function reloadvotes() {
 	var id = getAllUrlParams().id;
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.open("GET", "https://api.stibarc.gq/v2/getpost.sjs?id="+id, true);
-	xmlHttp.send(null);
 	xmlHttp.onload = function(evt) {
 		var stuff = JSON.parse(xmlHttp.responseText);
 		document.getElementById("upvotes").innerHTML = stuff['upvotes'];
 		document.getElementById("downvotes").innerHTML = stuff['downvotes'];
 	}
+	xmlHttp.send(null);
 }
 
 function upvote() {
@@ -98,10 +98,10 @@ function upvote() {
 	if (sess != undefined && sess != "") {
 		var xhr = new XMLHttpRequest();
 		xhr.open("post", "https://api.stibarc.gq/upvote.sjs", true);
-		xhr.send("id="+id+"&sess="+sess);
 		xhr.onload = function(evt) {
 			reloadvotes();
 		}
+		xhr.send("id="+id+"&sess="+sess);
 	}
 }
 
@@ -111,10 +111,10 @@ function downvote() {
 	if (sess != undefined && sess != "") {
 		var xhr = new XMLHttpRequest();
 		xhr.open("post", "https://api.stibarc.gq/downvote.sjs", true);
-		xhr.send("id="+id+"&sess="+sess);
 		xhr.onload = function(evt) {
 			reloadvotes();
 		}
+		xhr.send("id="+id+"&sess="+sess);
 	}
 }
 
