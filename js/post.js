@@ -1,4 +1,4 @@
-﻿var pushed = false;
+var pushed = false;
 
 function toLink(item) {
 	try {
@@ -80,6 +80,44 @@ function replyto(guy) {
 	}
 }
 
+function reloadvotes() {
+	var id = getAllUrlParams().id;
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.open("GET", "https://api.stibarc.gq/v2/getpost.sjs?id="+id, true);
+	xmlHttp.send(null);
+	xmlHttp.onload = function(evt) {
+		var stuff = JSON.parse(xmlHttp.responseText);
+		document.getElementById("upvotes").innerHTML = stuff['upvotes'];
+		document.getElementById("downvotes").innerHTML = stuff['downvotes'];
+	}
+}
+
+function upvote() {
+	var sess = window.localStorage.getItem("sess");
+	var id = getAllUrlParams().id;
+	if (sess != undefined && sess != "") {
+		var xhr = new XMLHttpRequest();
+		xhr.open("post", "https://api.stibarc.gq/upvote.sjs", true);
+		xhr.send("id="+id+"&sess="+sess);
+		xhr.onload = function(evt) {
+			reloadvotes();
+		}
+	}
+}
+
+function downvote() {
+	var sess = window.localStorage.getItem("sess");
+	var id = getAllUrlParams().id;
+	if (sess != undefined && sess != "") {
+		var xhr = new XMLHttpRequest();
+		xhr.open("post", "https://api.stibarc.gq/downvote.sjs", true);
+		xhr.send("id="+id+"&sess="+sess);
+		xhr.onload = function(evt) {
+			reloadvotes();
+		}
+	}
+}
+
 window.onload = function () {
 	pushed = false;
 	var sess = window.localStorage.getItem("sess");
@@ -91,7 +129,7 @@ window.onload = function () {
 	}
 	var id = getAllUrlParams().id;
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("GET", "https://api.stibarc.gq/getpost.sjs?id="+id, false);
+	xmlHttp.open("GET", "https://api.stibarc.gq/v2/getpost.sjs?id="+id, false);
 	xmlHttp.send(null);
 	var stuff = JSON.parse(xmlHttp.responseText);
 	document.getElementById("title").innerHTML = stuff.title.replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -108,6 +146,8 @@ window.onload = function () {
 	if (stuff["attachment"] != "none" && stuff["attachment"] != undefined && stuff["attachment"] != null) {
 		document.getElementById("attachment").style.display = "";
 	}
+	document.getElementById("upvotes").innerHTML = stuff['upvotes'];
+	document.getElementById("downvotes").innerHTML = stuff['downvotes'];
 	xmlHttp.open("GET", "https://api.stibarc.gq/getcomments.sjs?id=" + id, false);
 	xmlHttp.send(null);
 	if (xmlHttp.responseText != "undefined\n") {
