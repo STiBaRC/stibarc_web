@@ -20,6 +20,12 @@
     width: 50%;
 }
 
+@media only screen and (max-width: 700px) {
+  #image {
+    width: 100%;
+  }
+}
+
 .replyto {
     color: #d7d7d7;
     font-size: 80%;
