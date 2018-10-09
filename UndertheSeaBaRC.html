@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!-- saved from url=(0122)https://cdn.rawgit.com/savaka2/6ddd2798341acb0967e935b4552ed73e/raw/7f80cc4ef6bcbca477e38aba0fc547af9c7eb202/undersea.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<title>Under the SeaBaRC</title>
+		<script>
+			window.onload = function() {
+				var r = new XMLHttpRequest();
+				r.addEventListener('load', function() {
+					var obj = JSON.parse(r.responseText);
+					var items = [];
+					for (i = obj.totalposts; i > obj.totalposts - 20; i--) {
+						items.push(obj[i]);
+					}
+					document.getElementById('loading').style.display = 'none';
+					document.getElementById('canvas').style.display = 'block';
+					var ctx = document.getElementById('canvas').getContext("2d");
+					ctx.lineCap = 'round';
+					ctx.lineJoin = 'round';
+					ctx.fillStyle = 'darkblue';
+					ctx.fillRect(0, 0, 320, 450);
+					var radius;
+					var x;
+					var y;
+					var numWaves;
+					for (i = 0; i < 20; i++) {
+						ctx.strokeStyle = 'rgb(0, ' + randomInt(100, 200) + ', 0)';
+						ctx.lineWidth = 3;
+						radius = randomInt(5, 20);
+						x = randomInt(0, 320);
+						y = 450;
+						ctx.beginPath();
+						ctx.arc(x - radius, y, radius, 0, toRad(-30), true);
+						ctx.stroke();
+						x = x - (1 - Math.sqrt(3) / 2) * radius;
+						y = y - 0.5 * radius;
+						numWaves = 2 + Math.floor(items[i].content.length / 250);
+						for (j = 0; j < numWaves; j++) {
+							ctx.beginPath();
+							ctx.arc(x + (Math.sqrt(3) / 2) * radius, y - 0.5 * radius, radius, toRad(150), toRad(-150));
+							ctx.stroke();
+							y = y - radius;
+							ctx.beginPath();
+							ctx.arc(x - (Math.sqrt(3) / 2) * radius, y - 0.5 * radius, radius, toRad(-30), toRad(30));
+							ctx.stroke();
+							y = y - radius;
+						}
+					}
+					var size;
+					ctx.strokeStyle = 'rgb(255, 0, 255)';
+					ctx.lineWidth = 10;
+					for (i = 0; i < 20; i++) {
+						if (items[i].upvotes + items[i].downvotes > 0) {
+							var voting = items[i].upvotes / (items[i].upvotes + items[i].downvotes);
+							size = 10 + (20 * voting);
+							ctx.beginPath();
+							x = randomInt(0, 320);
+							y = randomInt(360, 450);
+							ctx.moveTo(x, y);
+							y = y - size;
+							ctx.lineTo(x, y);
+							x = x + Math.sin(toRad(36)) * size;
+							y = y + Math.cos(toRad(36)) * size;
+							ctx.lineTo(x, y);
+							x = x - Math.cos(toRad(18)) * size;
+							y = y - Math.sin(toRad(18)) * size;
+							ctx.lineTo(x, y);
+							x = x + Math.cos(toRad(18)) * size;
+							y = y - Math.sin(toRad(18)) * size;
+							ctx.lineTo(x, y);
+							x = x - Math.sin(toRad(36)) * size;
+							y = y + Math.cos(toRad(36)) * size;
+							ctx.lineTo(x, y);
+							ctx.stroke();
+						}
+					}
+					var userColors = {};
+					for (i = 0; i < 20; i++) {
+						if (userColors[items[i].poster] == null) {
+							userColors[items[i].poster] = 'rgb(' + randomInt(100, 255) + ', ' + randomInt(100, 255) + ', ' + randomInt(100, 255) + ')';
+						}
+						ctx.fillStyle = userColors[items[i].poster];
+						ctx.strokeStyle = ctx.fillStyle;
+						size = randomInt(5, 20);
+						ctx.lineWidth = size;
+						ctx.beginPath();
+						x = randomInt(0, 320);
+						y = randomInt(0, 360);
+						ctx.arc(x, y, size, 0, 2 * Math.PI);
+						ctx.fill();
+						ctx.beginPath();
+						ctx.moveTo(x, y);
+						ctx.lineTo(x + size, y);
+						ctx.lineTo(x + size + (Math.cos(toRad(30)) * size), y - (Math.sin(toRad(30)) * size));
+						ctx.lineTo(x + size + (Math.cos(toRad(30)) * size), y + (Math.sin(toRad(30)) * size));
+						ctx.lineTo(x + size, y);
+						ctx.stroke();
+					}
+					ctx.fillStyle = 'rgba(100, 100, 225)';
+					ctx.strokeStyle = 'rgb(100, 100, 255)';
+					ctx.lineWidth = 1;
+					ctx.globalAlpha = 0.2;
+					for (i = 0; i < 200; i++) {
+						ctx.beginPath();
+						ctx.arc(randomInt(0, 320), randomInt(0, 450), randomInt(1, 5), 0, 2 * Math.PI);
+						ctx.fill();
+						ctx.stroke();
+					}
+					ctx.globalAlpha = 0.1;
+					ctx.strokeStyle = 'rgb(255, 255, 255)';
+					var angle;
+					for (i = 0; i < 100; i++) {
+						x = randomInt(-50, 320);
+						angle = randomInt(5, 15);
+						size = randomInt(100, 400);
+						ctx.lineWidth = randomInt(1, 15);
+						ctx.beginPath();
+						ctx.moveTo(x, 0);
+						ctx.lineTo(x + (Math.sin(toRad(angle)) * size), Math.cos(toRad(angle)) * size);
+						ctx.stroke();
+					}
+				});
+				r.open('get', 'https://api.stibarc.gq/v2/getposts.sjs', true);
+				r.send();				
+			}
+			
+			function randomInt(min, max) {
+				return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+			
+			function toRad (angle) {
+				return angle * (Math.PI / 180);
+			}
+		</script>
+	</head>
+	<body>
+		<p id="loading" style="display: none;">Loading...</p>
+		<canvas id="canvas" width="320" height="450" style="display: block;"></canvas>
+	
+
+<style media="screen">
+	body {
+		font-family: sans-serif;
+		background-color: black;
+		color: white;
+	}
+	
+	canvas {
+		background-color: white;
+		border: 1px solid rgb(198, 202, 205);
+		display: none;
+	}
+</style></body></html>

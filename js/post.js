@@ -4,7 +4,7 @@ function toLink(item) {
 	try {
 		var i = item.indexOf(':');
 		var splits = [item.slice(0, i), item.slice(i + 1)];
-		document.getElementById("shitlist").innerHTML = document.getElementById("shitlist").innerHTML.concat('<li><a href="post.html?id=').concat(splits[0]).concat('">').concat(splits[1]).concat("</a></li>");
+		document.getElementById("list").innerHTML = document.getElementById("list").innerHTML.concat('<li><a href="post.html?id=').concat(splits[0]).concat('">').concat(splits[1]).concat("</a></li>");
 
 	} catch (err) {
 		console.log("Whoops");
@@ -118,6 +118,17 @@ function downvote() {
 	}
 }
 
+function delpost() {
+	var pass = prompt("Admin password?");
+	var id = getAllUrlParams().id;
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST","https://stibarc.gq/management/delpost.sjs",true);
+	xhr.send("adminpassword="+pass+"&id="+id);
+	xhr.onload = function(evt) {
+		location.reload();
+	}
+}
+
 window.onload = function () {
 	pushed = false;
 	var sess = window.localStorage.getItem("sess");
@@ -142,6 +153,9 @@ window.onload = function () {
 	}
 	if (stuff.poster == window.localStorage.getItem("username") && getRank() != "User") {
 		document.getElementById("editlink").style.display = "";
+	}
+	if (getRank() == "Owner") {
+		document.getElementsByTagName("body")[0].innerHTML = '<button onclick="delpost()">Delete post</button>'+document.getElementsByTagName("body")[0].innerHTML;
 	}
 	if (stuff["attachment"] != "none" && stuff["attachment"] != undefined && stuff["attachment"] != null) {
 		document.getElementById("attachment").style.display = "";

@@ -9,7 +9,7 @@
 <link rel="icon" type="image/png" href="icon.png">
 <meta name="keywords" content="stibarc,so this is basically a reddit clone" />
 <meta name="description" content="STiBaRC is a simple social media site that allows simple text posting (with no character limits) and single image posting. The last 20 posts on the site always have an equal chance of being seen on the homepage, regardless of popularity, content quality, or comments.">
-<!--Apple Crap-->
+<!--Apple Stuff-->
 <link rel="apple-touch-icon" href="icon.png">
 <meta name="apple-mobile-web-app-title" content="STiBaRC">
 <meta name="apple-mobile-web-app-status-bar-style" content="white">
@@ -43,17 +43,22 @@ document.location.href = noddy.href;
 },false);
 }
 </script>
-<!--End Apple Crap-->
+<!--End Apple Stuff-->
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-title" content="STiBaRC">
 <script src="js/global.js"></script>
 <script src="js/notifs.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/main.js"></script>
-
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8376259046479900",
+    enable_page_level_ads: true
+  });
+</script>
 </head>
 <body>
-<iframe height="0" width="0" src="https://api.stibarc.gq/justkeepingscore.sjs" style="visibility:hidden;display:none"></iframe>
 <noscript>
 Please visit the <a href="http://legacy.stibarc.gq">legacy site</a> if JavaScript is disabled or not available.
 </noscript>
@@ -62,40 +67,25 @@ Please visit the <a href="http://legacy.stibarc.gq">legacy site</a> if JavaScrip
 <span><img src="logo.png" id="logo"></span><br>
 <span id="loggedout">
 <span class="buttons">
-  <a href="login.html" class="button">Login</a>
-  <a href="register.html" class="button">Register</a>
-  <a href="search.html" class="button">Search</a></span>
+<a href="login.html" class="button">Login</a>
+<a href="register.html" class="button">Register</a>
+<a href="search.html" class="button">Search</a></span>
 </span>
 <span id="loggedin" style="display: none;">
 <span class="buttons"><a href="newpost.html" class="button">New post</a> <a href="editprofile.html" id="edit" class="button">Edit profile</a> <a href="search.html" class="button">Search</a></span>
 </span>
 </div><br/>
-<div id="mainblobshitwithlist">
+<div id="mainblobwithlist">
   <h2>Recent posts:</h2>
-<div id="shitlist">
-<!--BEGIN CHAT-->
-<!--unknown: so i heard youve got the stuff im looking for?-->
-<!--herronjo: You'd be right.-->
-<!--unknown: oxycoton?-->
-<!--herronjo: Yep-->
-<!--unknown: herion?-->
-<!--herronjo: Best contraceptive-->
-<!--unknown: What?-->
-<!--herronjo: Nevermind-->
-<!--unknown: ...-->
-<!--unknwon: anyways, i need the stuff asap-->
-<!--herronjo: Got it, meet me at 608 W Central Ave, Delaware, OH 43015 at midnight-->
-<!--unknown: on it-->
-<!--herronjo: Don't forget the-->
-<!--CHAT ENDED BY unknown-->
-<!--https://stibarc.gq/post.html?id=170-->
+<div id="list">
 </div>
 <div id="loadmorecontainer" class="button"><a href="javascript:;" id="loadmore">Load more</a></div>
 </div>
 <br/>
 <footer>
-<div id="footerout"><a href="index.html" class="button">Home</a> <a href="privacy.html" class="button">Privacy</a><br/></div>
-<div id="footerin" style="display:none"><a href="index.html" class="button">Home</a> <a href="logout.html" class="button">Logout</a> <a href="privacy.html" class="button">Privacy</a><br/></div>
+<div id="footerout"><a href="index.html" class="button">Home</a><br/></div>
+<div id="footerin" style="display:none"><a href="index.html" class="button">Home</a> <a href="logout.html" class="button">Logout</a><br/></div>
+<br/><a href="https://stibarc.gq/privacy.html" class="button">Privacy</a> <a href="https://stibarc.gq/tos.html" class="button">Terms of Service</a><br/>
 <br>
 Official president: Aldeenyo (Alden Savon)<br/>
 Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br/>
