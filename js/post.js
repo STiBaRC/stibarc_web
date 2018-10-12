@@ -154,9 +154,6 @@ window.onload = function () {
 	if (stuff.poster == window.localStorage.getItem("username") && getRank() != "User") {
 		document.getElementById("editlink").style.display = "";
 	}
-	if (getRank() == "Owner") {
-		document.getElementsByTagName("body")[0].innerHTML = '<button onclick="delpost()">Delete post</button>'+document.getElementsByTagName("body")[0].innerHTML;
-	}
 	if (stuff["attachment"] != "none" && stuff["attachment"] != undefined && stuff["attachment"] != null) {
 		document.getElementById("attachment").style.display = "";
 	}
