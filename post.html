@@ -33,13 +33,6 @@ document.location.href = noddy.href;
 <script src="js/global.js"></script>
 <script src="js/chat.js"></script>
 <script src="js/post.js"></script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-8376259046479900",
-    enable_page_level_ads: true
-  });
-</script>
 </head>
 <body>
 <div id="poststuff">
@@ -50,7 +43,6 @@ Loading...
 </div>
 <div id="attachment" style="display:none">
 <br/><button id="viewattachment">View attachment</button>
-<img id="image" src="" style="display:none"></img>
 </div><br/>
 <a href="javascript:upvote()" class="button">&#8679; <span id="upvotes">0</span></a> <a href="javascript:downvote()" class="button">&#8681; <span id="downvotes">0</span></a>
 <br/><button id="editlink" style="display:none">Edit post</button>
@@ -64,7 +56,7 @@ Log in to post a comment!
 <div id="postin" style="display:none">
 <div id="wait" style="display: none">Please wait x more seconds before commenting again<br/><br/></div>
 <h4>New comment:</h4>
-<textarea id="comtent" name="comtent" rows="5" cols="35"></textarea><br/>
+<textarea id="comtent" name="comtent"></textarea><br/>
 <button id="commentbutton">Submit</button>
 </div>
 </div>

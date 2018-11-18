@@ -8,6 +8,15 @@ body {
     padding: 15px; 
     background-color: white;
 }
+#content {
+	width: 39%;
+	height: 48vh;
+}
+@media only screen and (max-width: 700px) {
+	#content {
+		width: 98%
+	}
+}
 a:link {
     color: #000000;
 }

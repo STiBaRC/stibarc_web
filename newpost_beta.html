@@ -28,26 +28,37 @@ document.location.href = noddy.href;
 },false);
 }
 </script>
-<link href="css/global.css" rel="stylesheet" />
-<link href="css/newpost.css" rel="stylesheet" />
-<script src="js/newpost.js"></script>
+<!--link href="css/newpost.css" rel="stylesheet" /-->
+<style>
+body {
+	background-color: #98DFF3;
+	word-wrap: break-word;
+	text-align: center;
+}
+a:link {
+    color: #000000;
+}
+a:visited {
+    color: #000000;
+}
+a:hover {
+    color: #000000;
+}
+a:active {
+    color: #000000;
+}
+</style>
+<script src="js/newpost_beta.js"></script>
 </head>
 <body>
 <div id="wait" style="display: none">Please wait x more seconds before posting again<br/><br/></div>
-<div id="main">
-<h2>New post:</h2>
-<h4>Title</h4> <input type="text" id="title"><br/><br>
-<h4>Content</h4> <textarea name="content" id="content"></textarea><br/><br/>
-<div id="error" style="display:none">Error uploading file!</div>
-<div id="imageadd"><h4>Attach image/video</h4> <input type="file" id="file" name="file" accept="image/*,video/*" /></div>
-<div id="pleasewait" style="display:none">Please wait for attachment to upload...</div>
+Title: <input type="text" id="title"><br/>
+Content: <textarea name="content" id="content" rows="20" cols="70"></textarea><br/><br/>
+<div id="error" style="display:none">Error uploading image!</div>
+<div id="imageadd">Attach image: <input type="file" id="file" name="file" accept="image/*" /></div>
+<div id="pleasewait" style="display:none">Please wait for image to upload...</div>
 <progress id="imageprogress" style="display:none"></progress>
-<div id="imageadded" style="display:none">Attachment added <button id="removeimage">remove</button></div><br/><br>
+<div id="imageadded" style="display:none">Image added <button id="removeimage">remove</button></div><br/>
 <button id="send">Submit</button>
-<br>
-</div>
 </body>
-<br>
-<footer><a href="index.html" class="button" style="font-weight: bold">Back</a>
-</footer>
 </html>

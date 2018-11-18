@@ -69,6 +69,17 @@
     width: 100%;
 }
 
+#comtent {
+	width: 20%;
+	height: 15vh;
+}
+
+@media only screen and (max-width: 700px) {
+	#comtent {
+		width: 98%;
+	}
+}
+
 footer {
     padding: 15px;
     border-radius: 15px;

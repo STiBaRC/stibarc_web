@@ -53,21 +53,33 @@ function postcomment(id) {
 
 function getAttach(id) {
 	document.getElementById("viewattachment").style.display = "none";
-	if (window.localStorage.getItem("cache"+id) == null || window.localStorage.getItem("cache"+id) == undefined) {
-		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.open("GET", "https://api.stibarc.gq/getimage.sjs?id="+id, false);
-		xmlHttp.send();
-		document.getElementById("image").src = xmlHttp.responseText;
-		document.getElementById("image").style.display = "";
-		var tmp = xmlHttp.responseText.split("");
-		tmp = tmp[0]+tmp[1]+tmp[2]+tmp[3]+tmp[4];
-		if (tmp == "data:") {
-			window.localStorage.setItem("cache"+id, xmlHttp.responseText);
-		}
+	//if (window.localStorage.getItem("cache"+id) == null || window.localStorage.getItem("cache"+id) == undefined) {
+	var xmlHttp = new XMLHttpRequest();
+	xmlHttp.open("GET", "https://api.stibarc.gq/getimage.sjs?id="+id, false);
+	xmlHttp.send();
+	if (xmlHttp.responseText.substring(5,10) == "image") {
+		var img = document.createElement("IMG");
+		img.setAttribute("id", "image");
+		img.setAttribute("src", xmlHttp.responseText);
+		document.getElementById("attachment").appendChild(img);
+	} else if (xmlHttp.responseText.substring(5,10) == "video" || xmlHttp.responseText.substring(5,20) == "application/mp4") {
+		var video = document.createElement("VIDEO");
+		video.setAttribute("controls", null)
+		video.setAttribute("id", "image");
+		var source = document.createElement("SOURCE");
+		source.setAttribute("src", xmlHttp.responseText);
+		video.appendChild(source);
+		document.getElementById("attachment").appendChild(video);
+	}
+	var tmp = xmlHttp.responseText.split("");
+	/*tmp = tmp[0]+tmp[1]+tmp[2]+tmp[3]+tmp[4];
+	if (tmp == "data:") {
+		//window.localStorage.setItem("cache"+id, xmlHttp.responseText);
+	}
 	} else {
 		document.getElementById("image").src = window.localStorage.getItem("cache"+id);
 		document.getElementById("image").style.display = "";
-	}
+	}*/
 }
 
 function replyto(guy) {
