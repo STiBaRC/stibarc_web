@@ -64,16 +64,18 @@ function getAttach(id) {
 		document.getElementById("attachment").appendChild(img);
 	} else if (xmlHttp.responseText.substring(5,10) == "video" || xmlHttp.responseText.substring(5,20) == "application/mp4") {
 		var video = document.createElement("VIDEO");
-		video.setAttribute("controls", null)
+		video.setAttribute("controls", null);
+		video.setAttribute("autoplay", null);
 		video.setAttribute("id", "image");
 		var source = document.createElement("SOURCE");
 		source.setAttribute("src", xmlHttp.responseText);
 		video.appendChild(source);
 		document.getElementById("attachment").appendChild(video);
-	} else if (xmlHttp.responseText.substring(5,10) == "audio" || xmlHttp.responseText.substring(5,20) == "application/mp3" || xmlHttp.responseText.substring(5,20) == "application/mp3") {
+	} else if (xmlHttp.responseText.substring(5,10) == "audio" || xmlHttp.responseText.substring(5,20) == "application/mp3" || xmlHttp.responseText.substring(5,20) == "application/wav") {
 		var audio = document.createElement("AUDIO");
-		video.setAttribute("controls", null)
-		video.setAttribute("id", "image");
+		audio.setAttribute("controls", null);
+		audio.setAttribute("autoplay", null);
+		audio.setAttribute("id", "image");
 		var source = document.createElement("SOURCE");
 		source.setAttribute("src", xmlHttp.responseText);
 		audio.appendChild(source);
