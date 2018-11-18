@@ -70,7 +70,7 @@ function getAttach(id) {
 		source.setAttribute("src", xmlHttp.responseText);
 		video.appendChild(source);
 		document.getElementById("attachment").appendChild(video);
-	} else if (xmlHttp.responseText.substring(5,10) == "audio" || xmlHttp.responseText.substring(5,20) == "application/mp3") {
+	} else if (xmlHttp.responseText.substring(5,10) == "audio" || xmlHttp.responseText.substring(5,20) == "application/mp3" || xmlHttp.responseText.substring(5,20) == "application/mp3") {
 		var audio = document.createElement("AUDIO");
 		video.setAttribute("controls", null)
 		video.setAttribute("id", "image");
