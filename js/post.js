@@ -70,6 +70,14 @@ function getAttach(id) {
 		source.setAttribute("src", xmlHttp.responseText);
 		video.appendChild(source);
 		document.getElementById("attachment").appendChild(video);
+	} else if (xmlHttp.responseText.substring(5,10) == "audio" || xmlHttp.responseText.substring(5,20) == "application/mp3") {
+		var audio = document.createElement("AUDIO");
+		video.setAttribute("controls", null)
+		video.setAttribute("id", "image");
+		var source = document.createElement("SOURCE");
+		source.setAttribute("src", xmlHttp.responseText);
+		audio.appendChild(source);
+		document.getElementById("attachment").appendChild(audio);
 	}
 	var tmp = xmlHttp.responseText.split("");
 	/*tmp = tmp[0]+tmp[1]+tmp[2]+tmp[3]+tmp[4];
