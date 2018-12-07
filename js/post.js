@@ -169,8 +169,11 @@ window.onload = function () {
 	document.title = stuff.title + " - STiBaRC";
 	document.getElementById("dateandstuff").innerHTML = 'Posted by <a href="user.html?id=' + stuff.poster + '">' + stuff.poster + '</a><span id="verified" title="Verified user" style="display:none">'+"✔️</span> at " + stuff.postdate;
 	checkVerified(stuff.poster);
-	document.getElementById("content").innerHTML = stuff.content.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r\n/g, "<br/>");
-	if (stuff['edited'] == true) {
+	if (stuff.poster == "herronjo" || stuff.poster == "DomHupp" || stuff.poster == "Aldeenyo" || stuff.poster == "savaka" || stuff.poster == "-Verso-") {
+		document.getElementById("content").innerHTML = stuff.content.replace(/\r\n/g, "<br/>");
+	} else {
+		document.getElementById("content").innerHTML = stuff.content.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r\n/g, "<br/>");
+	}if (stuff['edited'] == true) {
 		document.getElementById("edited").style.display = "";
 	}
 	if (stuff.poster == window.localStorage.getItem("username") && getRank() != "User") {
