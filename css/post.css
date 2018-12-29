@@ -50,6 +50,7 @@
     height: 50%;
     width: 25%;
     position: sticky;
+    position: -webkit-sticky;
     bottom: 0;
     right: 0;
     float: right;

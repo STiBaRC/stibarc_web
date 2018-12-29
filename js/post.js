@@ -165,14 +165,14 @@ window.onload = function () {
 	xmlHttp.open("GET", "https://api.stibarc.gq/v2/getpost.sjs?id="+id, false);
 	xmlHttp.send(null);
 	var stuff = JSON.parse(xmlHttp.responseText);
-	document.getElementById("title").innerHTML = stuff.title.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+	document.getElementById("title").innerHTML = stuff.title.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 	document.title = stuff.title + " - STiBaRC";
 	document.getElementById("dateandstuff").innerHTML = 'Posted by <a href="user.html?id=' + stuff.poster + '">' + stuff.poster + '</a><span id="verified" title="Verified user" style="display:none">'+"✔️</span> at " + stuff.postdate;
 	checkVerified(stuff.poster);
 	if (stuff.poster == "herronjo" || stuff.poster == "DomHupp" || stuff.poster == "Aldeenyo" || stuff.poster == "savaka" || stuff.poster == "-Verso-") {
 		document.getElementById("content").innerHTML = stuff.content.replace(/\r\n/g, "<br/>");
 	} else {
-		document.getElementById("content").innerHTML = stuff.content.replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r\n/g, "<br/>");
+		document.getElementById("content").innerHTML = stuff.content.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r\n/g, "<br/>");
 	}if (stuff['edited'] == true) {
 		document.getElementById("edited").style.display = "";
 	}
@@ -189,7 +189,7 @@ window.onload = function () {
 	if (xmlHttp.responseText != "undefined\n") {
 		var comments = JSON.parse(xmlHttp.responseText);
 		for (var key in comments) {
-			document.getElementById("comments").innerHTML = document.getElementById("comments").innerHTML + '<div id="comment"><a href="user.html?id=' + comments[key]['poster'] + '">' + comments[key]['poster'] + '</a><br/>' + comments[key]['content'].replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r\n/g, "<br/>") + '<br/><a class="replyto" href="javascript:replyto('+"'"+comments[key]['poster']+"'"+')"><i>Reply</i></a></div><br/>';
+			document.getElementById("comments").innerHTML = document.getElementById("comments").innerHTML + '<div id="comment"><a href="user.html?id=' + comments[key]['poster'] + '">' + comments[key]['poster'].replace(/&/g, "&amp;") + '</a><br/>' + comments[key]['content'].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r\n/g, "<br/>") + '<br/><a class="replyto" href="javascript:replyto('+"'"+comments[key]['poster']+"'"+')"><i>Reply</i></a></div><br/>';
 		}
 	} else {
 		document.getElementById("comments").innerHTML = document.getElementById("comments").innerHTML + '<div id="comment">No comments</div>';
