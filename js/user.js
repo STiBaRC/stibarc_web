@@ -32,25 +32,25 @@ function getPosts(id) {
 
 function getStuff(id) {
 	var thing = new XMLHttpRequest();
-	thing.open("GET", "https://api.stibarc.gq/getuser.sjs?id=" + id, false);
+	thing.open("GET", "https://api.stibarc.gq/v2/getuser.sjs?id=" + id, false);
 	thing.send(null);
-	var stuff = thing.responseText.replace(/</g, "&lt;").replace(/>/g, "&gt;");
-	var tmp = stuff.split("\n");
-	var rank = tmp[4].split(":")[1];
-	var name = tmp[0].split(":")[1];
-	var email = tmp[1].split(":")[1];
-	//var posts = tmp[2].split(":")[1];
-	var birthday = tmp[3].split(":")[1];
+	var tmp = JSON.parse(thing.responseText);
+	var rank = tmp['rank'];
+	var name = tmp['name'];
+	var email = tmp['email'];
+	//var posts = tmp['posts'];
+	var birthday = tmp['bday'];
 	document.getElementById("username").innerHTML = id.concat('<span id="verified" title="Verified user" style="display:none">✔️</span>');
 	document.getElementById("rank").innerHTML = "Rank: ".concat(rank);
-	document.getElementById("name").innerHTML = "Real name: ".concat(name);
+	document.getElementById("name").innerHTML = "Real name: ".concat(name.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
 	if (email != "Not shown" && email != "Not set") {
-		document.getElementById("email").innerHTML = "Email: ".concat("<a href=\"mailto:" + email + "\">" + email + "</a>");
+		document.getElementById("email").innerHTML = "Email: ".concat("<a href=\"mailto:" + email + "\">" + email.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;") + "</a>");
 	} else {
-		document.getElementById("email").innerHTML = "Email: ".concat(email);
+		document.getElementById("email").innerHTML = "Email: ".concat(email.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
 	}
-	document.getElementById("bday").innerHTML = "Birthday: ".concat(birthday);
+	document.getElementById("bday").innerHTML = "Birthday: ".concat(birthday.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
 	//posts = posts.split(",");
+	document.getElementById("pfp").src = tmp['pfp'];
 	document.getElementById("posts").innerHTML = "";
 	getPosts(id);		
 	var showbio = false;
