@@ -56,12 +56,8 @@ function getStuff(id) {
 	var showbio = false;
 	var bio = "";
 	document.getElementById("biobio").innerHTML = "";
-	if (tmp[5] != undefined && tmp[5] != "") {
-		showbio = true;
-		for (i = 6; i < tmp.length-1; i++) {
-			bio = bio + tmp[i]+"<br/>";
-		}
-		bio = bio+tmp[tmp.length-1];
+	if (tmp['bio'] != undefined && tmp['bio'] != "") {
+		bio = tmp['bio'].replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br/>");
 	}
 	if (showbio) {
 		document.getElementById("bio").style.display = "";
