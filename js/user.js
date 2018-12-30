@@ -58,6 +58,7 @@ function getStuff(id) {
 	document.getElementById("biobio").innerHTML = "";
 	if (tmp['bio'] != undefined && tmp['bio'] != "") {
 		bio = tmp['bio'].replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br/>");
+		showbio = true;
 	}
 	if (showbio) {
 		document.getElementById("bio").style.display = "";
