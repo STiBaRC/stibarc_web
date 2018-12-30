@@ -5,7 +5,7 @@ function readFile(evt) {
   if(f) {
     var r = new FileReader();
     r.onload = function(e) {
-      pfp = r.result;
+      pfp = e.target.result;
     }
     r.readAsDataURL(f);
   }
