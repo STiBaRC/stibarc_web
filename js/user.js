@@ -39,7 +39,7 @@ function getStuff(id) {
 	var name = tmp['name'];
 	var email = tmp['email'];
 	//var posts = tmp['posts'];
-	var birthday = tmp['bday'];
+	var birthday = tmp['birthday'];
 	document.getElementById("username").innerHTML = id.concat('<span id="verified" title="Verified user" style="display:none">✔️</span>');
 	document.getElementById("rank").innerHTML = "Rank: ".concat(rank);
 	document.getElementById("name").innerHTML = "Real name: ".concat(name.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
