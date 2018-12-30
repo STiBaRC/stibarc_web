@@ -48,7 +48,7 @@ window.onload = function() {
     if (pfp.trim() != "") {
       var xhr2 = new XMLHttpRequest();
       xhr2.open("POST","https://api.stibarc.gq/updatepfp.sjs",true);
-      xhr2.send("sess="+localStorage.sess+"&data="+pfp);
+      xhr2.send("sess="+localStorage.sess+"&data="+encodeURIComponent(pfp));
     }
     xhr.send("sess="+sess+"&email="+encodeURIComponent(document.getElementById("email").value)+"&name="+encodeURIComponent(document.getElementById("name").value)+"&birthday="+encodeURIComponent(document.getElementById("birthday").value)+"&bio="+encodeURIComponent(document.getElementById("bio").value)+"&showemail="+showemail+"&showname="+showname+"&showbday="+showbday+"&showbio="+showbio);
     xhr.onload = function(e) {
