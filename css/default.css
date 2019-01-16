@@ -43,6 +43,7 @@
     word-wrap: break-word;
     padding: 10px;
     border-radius: 10px;
+    color: var(--posttext);
 }
 
 .buttons {
