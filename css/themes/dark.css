@@ -1,20 +1,20 @@
 :root {
-    --body: black;
+	--body: black;
 	--textcolor: white;
-    --buttoncolor: #262626;
-    --buttontext: white;
-    --mainblobwithlist: #171717;
-    --mainblobwithlisttext: white;
-    --header: #0e0e0e;
-    --messenger: #3c3c3c;
-    --post: #98DFF3;
-    --footer: #0e0e0e;
-    --bio: #F0F0F0;
-    --post: #262626;
-    --posttext: white;
-    --link: white;
-    --visted: white;
-    --hover: white;
-    --active: white;
-    --footertext: white;
+	--buttoncolor: #262626;
+	--buttontext: white;
+	--mainblobwithlist: #171717;
+	--mainblobwithlisttext: white;
+	--header: #0e0e0e;
+	--messenger: #3c3c3c;
+	--post: #98DFF3;
+	--footer: #0e0e0e;
+	--bio: #F0F0F0;
+	--post: #262626;
+	--posttext: white;
+	--link: white;
+	--visted: white;
+	--hover: white;
+	--active: white;
+	--footertext: white;
 }
