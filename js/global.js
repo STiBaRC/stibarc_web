@@ -66,13 +66,13 @@ function loadTheme() {
 				if (localStorage.getItem('customtheme').trim() != "") {
 					document.getElementById('themer').href = localStorage.getItem('customtheme');
 				} else {
-					document.getElementById('themer').href = 'themes/light.css';
+					document.getElementById('themer').href = 'css/themes/light.css';
 				}
 			} else {
-				document.getElementById('themer').href = 'themes/'+theme+".css";
+				document.getElementById('themer').href = 'css/themes/'+theme+".css";
 			}
 		} else {
-			document.getElementById('themer').href = 'themes/light.css';
+			document.getElementById('themer').href = 'css/themes/light.css';
 		}
 	} catch(err) {
 		console.error(err);
