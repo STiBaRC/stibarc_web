@@ -9,5 +9,11 @@
     --post: #98DFF3;
     --footer: #49B9CA;
     --bio: #F0F0F0;
-
+    --post: #98dff3;
+    --posttext: black;
+    --link: #000000;
+    --visted: #00000;
+    --hover: #000000;
+    --active: #000000;
+    --footertext: black;
 }

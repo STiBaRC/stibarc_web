@@ -34,25 +34,26 @@ body {
 }
 
 a:link {
-    color: #000000;
+    color: var(--link);
 }
 
 a:visited {
-    color: #000000;
+    color: var(--visted);
 }
 
 a:hover {
-    color: #000000;
+    color: var(--hover);
 }
 
 a:active {
-    color: #000000;
+    color: var(--active);
 }
 
 footer {
-	background-color: #49B9CA;
-	text-align: center;
-	word-wrap: break-word;
-	padding: 15px; 
-	border-radius: 15px;
+    background-color: var(--footer);
+    color: var(--footertext);
+    text-align: center;
+    word-wrap: break-word;
+    padding: 15px;
+    border-radius: 15px;
 }
