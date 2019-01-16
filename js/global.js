@@ -2,6 +2,8 @@ if (location.protocol == "http:") {
 	location.protocol = "https:";
 }
 
+loadTheme();
+
 function getAllUrlParams(url) {
 	var queryString = url ? url.split('?')[1] : window.location.search.slice(1);
 	var obj = {};
@@ -56,35 +58,23 @@ var checkVerified = function(poster) {
 	}
 }
 
-function applySetting(setting) {
-    localStorage.setItem('stibarc_' + setting, document.getElementById(setting).value);
-    checkSettings();
+function loadTheme() {
+	try {
+		var theme = localStorage.getItem('theme');
+		if (theme != undefined) {
+			if (theme == "custom") {
+				if (localStorage.getItem('customtheme').trim() != "") {
+					document.getElementById('themer').href = localStorage.getItem('customtheme');
+				} else {
+					document.getElementById('themer').href = 'themes/light.css';
+				}
+			} else {
+				document.getElementById('themer').href = 'themes/'+theme+".css";
+			}
+		} else {
+			document.getElementById('themer').href = 'themes/light.css';
+		}
+	} catch(err) {
+		
+	}
 }
-
-function isSet(theme) {
-	return false;
-}
-
-function checkSettings() {
-    var theme = localStorage.getItem('stibarc_theme');
-    if (!isSet(theme)) {
-        theme = 'light.css';
-    }
-}
-
-function colors() {
-    var theme = localStorage.getItem('astiw_theme');
-    var link = document.getElementById('themer');
-    if (isSet(theme)) {
-        if (theme == 'custom') {
-            var customTheme = localStorage.getItem('astiw_customtheme');
-            if (isSet(customTheme)) {
-                link.href = customTheme;
-            } else {
-                link.href = 'themes/dark.css';
-            }
-        } else {
-            link.href = 'themes/' + theme;
-        }
-    }
-};
