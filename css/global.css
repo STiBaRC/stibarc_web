@@ -5,6 +5,7 @@ body {
     overflow-y: auto;
     font-family: Verdana,sans-serif;
     line-height: 1.41;
+	color: var(--textcolor);
 }
 
 .button {
