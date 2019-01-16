@@ -75,6 +75,6 @@ function loadTheme() {
 			document.getElementById('themer').href = 'themes/light.css';
 		}
 	} catch(err) {
-		
+		console.error(err);
 	}
 }
