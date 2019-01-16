@@ -31,7 +31,7 @@ function checkNotifsUser(user) {
 	var perms = window.localStorage.getItem("notifs");
 	if (perms == "granted") {
 		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.open("post", "https://api.stibarc.gq/getusernotifs.sjs", false);
+		xmlHttp.open("post", "https://api.stibarc.gq/getusernotifs.sjs", true);
 		xmlHttp.send("id="+user);
 		if (xmlHttp.responseText.split("\n")[0] != "None") {
 			var tmp = xmlHttp.responseText.split("\n");

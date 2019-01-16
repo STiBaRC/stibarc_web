@@ -8,6 +8,19 @@ function toLink(id,item) {
 	}
 }
 
+function getAnnounce() {
+	var sess = window.localStorage.getItem("sess");
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET","https://api.stibarc.gq/getannounce.sjs?sess="+sess,true);
+	xhr.send(null);
+	xhr.onload = function(e) {
+		if (xhr.responseText != "\n") {
+			var tmp = JSON.parse(xhr.responseText);
+			document.getElementsByTagName("body")[0].innerHTML = '<div id="announce" style="text-align:center;background-color:#49B9CA;word-wrap:break-word;padding:15px;border-radius:15px;"><h2>'+tmp['title']+'</h2>'+tmp['content']+'</div>' + document.getElementsByTagName("body")[0].innerHTML;
+		}
+	}
+}
+
 function checkSess() {
 	var sess = window.localStorage.getItem("sess");
 	var xmlHttp = new XMLHttpRequest();
@@ -66,6 +79,7 @@ window.onload = function () {
 		offline = true;
 	}
 	if (!offline) {
+		getAnnounce();
 		if (window.localStorage.getItem("username") == "" || window.localStorage.getItem("username") == undefined) {
 			if (sess != undefined && sess != null && sess != "") {
 				getUsername();
