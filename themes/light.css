@@ -1,0 +1,19 @@
+:root {
+    --body: #98DFF3;
+    --buttoncolor: white;
+    --buttontext: black;
+    --mainblobwithlist: white;
+    --mainblobwithlisttext: black;
+    --header: #49B9CA;
+    --messenger: #49B9CA;
+    --post: #98DFF3;
+    --footer: #49B9CA;
+    --bio: #F0F0F0;
+    --post: #98dff3;
+    --posttext: black;
+    --link: #000000;
+    --visted: #00000;
+    --hover: #000000;
+    --active: #000000;
+    --footertext: black;
+}
