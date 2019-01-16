@@ -1,8 +1,8 @@
 #userstuffs {
-	background-color: #FFFFFF;
-	word-wrap: break-word;
-	padding: 15px; 
-	border-radius: 15px;
+    background-color: var(--mainblobwithlist);
+    word-wrap: break-word;
+    padding: 15px;
+    border-radius: 15px;
 }
 
 #chatframe {
@@ -24,12 +24,12 @@
 }
 
 #messenger {
-    background-color: #49B9CA;
+    background-color: var(--messenger);
     height: 60vh;
     width: 100%;
 }
 #bio {
-	background-color: #F0F0F0;
+	background-color: var(--bio);
 	word-wrap: break-word;
 	padding: 10px; 
 	border-radius: 10px;

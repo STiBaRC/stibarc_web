@@ -55,3 +55,36 @@ var checkVerified = function(poster) {
 		document.getElementById("verified").style.display = "";
 	}
 }
+
+function applySetting(setting) {
+    localStorage.setItem('stibarc_' + setting, document.getElementById(setting).value);
+    checkSettings();
+}
+
+function isSet(theme) {
+	return false;
+}
+
+function checkSettings() {
+    var theme = localStorage.getItem('stibarc_theme');
+    if (!isSet(theme)) {
+        theme = 'light.css';
+    }
+}
+
+function colors() {
+    var theme = localStorage.getItem('astiw_theme');
+    var link = document.getElementById('themer');
+    if (isSet(theme)) {
+        if (theme == 'custom') {
+            var customTheme = localStorage.getItem('astiw_customtheme');
+            if (isSet(customTheme)) {
+                link.href = customTheme;
+            } else {
+                link.href = 'themes/dark.css';
+            }
+        } else {
+            link.href = 'themes/' + theme;
+        }
+    }
+};

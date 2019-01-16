@@ -1,6 +1,6 @@
 #main {
     text-align: center;
-    background-color: #FFFFFF;
+    background-color: var(--mainblobwithlist);
     word-wrap: break-word;
     padding: 15px;
     border-radius: 15px;
@@ -8,7 +8,7 @@
 
 #main2 {
     text-align: left;
-    background-color: #FFFFFF;
+    background-color: var(--mainblobwithlist);
     word-wrap: break-word;
     padding: 15px;
     border-radius: 15px;
@@ -33,7 +33,7 @@
 }
 
 #messenger {
-    background-color: #49B9CA;
+    background-color: var(--messenger);
     height: 60vh;
     width: 100%;
 }

@@ -1,5 +1,5 @@
 #poststuff {
-    background-color: #FFFFFF;
+    background-color: var(--mainblobwithlist);
     word-wrap: break-word;
     padding: 15px;
     border-radius: 15px;
@@ -10,7 +10,7 @@
 }
 
 #comment {
-    background-color: #98DFF3;
+    background-color: var(--post);
     word-wrap: break-word;
     padding: 10px;
     border-radius: 10px;
@@ -27,10 +27,10 @@
 }
 
 .replyto {
-    color: #d7d7d7;
+    color: var(--buttoncolortext);
     font-size: 80%;
     text-decoration: none;
-    background-color: white;
+    background-color: var(--buttoncolor);
     padding: 3px;
     border-radius: 3px;
     font-weight: bold;
@@ -65,7 +65,7 @@
 }
 
 #messenger {
-    background-color: #49B9CA;
+    background-color: var(--messenger);
     height: 60vh;
     width: 100%;
 }

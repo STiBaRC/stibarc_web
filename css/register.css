@@ -3,14 +3,14 @@ body {
 }
 
 #privacies {
-	background-color: white;
-	padding: 15px;
-	border-radius: 15px;
-	word-wrap: break-word;
+    background-color: var(--mainblobwithlist);
+    padding: 15px;
+    border-radius: 15px;
+    word-wrap: break-word;
 }
 
 #main {
-    background-color: #FFFFFF;
+    background-color: var(--mainblobwithlist);
     word-wrap: break-word;
     padding: 15px;
     border-radius: 15px;

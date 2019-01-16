@@ -1,75 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
-<link rel="icon" type="image/png" href="icon.png">
-<title>Terms of Service</title>
-<script type="text/javascript">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+    <link rel="icon" type="image/png" href="icon.png">
+    <title>Terms of Service - STiBaRC</title>
+    <script type="text/javascript">
 
-if(("standalone" in window.navigator) && window.navigator.standalone){
+        if (("standalone" in window.navigator) && window.navigator.standalone) {
 
-var noddy, remotes = false;
+            var noddy, remotes = false;
 
-document.addEventListener('click', function(event) {
+            document.addEventListener('click', function (event) {
 
-noddy = event.target;
+                noddy = event.target;
 
-while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
-noddy = noddy.parentNode;
-}
+                while (noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+                    noddy = noddy.parentNode;
+                }
 
-if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes))
-{
-event.preventDefault();
-document.location.href = noddy.href;
-}
+                if ('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes)) {
+                    event.preventDefault();
+                    document.location.href = noddy.href;
+                }
 
-},false);
-}
-</script>
-<meta http-equiv="Content-Security-Policy" content="default-src *; style-src *  'unsafe-inline'; script-src *  'unsafe-inline'; media-src *">
-<meta http-equiv="X-XSS-Protection" content="0">
-<link rel="stylesheet" href="css/global.css">
-<link href="css/register.css" rel="stylesheet" />
+            }, false);
+        }
+    </script>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src *  'unsafe-inline'; script-src *  'unsafe-inline'; media-src *">
+    <meta http-equiv="X-XSS-Protection" content="0">
+    <link rel="stylesheet" href="css/global.css">
+    <link href="css/register.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/themes/light.css" id="themer">
+
 </head>
 <body>
-<div id="privacies">
-<h2>Terms of Service</h2><i>Last updated 10/9/2018</i><br/><br/>
-* Follow the content policy (see below)<br/>
-* Don't be stupid<br/>
-<h2>STiBaRC Content Policy</h2>
-The following types of content are prohibited:<br/>
-* Content that is illegal in the state of Ohio or in your jurisdiction<br/>
-* Pornography or nudity<br/>
-* Any content that may be interpreted as sexualization of minors<br/>
-* Content that encourages, glorifies, or incites violence against or abuse of people or animals<br/>
-* Threats or harassment<br/>
-* Other people's personal information without their permission<br/>
-* Impersonation for a deceptive purpose<br/>
-* Facilitation of transfer of weapons or controlled substances<br/>
-* Spam<br/>
-* Excessive profanity<br/>
-* Hate speech<br/>
-* Offensive content in any way<br/>
-Additionally, the following actions are prohibited:<br/>
-* Actions that are illegal in the state of Ohio or in your jurisdiction<br/>
-* Intentionally preventing users from using STiBaRC normally<br/>
-* Creating additional account(s) for the purpose of evading bans or other restrictions<br/><br/>
-STiBaRC and it's owner, Joshua Herron (aka herronjo), are not legally responsible for any content posted to this site. The user who submitted the content will be held liable for any legal consequences their content may have.
-<br/><br/>
-STiBaRC (the organization), moderators, and the owner (Joshua Herron, aka herronjo), collectively referred to as <i>they</i>, reserve the right to remove or modify posts or content as needed, whether or not they violate any of the content policies defined above.<br/>
-They also reserve the right to ban or commandeer any user account as they see fit, as long as a reason is provided.<br/>
-Bots also apply to the content policies and additional terms above.<br/>
-<h2>Contact Us</h2>
-Questions and concerns regarding privacy may be directed to herronjo110@gmail.com<br>
-</div>
+    <div id="privacies">
+        <h2>Terms of Service</h2><i>Last updated 10/9/2018</i><br /><br />
+        * Follow the content policy (see below)<br />
+        * Don't be stupid<br />
+        <h2>STiBaRC Content Policy</h2>
+        The following types of content are prohibited:<br />
+        * Content that is illegal in the state of Ohio or in your jurisdiction<br />
+        * Pornography or nudity<br />
+        * Any content that may be interpreted as sexualization of minors<br />
+        * Content that encourages, glorifies, or incites violence against or abuse of people or animals<br />
+        * Threats or harassment<br />
+        * Other people's personal information without their permission<br />
+        * Impersonation for a deceptive purpose<br />
+        * Facilitation of transfer of weapons or controlled substances<br />
+        * Spam<br />
+        * Excessive profanity<br />
+        * Hate speech<br />
+        * Offensive content in any way<br />
+        Additionally, the following actions are prohibited:<br />
+        * Actions that are illegal in the state of Ohio or in your jurisdiction<br />
+        * Intentionally preventing users from using STiBaRC normally<br />
+        * Creating additional account(s) for the purpose of evading bans or other restrictions<br /><br />
+        STiBaRC and it's owner, Joshua Herron (aka herronjo), are not legally responsible for any content posted to this site. The user who submitted the content will be held liable for any legal consequences their content may have.
+        <br /><br />
+        STiBaRC (the organization), moderators, and the owner (Joshua Herron, aka herronjo), collectively referred to as <i>they</i>, reserve the right to remove or modify posts or content as needed, whether or not they violate any of the content policies defined above.<br />
+        They also reserve the right to ban or commandeer any user account as they see fit, as long as a reason is provided.<br />
+        Bots also apply to the content policies and additional terms above.<br />
+        <h2>Contact Us</h2>
+        Questions and concerns regarding privacy may be directed to herronjo110@gmail.com<br>
+    </div>
 </body>
 <br>
-<footer><a href="index.html" class="button" style="font-weight: bold">Home</a>
-<br><br>
-Official president: Aldeenyo (Alden Savon)<br/>
-Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br/>
-Icon by Alex Savon<br/>
-&copy; 2019 STiBaRC<br/>
+<footer>
+    <a href="index.html" class="button" style="font-weight: bold">Home</a>
+    <br><br>
+    Official president: Aldeenyo (Alden Savon)<br />
+    Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br />
+    Icon by Alex Savon<br />
+    &copy; 2019 STiBaRC<br />
 </footer>
 </html>

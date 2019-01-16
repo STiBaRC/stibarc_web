@@ -1,5 +1,6 @@
 #mainblobwithlist {
-    background-color: #FFFFFF;
+    background-color: var(--mainblobwithlist);
+    color: var(--mainblobwithlisttext);
     word-wrap: break-word;
     padding: 15px;
     border-radius: 15px;
@@ -7,7 +8,7 @@
 
 #header {
     text-align: center;
-    background-color: #49B9CA;
+    background-color: var(--header);
     word-wrap: break-word;
     padding: 15px;
     border-radius: 15px;
@@ -32,13 +33,13 @@
 }
 
 #messenger {
-    background-color: #49B9CA;
+    background-color: var(--messenger);
     height: 60vh;
     width: 100%;
 }
 
 .post {
-	background-color: #98DFF3;
+	background-color: var(--post);
     word-wrap: break-word;
     padding: 10px;
     border-radius: 10px;
@@ -80,7 +81,7 @@ span {
 }
 
 footer {
-    background-color: #49B9CA;
+    background-color: var(--footer);
     text-align: center;
     word-wrap: break-word;
     padding: 15px;

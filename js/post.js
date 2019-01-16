@@ -140,17 +140,6 @@ function downvote() {
 	}
 }
 
-function delpost() {
-	var pass = prompt("Admin password?");
-	var id = getAllUrlParams().id;
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST","https://stibarc.gq/management/delpost.sjs",true);
-	xhr.send("adminpassword="+pass+"&id="+id);
-	xhr.onload = function(evt) {
-		location.reload();
-	}
-}
-
 window.onload = function () {
 	pushed = false;
 	var sess = window.localStorage.getItem("sess");
