@@ -11,6 +11,11 @@ function readFile(evt) {
 	}
 }
 
+function doneLoading() {
+    document.getElementById("load").style.display = "none";
+    document.getElementById("page").style.display = "";
+}
+
 window.onload = function() {
 	try {
 		document.getElementById("themechng").value = localStorage.getItem("theme");
@@ -31,7 +36,8 @@ window.onload = function() {
 			document.getElementById("showbday").checked = tmp['displaybirthday'];
 			document.getElementById("bio").value = tmp['bio'];
 			document.getElementById("showbio").checked = tmp['displaybio'];
-			document.getElementById("pfp").addEventListener('change',readFile,false);
+            document.getElementById("pfp").addEventListener('change', readFile, false);
+            doneLoading();
 		}
 	} else {
 		window.localStorage.removeItem("sess");

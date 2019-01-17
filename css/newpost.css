@@ -8,11 +8,18 @@ body {
     background-color: var(--mainblobwithlist);
 }
 #content {
-	width: 39%;
-	height: 48vh;
+    width: 39%;
+    height: 48vh;
+    background-color: var(--comtent);
+    color: var(--comtenttext);
 }
 @media only screen and (max-width: 700px) {
 	#content {
 		width: 98%
 	}
+}
+
+#title {
+    background-color: var(--comtent);
+    color: var(--comtenttext);
 }

@@ -24,7 +24,13 @@ function post() {
 	}
 }
 
-window.onload = function() {
+function doneLoading() {
+    document.getElementById("load").style.display = "none";
+    document.getElementById("page").style.display = "";
+}
+
+window.onload = function () {
+    doneLoading();
 	var id = getAllUrlParams().id;
 	if (id != "" && id != undefined) {
 		var thing = new XMLHttpRequest();

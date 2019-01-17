@@ -71,8 +71,10 @@
 }
 
 #comtent {
-	width: 20%;
-	height: 15vh;
+    width: 20%;
+    height: 15vh;
+    background-color: var(--comtent);
+    color: var(--comtenttext);
 }
 
 @media only screen and (max-width: 700px) {

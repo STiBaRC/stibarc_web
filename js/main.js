@@ -58,6 +58,11 @@ function loadMore() {
 	}
 }
 
+function doneLoading() {
+    document.getElementById("load").style.display = "none";
+    document.getElementById("page").style.display = "";
+}
+
 window.onload = function () {
 	var offline = false;
 	var sess = window.localStorage.getItem("sess");
@@ -89,10 +94,11 @@ window.onload = function () {
 		document.getElementById("list").innerHTML = "";
 		for (var i = tmp['totalposts']; i > tmp['totalposts']-20; i--) {
 			toLink(i,tmp[i]);
-		}
+        }
 		document.getElementById("loadmorecontainer").style.display = "";
 	} else {
 		document.getElementById("list").innerHTML = "Error loading posts. Device offline.";
 	}
-	startNotifs();
+    startNotifs();
+    doneLoading();
 }

@@ -39,7 +39,7 @@ function getStuff(id) {
 	var name = tmp['name'];
 	var email = tmp['email'];
 	//var posts = tmp['posts'];
-	var birthday = tmp['birthday'];
+    var birthday = tmp['birthday'];
 	document.getElementById("username").innerHTML = id.concat('<span id="verified" title="Verified user" style="display:none">✔️</span>');
 	document.getElementById("rank").innerHTML = "Rank: ".concat(rank);
 	document.getElementById("name").innerHTML = "Real name: ".concat(name.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
@@ -65,10 +65,18 @@ function getStuff(id) {
 		document.getElementById("biobio").innerHTML = bio;
 	} else {
 		document.getElementById("bio").style.display = "none";
-	}
+    }
+    doneLoading();
+}
+
+function doneLoading() {
+    document.getElementById("load").style.display = "none";
+    document.getElementById("page").style.display = "";
 }
 
 window.onload = function () {
+    var id = getAllUrlParams().id;
+    document.title = id + " - STiBaRC";
 	var id = getAllUrlParams().id;
 	//var cookie = toJSON(document.cookie);
 	var sess = window.localStorage.getItem("sess");

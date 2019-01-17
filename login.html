@@ -1,54 +1,56 @@
-<!DOCTYPE html>
-<html><head>
-<meta charset="utf-8">
-<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-<link rel="icon" type="image/png" href="icon.png">
-<title>Login - STiBaRC</title>
-<script type="text/javascript">
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="icon" type="image/png" href="icon.png">
+    <title>Login - STiBaRC</title>
+    <script type="text/javascript">
 
-if(("standalone" in window.navigator) && window.navigator.standalone){
+        if (("standalone" in window.navigator) && window.navigator.standalone) {
 
-var noddy, remotes = false;
+            var noddy, remotes = false;
 
-document.addEventListener('click', function(event) {
+            document.addEventListener('click', function (event) {
 
-noddy = event.target;
+                noddy = event.target;
 
-while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
-noddy = noddy.parentNode;
-}
+                while (noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+                    noddy = noddy.parentNode;
+                }
 
-if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes))
-{
-event.preventDefault();
-document.location.href = noddy.href;
-}
+                if ('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes)) {
+                    event.preventDefault();
+                    document.location.href = noddy.href;
+                }
 
-},false);
-}
-</script>
-<link rel="stylesheet" href="css/global.css">
-<link href="css/login.css" rel="stylesheet">
-<link rel="stylesheet" href="css/themes/light.css" id="themer">
-<script src="js/global.js"></script>
-<script src="js/login.js"></script>
+            }, false);
+        }
+    </script>
+    <link rel="stylesheet" href="css/global.css">
+    <link href="css/login.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/themes/light.css" id="themer">
+    <script src="js/global.js"></script>
+    <script src="js/login.js"></script>
 </head>
 <body>
-<div id="main">
-<h2>Login:</h2>
-<div id="badnamepass" style="display: none">Invalid username or password!<br><br></div>
-<div id="blank" style="display: none">Username or password cannot be blank!<br><br></div>
-<h4>Username</h4> <input id="username" type="text"><br><br>
-<h4>Password</h4> <input id="password" type="password"><br><br>
-<button id="login">Login</button><br><br></div>
-<br>
-<footer>
-<div id="footerout"><a href="index.html" class="button">Home</a><br/></div>
-<br/><a href="https://stibarc.gq/privacy.html" class="button">Privacy</a> <a href="https://stibarc.gq/tos.html" class="button">Terms of Service</a><br/>
-<br>
-Official president: Aldeenyo (Alden Savon)<br>
-Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br>
-Icon by Alex Savon<br>
-&copy; 2019 STiBaRC<br>
-</footer>
-</body></html>
+    <div id="main">
+        <h2>Login:</h2>
+        <div id="badnamepass" style="display: none">Invalid username or password!<br><br></div>
+        <div id="blank" style="display: none">Username or password cannot be blank!<br><br></div>
+        <h4>Username</h4> <input id="username" type="text"><br><br>
+        <h4>Password</h4> <input id="password" type="password"><br><br>
+        <button id="login">Login</button><br><br>
+    </div>
+    <br>
+    <footer>
+        <div id="footerout"><a href="index.html" class="button">Home</a><br /></div>
+        <br /><a href="privacy.html" class="button">Privacy</a> <a href="tos.html" class="button">Terms of Service</a><br />
+        <br>
+        Official president: Aldeenyo (Alden Savon)<br>
+        Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br>
+        Icon by Alex Savon<br>
+        &copy; 2019 STiBaRC<br>
+    </footer>
+</body>
+</html>

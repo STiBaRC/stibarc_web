@@ -1,55 +1,55 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<title>New Post - STiBaRC</title>
-<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
-<link rel="icon" type="image/png" href="icon.png">
-<script type="text/javascript">
+    <meta charset="utf-8" />
+    <title>New Post - STiBaRC</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+    <link rel="icon" type="image/png" href="icon.png">
+    <script type="text/javascript">
 
-if(("standalone" in window.navigator) && window.navigator.standalone){
+        if (("standalone" in window.navigator) && window.navigator.standalone) {
 
-var noddy, remotes = false;
+            var noddy, remotes = false;
 
-document.addEventListener('click', function(event) {
+            document.addEventListener('click', function (event) {
 
-noddy = event.target;
+                noddy = event.target;
 
-while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
-noddy = noddy.parentNode;
-}
+                while (noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+                    noddy = noddy.parentNode;
+                }
 
-if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes))
-{
-event.preventDefault();
-document.location.href = noddy.href;
-}
+                if ('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes)) {
+                    event.preventDefault();
+                    document.location.href = noddy.href;
+                }
 
-},false);
-}
-</script>
-<link href="css/global.css" rel="stylesheet" />
-<link href="css/newpost.css" rel="stylesheet" />
-<link rel="stylesheet" href="css/themes/light.css" id="themer">
-<script src="js/newpost.js"></script>
-<script src="js/global.js"></script>
+            }, false);
+        }
+    </script>
+    <link href="css/global.css" rel="stylesheet" />
+    <link href="css/newpost.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/themes/light.css" id="themer">
+    <script src="js/newpost.js"></script>
+    <script src="js/global.js"></script>
 </head>
 <body>
-<div id="wait" style="display: none">Please wait x more seconds before posting again<br/><br/></div>
-<div id="main">
-<h2>New post:</h2>
-<h4>Title</h4> <input type="text" id="title"><br/><br>
-<h4>Content</h4> <textarea name="content" id="content"></textarea><br/><br/>
-<div id="error" style="display:none">Error uploading file!</div>
-<div id="imageadd"><h4>Attach image/audio/video</h4> <input type="file" id="file" name="file" accept="image/*,video/*,audio/*" /></div>
-<div id="pleasewait" style="display:none">Please wait for attachment to upload...</div>
-<progress id="imageprogress" style="display:none"></progress>
-<div id="imageadded" style="display:none">Attachment added <button id="removeimage">remove</button></div><br/><br>
-<button id="send">Submit</button>
-<br>
-</div>
+    <div id="wait" style="display: none">Please wait x more seconds before posting again<br /><br /></div>
+    <div id="main">
+        <h2>New post:</h2>
+        <h4>Title</h4> <input type="text" id="title"><br /><br>
+        <h4>Content</h4> <textarea name="content" id="content"></textarea><br /><br />
+        <div id="error" style="display:none">Error uploading file!</div>
+        <div id="imageadd"><h4>Attach image/audio/video</h4> <input type="file" id="file" name="file" accept="image/*,video/*,audio/*" /></div>
+        <div id="pleasewait" style="display:none">Please wait for attachment to upload...</div>
+        <progress id="imageprogress" style="display:none"></progress>
+        <div id="imageadded" style="display:none">Attachment added <button id="removeimage">remove</button></div><br /><br>
+        <button id="send">Submit</button>
+        <br>
+    </div>
 </body>
 <br>
-<footer><a href="index.html" class="button" style="font-weight: bold">Back</a>
+<footer>
+    <a href="index.html" class="button" style="font-weight: bold">Back</a>
 </footer>
 </html>
