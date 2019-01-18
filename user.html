@@ -1,67 +1,77 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<title>STiBaRC</title>
-<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
-<link rel="icon" type="image/png" href="icon.png">
-<script type="text/javascript">
+    <meta charset="utf-8" />
+    <title>STiBaRC</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" />
+    <link rel="icon" type="image/png" href="icon.png">
+    <script type="text/javascript">
 
-if(("standalone" in window.navigator) && window.navigator.standalone){
+        if (("standalone" in window.navigator) && window.navigator.standalone) {
 
-var noddy, remotes = false;
+            var noddy, remotes = false;
 
-document.addEventListener('click', function(event) {
+            document.addEventListener('click', function (event) {
 
-noddy = event.target;
+                noddy = event.target;
 
-while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
-noddy = noddy.parentNode;
-}
+                while (noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+                    noddy = noddy.parentNode;
+                }
 
-if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes))
-{
-event.preventDefault();
-document.location.href = noddy.href;
-}
+                if ('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes)) {
+                    event.preventDefault();
+                    document.location.href = noddy.href;
+                }
 
-},false);
-}
-</script>
-<link rel="stylesheet" href="css/global.css">
-<link href="css/user.css" rel="stylesheet" />
-<link rel="stylesheet" href="css/themes/light.css" id="themer">
-<script src="js/global.js"></script>
-<script src="js/user.js"></script>
-<script src="js/chat.js"></script>
+            }, false);
+        }
+    </script>
+    <link rel="stylesheet" href="css/global.css">
+    <link href="css/user.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/themes/light.css" id="themer">
+    <script src="js/global.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/chat.js"></script>
 </head>
 <body>
-<br/>
-<div id="userstuffs">
-<h2><img id="pfp" src="" style="width:64px;height:64px;border-radius:50%;"><span id="username" style="margin-left:10px;">Loading...</span></h2>
-<div id="rank">Rank: Loading...</div>
-<div id="name">Real name: Loading...</div>
-<div id="email">Email: Loading...</div>
-<div id="bday">Birthday: Loading...</div>
-<br>
-<div id="bio" style="display:none"><h4>Bio:</h4><div id="biobio"></div></div>
-<h4>Posts:</h4>
-<ul id="posts">
-<li>Loading...</li>
-</ul>
-</div><br/>
-<footer>
-<div id="footerout"><a href="index.html" class="button">Home</a><br/></div>
-<div id="footerin" style="display:none"><a href="index.html" class="button">Home</a> <a href="logout.html" class="button">Logout</a><br/></div>
-<br/><a href="https://stibarc.gq/privacy.html" class="button">Privacy</a> <a href="https://stibarc.gq/tos.html" class="button">Terms of Service</a><br/>
-<br>
-Official president: Aldeenyo (Alden Savon)<br/>
-Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br/>
-Icon by Alex Savon<br/>
-&copy; 2019 STiBaRC
-</footer>
-<div id="chatframe">
-<button id="chattoggle" onclick="togglechat()">Messenger</button>
-</div>
+    <div id="load">
+        <div id="centerback">
+            <center>
+                <div class="loader">
+                </div>
+                <h2>Now Loading</h2>
+            </center>
+        </div>
+    </div>
+    <br />
+    <div id="page" style="display: none;">
+        <div id="userstuffs">
+            <h2><img id="pfp" src="" style="width:64px;height:64px;border-radius:50%;"><span id="username" style="margin-left:10px;">Loading...</span></h2>
+            <div id="rank">Rank: Loading...</div>
+            <div id="name">Real name: Loading...</div>
+            <div id="email">Email: Loading...</div>
+            <div id="bday">Birthday: Loading...</div>
+            <br>
+            <div id="bio" style="display:none"><h4>Bio:</h4><div id="biobio"></div></div>
+            <h4>Posts:</h4>
+            <ul id="posts">
+                <li>Loading...</li>
+            </ul>
+        </div><br />
+        <footer>
+            <div id="footerout"><a href="index.html" class="button">Home</a><br /></div>
+            <div id="footerin" style="display:none"><a href="index.html" class="button">Home</a> <a href="logout.html" class="button">Logout</a><br /></div>
+            <br /><a href="privacy.html" class="button">Privacy</a> <a href="tos.html" class="button">Terms of Service</a><br />
+            <br>
+            Official president: Aldeenyo (Alden Savon)<br />
+            Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br />
+            Icon by Alex Savon<br />
+            &copy; 2019 STiBaRC
+        </footer>
+        <div id="chatframe">
+            <button id="chattoggle" onclick="togglechat()">Messenger</button>
+        </div>
+        </div>
 </body>
 </html>

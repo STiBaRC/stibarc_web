@@ -140,6 +140,11 @@ function downvote() {
 	}
 }
 
+function doneLoading() {
+    document.getElementById("load").style.display = "none";
+    document.getElementById("page").style.display = "";
+}
+
 window.onload = function () {
 	pushed = false;
 	var sess = window.localStorage.getItem("sess");
@@ -193,5 +198,6 @@ window.onload = function () {
 	}
 	document.getElementById("viewattachment").onclick = function (evt) {
 		getAttach(stuff["attachment"]);
-	}
+    }
+    doneLoading();
 }

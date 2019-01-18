@@ -1,43 +1,56 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Edit Profile - STiBaRC</title>
-<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-<link rel="stylesheet" href="css/global.css">
-<link href="css/editprofile.css" rel="stylesheet">
-<link rel="stylesheet" href="css/themes/light.css" id="themer">
-<link rel="icon" type="image/png" href="icon.png">
-<script src="js/global.js"></script>
-<script src="js/editprofile.js"></script>
+    <meta charset="utf-8">
+    <title>Edit Profile - STiBaRC</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="css/global.css">
+    <link href="css/editprofile.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/themes/light.css" id="themer">
+    <link rel="icon" type="image/png" href="icon.png">
+    <script src="js/global.js"></script>
+    <script src="js/editprofile.js"></script>
 </head>
 <body>
-<div id="main"><h2>Edit profile:</h2>
-<h4>Profile Picture</h4> <input type="file" id="pfp" accept="image/*"><br/><br/>
-<h4>Name</h4> <input type="text" id="name"> <input type="checkbox" id="showname"><i style="font-size:70%">Show?</i><br><br>
-<h4>Email</h4> <input type="email" id="email"> <input type="checkbox" id="showemail"><i style="font-size:70%">Show?</i><br><br>
-<h4>Birthday</h4> <input type="text" id="birthday"> <input type="checkbox" id="showbday"><i style="font-size:70%">Show?</i><br>
-<br><h4>Bio</h4>
+    <div id="load">
+        <div id="centerback">
+            <center>
+                <div class="loader">
+                </div>
+                <h2>Now Loading</h2>
+            </center>
+        </div>
+    </div>
+    <br />
+    <div id="page" style="display: none;">
+        <div id="main">
+            <h2>Edit profile:</h2>
+            <h4>Profile Picture</h4> <input type="file" id="pfp" accept="image/*"><br /><br />
+            <h4>Name</h4> <input type="text" id="name"> <input type="checkbox" id="showname"><i style="font-size:70%">Show?</i><br><br>
+            <h4>Email</h4> <input type="email" id="email"> <input type="checkbox" id="showemail"><i style="font-size:70%">Show?</i><br><br>
+            <h4>Birthday</h4> <input type="text" id="birthday"> <input type="checkbox" id="showbday"><i style="font-size:70%">Show?</i><br>
+            <br><h4>Bio</h4>
 <textarea id="bio" rows="5" cols="35"></textarea>
-<i style="font-size:70%"><input type="checkbox" id="showbio">Show?</i><br><br/>
-<h4>Theme</h4>
-<select id="themechng">
-<option value="light">Light</option>
-<option value="dark">Dark</option>
-<option value="custom">Custom theme</option>
-</select><br/>
-<input id="themecust" type="text" style="display:none">
-<br><button id="submit">Update</button><br><br>
-<a href="passwd.html" class="button">Change password</a><br/><br/><a href="mailto:herronjo110@gmail.com?subject=STiBaRC%20User%20Verification%20Request" class="button">Request user verification</a><br>
-</div>
-<br>
-<footer>
-<div id="footerin"><a href="index.html" class="button">Home</a> <a href="logout.html" class="button">Logout</a> <a href="privacy.html" class="button">Privacy</a><br></div>
-<br>
-Official president: Aldeenyo (Alden Savon)<br>
-Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br>
-Icon by Alex Savon<br>
-&copy; 2019 STiBaRC
-</footer>
+            <i style="font-size:70%"><input type="checkbox" id="showbio">Show?</i><br><br />
+            <h4>Theme</h4>
+            <select id="themechng">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+                <option value="custom">Custom theme</option>
+            </select><br />
+            <input id="themecust" type="text" style="display:none">
+            <br><button id="submit">Update</button><br><br>
+            <a href="passwd.html" class="button">Change password</a><br /><br /><a href="mailto:herronjo110@gmail.com?subject=STiBaRC%20User%20Verification%20Request" class="button">Request user verification</a><br>
+        </div>
+        <br>
+        <footer>
+            <div id="footerin"><a href="index.html" class="button">Home</a> <a href="logout.html" class="button">Logout</a> <a href="privacy.html" class="button">Privacy</a><br></div>
+            <br>
+            Official president: Aldeenyo (Alden Savon)<br>
+            Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br>
+            Icon by Alex Savon<br>
+            &copy; 2019 STiBaRC
+        </footer>
+    </div>
 </body>
 </html>

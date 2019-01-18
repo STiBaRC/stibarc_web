@@ -58,3 +58,45 @@ footer {
     padding: 15px;
     border-radius: 15px;
 }
+
+.loader {
+    border: 12px solid var(--body);
+    border-radius: 50%;
+    border-top: 12px solid var(--spinner1);
+    border-right: 12px solid var(--spinner2);
+    border-bottom: 12px solid var(--spinner3);
+    width: 75px;
+    height: 75px;
+    -webkit-animation: spin 0.4s linear infinite;
+    animation: spin 0.4s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+#centerback {
+    height: 200px;
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
