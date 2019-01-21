@@ -145,6 +145,18 @@ function doneLoading() {
     document.getElementById("page").style.display = "";
 }
 
+function greenify() {
+	var content = document.getElementById("content").innerHTML;
+	var tmp = content.split("<br>");
+	for (var i = 0; i < tmp.length; i++) {
+		if (tmp[i].split("")[0] == "&" && tmp[i].split("")[1] == "g" && tmp[i].split("")[2] == "t" && tmp[i].split("")[3] == ";" && tmp[i].split("")[4] != " ") {
+			console.log(i);
+			tmp[i] = '<span style="color:green;">'+tmp[i]+"</span>"
+		}
+	}
+	document.getElementById("content").innerHTML = tmp.join("<br>");
+}
+
 window.onload = function () {
 	pushed = false;
 	var sess = window.localStorage.getItem("sess");
@@ -167,7 +179,9 @@ window.onload = function () {
 		document.getElementById("content").innerHTML = stuff.content.replace(/\r\n/g, "<br/>");
 	} else {
 		document.getElementById("content").innerHTML = stuff.content.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r\n/g, "<br/>");
-	}if (stuff['edited'] == true) {
+	}
+	greenify();
+	if (stuff['edited'] == true) {
 		document.getElementById("edited").style.display = "";
 	}
 	if (stuff.poster == window.localStorage.getItem("username") && getRank() != "User") {
