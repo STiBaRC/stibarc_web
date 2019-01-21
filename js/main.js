@@ -99,6 +99,6 @@ window.onload = function () {
 	} else {
 		document.getElementById("list").innerHTML = "Error loading posts. Device offline.";
 	}
-    startNotifs();
-    doneLoading();
+	doneLoading();
+	startNotifs();
 }
