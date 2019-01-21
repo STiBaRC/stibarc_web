@@ -19,7 +19,10 @@
     --footertext: black;
     --comtent: white;
     --comenttext: black;
-    --spinner1: #49B9CA;
+    /*--spinner1: #49B9CA;
     --spinner2: #49B9CA;
-    --spinner3: #49B9CA;
+    --spinner3: #49B9CA;*/
+    --spinner1: #FFFFFF;
+    --spinner2: #FFFFFF;
+    --spinner3: #FFFFFF;
 }
