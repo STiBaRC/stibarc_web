@@ -14,9 +14,12 @@ function getAnnounce() {
 	xhr.open("GET","https://api.stibarc.gq/getannounce.sjs?sess="+sess,true);
 	xhr.send(null);
 	xhr.onload = function(e) {
-		if (xhr.responseText != "\n") {
-			var tmp = JSON.parse(xhr.responseText);
+		if (xhr.responseText.trim() != "") {
+			try {var tmp = JSON.parse(xhr.responseText);} catch(err) {}
 			document.getElementsByTagName("body")[0].innerHTML = '<div id="announce" style="text-align:center;background-color:#49B9CA;word-wrap:break-word;padding:15px;border-radius:15px;"><h2>'+tmp['title']+'</h2>'+tmp['content']+'</div>' + document.getElementsByTagName("body")[0].innerHTML;
+		}
+		document.getElementById("loadmore").onclick = function(evt) {
+			loadMore();
 		}
 	}
 }
@@ -72,9 +75,6 @@ window.onload = function () {
 		document.getElementById("loggedin").style.display = "";
 		document.getElementById("footerout").style.display = "none";
 		document.getElementById("footerin").style.display = "";
-	}
-	document.getElementById("loadmore").onclick = function(evt) {
-		loadMore();
 	}
 	var xmlHttp = new XMLHttpRequest();
 	xmlHttp.open("GET", "https://api.stibarc.gq/v2/getposts.sjs", false);

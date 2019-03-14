@@ -208,10 +208,14 @@ window.onload = function () {
 		}
 	}
 	document.getElementById("editlink").onclick = function (evt) {
-	document.location.href = "editpost.html?id=" + id;
+		document.location.href = "editpost.html?id=" + id;
+	}
+	if (stuff.client != undefined) {
+		document.getElementById("client").innerHTML = "<br/><br/><i>Posted using "+stuff.client+"</i>";
+		document.getElementById("client").style.display = "";
 	}
 	document.getElementById("viewattachment").onclick = function (evt) {
 		getAttach(stuff["attachment"]);
-    }
-    doneLoading();
+	}
+	doneLoading();
 }

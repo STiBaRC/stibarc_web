@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>STiBaRC TV</title>
+<link rel="stylesheet" href="/css/themes/light.css" />
+<link rel="stylesheet" href="/css/default.css" />
+<link rel="stylesheet" href="/css/global.css" />
+<script>
+window.onload = function() {
+	document.getElementById("submit").onclick = function(e) {
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST","/tv/setmetadata.sjs",true);
+		xhr.send("title="+document.getElementById("title").value+"&sess="+localStorage.sess);
+	};
+}
+</script>
+</head>
+<body>
+<div id="mainblobwithlist">
+Title: <input type="text" id="title"><br/>
+<button id="submit">Submit</button>
+</div>
+<br/>
+<footer>
+<a href="/index.html" class="button">Home</a><br/><br/>
+<a href="/privacy.html" class="button">Privacy</a> <a href="/tos.html" class="button">Terms of Service</a><br/><br/>
+&copy; 2019 STiBaRC<br/>
+</footer>
+</body>
+</html>

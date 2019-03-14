@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>STiBaRC TV</title>
+<link rel="stylesheet" href="/css/themes/light.css" />
+<link rel="stylesheet" href="/css/default.css" />
+<link rel="stylesheet" href="/css/global.css" />
+<script>
+function getTitle() {
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", "/tv/metadata.sjs", true);
+	xhr.send("");
+	xhr.onload = function(e) {
+		var tmp = JSON.parse(xhr.responseText);
+		document.getElementById("title").innerHTML = tmp.title.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+		document.getElementById("streamer").innerHTML = tmp.streamer.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+	}
+}
+
+window.onload = function() {
+	getTitle();
+	setInterval(getTitle, 500);
+	var ws = new WebSocket("wss://stibarc.gq:8001");
+	ws.onmessage = function(evt) {
+		if (evt.data == "/identified"){
+			
+		} else if (evt.data.split("/vc")[0] == "") {
+			document.getElementById("viewers").innerHTML = evt.data.split(" ")[1];
+		} else {
+			var user = evt.data.split(":")[0];
+			var message = evt.data.split(":");
+			message.splice(0,1);
+			message = message.join(":");
+			document.getElementById("chat").innerHTML = document.getElementById("chat").innerHTML+"<a href=\"/user.html?id="+user+"\">"+user.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")+"</a>: "+message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\n/g, "<br/>")+"<br/>";
+			document.getElementById("chat").scrollTop = document.getElementById("chat").scrollHeight;
+		}
+	}
+	ws.onopen = function(evt) {
+		ws.send("/viewcount");
+		if (localStorage.sess != "" && localStorage.sess != undefined) {
+			ws.send("/identify "+localStorage.sess);
+		}
+		var shifted = false;
+		document.getElementById("comtent").addEventListener("keydown", function(e) {
+			if (e.keyCode == 16) {
+				shifted = true;
+			}
+		});
+		document.getElementById("comtent").addEventListener("keyup", function(e) {
+			if (e.keyCode == 13 && shifted == false) {
+				var message = document.getElementById("comtent").value;
+				var tmp = message.split("\n");
+				if (tmp[tmp.length-1] == "") {
+					tmp.pop();
+				}
+				message = tmp.join("\n");
+				if (message.trim() != "") {
+					document.getElementById("comtent").value = "";
+					ws.send("m:"+message);
+				}
+			}
+			if (e.keyCode == 16) {
+				shifted = false;
+			}
+		});
+		document.getElementById("send").onclick = function(e) {
+			var message = document.getElementById("comtent").value;
+			if (message.trim() != "") {
+				document.getElementById("comtent").value = "";
+				ws.send("m:"+message);
+			}
+		};
+		setInterval(function() {ws.send("/viewcount");}, 500);
+	}
+}
+</script>
+</head>
+<body>
+<div id="mainblobwithlist">
+<h2 id="title"></h2>
+<h4>Streamed by: <span id="streamer"></span></h4>
+<center>
+<table>
+<tr>
+<td>
+<video controls autoplay style="width:45vw;">
+<source src="https://joshiepoo.gq:8443/stream" type="video/webm">
+</video><br/>
+Viewers: <span id="viewers"></span>
+</td>
+<td style="background-color:#98DFF3;">
+<h4>Chat:</h4>
+<div id="chat" style="width:45vw;height:50vh;padding:15px;border-radius:15px;background-color:#ffffff;overflow-y:auto;word-wrap:break-word;">
+
+</div>
+<textarea id="comtent" style="width:90%;"></textarea><button id="send" style="width:9%;">Send</button>
+</td>
+</tr>
+</table>
+</center>
+</div>
+<br/>
+<footer>
+<a href="/index.html" class="button">Home</a><br/><br/>
+<a href="/privacy.html" class="button">Privacy</a> <a href="/tos.html" class="button">Terms of Service</a><br/><br/>
+&copy; 2019 STiBaRC<br/>
+</footer>
+</body>
+</html>
