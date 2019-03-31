@@ -17,6 +17,14 @@ function doneLoading() {
 }
 
 window.onload = function() {
+	var ads = localStorage.noads;
+	if (ads == undefined) {ads = false;}
+	if (ads == "false") {ads = false;}
+	if (ads == "true") {ads = true;}
+	document.getElementById("showads").checked = !ads;
+	document.getElementById("showads").onchange = function() {
+		localStorage.noads = !(document.getElementById("showads").checked);
+	}
 	try {
 		document.getElementById("themechng").value = localStorage.getItem("theme");
 		document.getElementById("themecust").value = localStorage.getItem("customtheme");

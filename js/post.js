@@ -158,6 +158,9 @@ function greenify() {
 }
 
 window.onload = function () {
+	if (localStorage.noads == "true") {
+		document.getElementById("ads").style.display = "none";
+	}
 	pushed = false;
 	var sess = window.localStorage.getItem("sess");
 	if (sess != undefined && sess != "" && sess != null) {

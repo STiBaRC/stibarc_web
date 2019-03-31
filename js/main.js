@@ -67,6 +67,9 @@ function doneLoading() {
 }
 
 window.onload = function () {
+	if (localStorage.noads == "true") {
+		document.getElementById("ads").style.display = "none";
+	}
 	var offline = false;
 	var sess = window.localStorage.getItem("sess");
 	if (sess != undefined && sess != null && sess != "") {

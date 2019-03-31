@@ -37,6 +37,9 @@ function search() {
 }
 
 window.onload = function () {
+	if (localStorage.noads == "true") {
+		document.getElementById("ads").style.display = "none";
+	}
 	var sess = window.localStorage.getItem("sess");
 	if (sess != undefined && sess != null && sess != "") {
 		document.getElementById("footerout").style.display = "none";
