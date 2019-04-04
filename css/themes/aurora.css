@@ -1,15 +1,15 @@
 :root {
-    --body: #98DFF3;
+    --body: #79cc3e;
     --textcolor: black;
     --buttoncolor: white;
     --buttontext: black;
     --mainblobwithlist: white;
     --mainblobwithlisttext: black;
-    --header: #49B9CA;
+    --header: #218762;
     --messenger: #49B9CA;
-    --footer: #49B9CA;
+    --footer: #218762;
     --bio: #F0F0F0;
-    --post: #98dff3;
+    --post: #218762;
     --posttext: black;
     --link: #000000;
     --visted: #00000;
@@ -18,8 +18,8 @@
     --footertext: black;
     --comtent: white;
     --comenttext: black;
-    --spinner1: #FFFFFF;
-    --spinner2: #FFFFFF;
-    --spinner3: #FFFFFF;
+    --spinner1: #218762;
+    --spinner2: #218762;
+    --spinner3: #218762;
     --hrcolor: black;
 }
