@@ -20,8 +20,8 @@ window.onload = function() {
 	var ads = localStorage.noads;
 	if (ads == undefined) {ads = false; localStorage.noads = "false";}
 	if (ads == "true") {ads = true;} else {ads = false;}
-	var showpfps = localStorage.pfps;
-	if (showpfps == undefined) {showpfps = true; localStorage.pfps = "true";}
+	var showpfps = localStorage.showpfps;
+	if (showpfps == undefined) {showpfps = true; localStorage.showpfps = "true";}
 	if (showpfps == "true") {showpfps = true;} else {showpfps = false;}
 	document.getElementById("showads").checked = !ads;
 	document.getElementById("showpfp").checked = showpfps;
