@@ -82,14 +82,6 @@ function getAttach(id) {
 		document.getElementById("attachment").appendChild(audio);
 	}
 	var tmp = xmlHttp.responseText.split("");
-	/*tmp = tmp[0]+tmp[1]+tmp[2]+tmp[3]+tmp[4];
-	if (tmp == "data:") {
-		//window.localStorage.setItem("cache"+id, xmlHttp.responseText);
-	}
-	} else {
-		document.getElementById("image").src = window.localStorage.getItem("cache"+id);
-		document.getElementById("image").style.display = "";
-	}*/
 }
 
 function replyto(guy) {
@@ -158,6 +150,9 @@ function greenify() {
 }
 
 window.onload = function () {
+	if (localStorage.showpfps == undefined) {
+		localStorage.showpfps = "true";
+	}
 	if (localStorage.noads == "true") {
 		document.getElementById("ads").style.display = "none";
 	}
@@ -175,15 +170,19 @@ window.onload = function () {
 	xmlHttp.send(null);
 	var stuff = JSON.parse(xmlHttp.responseText);
 	document.getElementById("title").innerHTML = stuff.title.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    document.title = stuff.title + " - STiBaRC";
-    var thing2 = new XMLHttpRequest();
-    thing2.open("GET", "https://api.stibarc.gq/v2/getuser.sjs?id=" + stuff.poster, false);
-    thing2.send(null);
-    var tmp2 = JSON.parse(thing2.responseText);
-    var posterpfp = tmp2['pfp'];
-    document.getElementById("postpfp").src = posterpfp + ' ';
-    document.getElementById("postname").innerHTML = '<a href="user.html?id=' + stuff.poster + '">' + stuff.poster + '</a><span id="verified" title="Verified user" style="display:none">' + "✔️</span>";
-    document.getElementById("dateandstuff").innerHTML = stuff.postdate;
+	document.title = stuff.title + " - STiBaRC";
+	if (localStorage.showpfps == "true") {
+		var thing2 = new XMLHttpRequest();
+		thing2.open("GET", "https://api.stibarc.gq/v2/getuser.sjs?id=" + stuff.poster, false);
+		thing2.send(null);
+		var tmp2 = JSON.parse(thing2.responseText);
+		var posterpfp = tmp2['pfp'];
+		document.getElementById("postpfp").src = posterpfp + ' ';
+	} else {
+		document.getElementById("postpfp").style.display = "none";
+	}
+	document.getElementById("postname").innerHTML = '<a href="user.html?id=' + stuff.poster + '">' + stuff.poster + '</a><span id="verified" title="Verified user" style="display:none">' + "✔️</span>";
+	document.getElementById("dateandstuff").innerHTML = stuff.postdate;
 	checkVerified(stuff.poster);
 	if (stuff.poster == "herronjo" || stuff.poster == "DomHupp" || stuff.poster == "Aldeenyo" || stuff.poster == "savaka" || stuff.poster == "-Verso-" || stuff.poster == "Bunnbuns") {
 		document.getElementById("content").innerHTML = stuff.content.replace(/\r\n/g, "<br/>");
@@ -206,13 +205,17 @@ window.onload = function () {
 	xmlHttp.send(null);
 	if (xmlHttp.responseText != "undefined\n") {
 		var comments = JSON.parse(xmlHttp.responseText);
-        for (var key in comments) {
-            var thing3 = new XMLHttpRequest();
-            thing3.open("GET", "https://api.stibarc.gq/v2/getuser.sjs?id=" + comments[key]['poster'], false);
-            thing3.send(null);
-            var tmp3 = JSON.parse(thing3.responseText);
-            var commentpfp = tmp3['pfp'];
-            document.getElementById("comments").innerHTML = document.getElementById("comments").innerHTML + '<div id="comment"><a href="user.html?id=' + comments[key]['poster'] + '"><img src="' + commentpfp + '"style="width:48px;height:48px;border-radius:50%;" />' + comments[key]['poster'].replace(/&/g, "&amp;") + '</a><br/>' + comments[key]['content'].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r\n/g, "<br/>") + '<br/><a class="replyto" href="javascript:replyto('+"'"+comments[key]['poster']+"'"+')"><i>Reply</i></a></div><br/>';
+		for (var key in comments) {
+			var image = "";
+			if (localStorage.showpfps == "true") {
+				var thing3 = new XMLHttpRequest();
+				thing3.open("GET", "https://api.stibarc.gq/v2/getuser.sjs?id=" + comments[key]['poster'], false);
+				thing3.send(null);
+				var tmp3 = JSON.parse(thing3.responseText);
+				var commentpfp = tmp3['pfp'];
+				image = '<img src="' + commentpfp + '"style="width:48px;height:48px;border-radius:50%;" />';
+			}
+			document.getElementById("comments").innerHTML = document.getElementById("comments").innerHTML + '<div id="comment"><a href="user.html?id=' + comments[key]['poster'] + '">'+image+comments[key]['poster'].replace(/&/g, "&amp;") + '</a><br/>' + comments[key]['content'].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r\n/g, "<br/>") + '<br/><a class="replyto" href="javascript:replyto('+"'"+comments[key]['poster']+"'"+')"><i>Reply</i></a></div><br/>';
 		}
 	} else {
 		document.getElementById("comments").innerHTML = document.getElementById("comments").innerHTML + '<div id="comment">No comments</div>';
