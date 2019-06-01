@@ -28,6 +28,9 @@ window.onload = function() {
 	document.getElementById("showads").onchange = function() {
 		localStorage.noads = !(document.getElementById("showads").checked);
 	}
+	document.getElementById("showpfp").onchange = function() {
+		localStorage.showpfps = document.getElementById("showpfp").checked;
+	}
 	try {
 		document.getElementById("themechng").value = localStorage.getItem("theme");
 		document.getElementById("themecust").value = localStorage.getItem("customtheme");
