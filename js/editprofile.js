@@ -18,16 +18,24 @@ function doneLoading() {
 
 window.onload = function() {
 	var ads = localStorage.noads;
-	if (ads == undefined) {ads = false;}
-	if (ads == "false") {ads = false;}
-	if (ads == "true") {ads = true;}
+	if (ads == undefined) {ads = false; localStorage.noads = "false";}
+	if (ads == "true") {ads = true;} else {ads = false;}
+	var showpfps = localStorage.pfps;
+	if (showpfps == undefined) {showpfps = true; localStorage.pfps = "true";}
+	if (showpfps == "true") {showpfps = true;} else {showpfps = false;}
 	document.getElementById("showads").checked = !ads;
+	document.getElementById("showpfp").checked = showpfps;
 	document.getElementById("showads").onchange = function() {
 		localStorage.noads = !(document.getElementById("showads").checked);
 	}
 	try {
 		document.getElementById("themechng").value = localStorage.getItem("theme");
 		document.getElementById("themecust").value = localStorage.getItem("customtheme");
+		if (localStorage.getItem("theme") != "custom") {
+			document.getElementById("themecust").style.display = "none";
+		} else {
+			document.getElementById("themecust").style.display = "";
+		}
 	} catch(err){}
 	var sess = window.localStorage.getItem("sess");
 	if (sess != undefined && sess != "") {
