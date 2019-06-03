@@ -1,90 +1,107 @@
 #mainblobwithlist {
-    background-color: var(--mainblobwithlist);
-    color: var(--mainblobwithlisttext);
-    word-wrap: break-word;
-    padding: 15px;
-    border-radius: 15px;
+	background-color: var(--mainblobwithlist);
+	color: var(--mainblobwithlisttext);
+	word-wrap: break-word;
+	padding: 15px;
+	border-radius: 15px;
+}
+
+#followblob {
+	background-color: var(--mainblobwithlist);
+	color: var(--mainblobwithlisttext);
+	word-wrap: break-word;
+	padding: 15px;
+	border-radius: 15px;
+}
+
+#feedselect {
+	text-align: center;
+	background-color: var(--header);
+	color: var(--mainblobwithlisttext);
+	word-wrap: break-word;
+	padding: 15px;
+	border-radius: 15px;
 }
 
 #header {
-    text-align: center;
-    background-color: var(--header);
-    word-wrap: break-word;
-    padding: 15px;
-    border-radius: 15px;
+	text-align: center;
+	background-color: var(--header);
+	word-wrap: break-word;
+	padding: 15px;
+	border-radius: 15px;
 }
 
 #chatframe {
-    height: 50%;
-    width: 25%;
-    position: sticky;
-    position: -webkit-sticky;
-    bottom: 0;
-    right: 0;
-    float: right;
+	height: 50%;
+	width: 30%;
+	position: sticky;
+	position: -webkit-sticky;
+	bottom: 0;
+	right: 0;
+	float: right;
 }
 
 #chattoggle {
-    height: 10%;
-    width: 35%;
-    //background-color: #D7D7D7;
-    bottom: 0;
-    float: right;
+	height: 10%;
+	width: 35%;
+	//background-color: #D7D7D7;
+	bottom: 0;
+	float: right;
 }
 
 #messenger {
-    background-color: var(--messenger);
-    height: 60vh;
-    width: 100%;
+	background-color: var(--messenger);
+	height: 80vh;
+	width: 100%;
 }
 
 .post {
 	background-color: var(--post);
-    word-wrap: break-word;
-    padding: 10px;
-    border-radius: 10px;
-    color: var(--posttext);
+	word-wrap: break-word;
+	padding: 10px;
+	border-radius: 10px;
+	color: var(--posttext);
 }
 
 .buttons {
-    display: inline-block;
-    float: right;
-    font-weight: bold;
+	display: inline-block;
+	float: right;
+	font-weight: bold;
 }
 
 .darkbutton {
-    display:none;
-    text-align:center;
-    background-color: black;
-    color: white;
-    padding: 6px;
-    border-radius: 5px;
-    width: 100%;
-    text-decoration: none;
-    font-weight: bold;
+	display:none;
+	text-align:center;
+	background-color: black;
+	color: white;
+	padding: 6px;
+	border-radius: 5px;
+	width: 100%;
+	text-decoration: none;
+	font-weight: bold;
 }
-    
+	
 #logo {
-    display: inline-block;
-    width: 20%;
+	display: inline-block;
+	width: 20%;
 }
 @media only screen and (max-width: 700px) {
   #logo {
-    width: 75vw;
+	width: 75vw;
   }
   #chatframe {
-    display: none;
+	display: none;
   }
 }
 
 span {
-    display:inline-block;
+	display:inline-block;
 }
 
 footer {
-    background-color: var(--footer);
-    text-align: center;
-    word-wrap: break-word;
-    padding: 15px;
-    border-radius: 15px;
+	background-color: var(--footer);
+	text-align: center;
+	word-wrap: break-word;
+	padding: 15px;
+	border-radius: 15px;
 }

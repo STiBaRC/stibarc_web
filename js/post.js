@@ -180,6 +180,7 @@ window.onload = function () {
 		document.getElementById("postpfp").src = posterpfp + ' ';
 	} else {
 		document.getElementById("postpfp").style.display = "none";
+		document.getElementById("postname").style.marginLeft = "0px";
 	}
 	document.getElementById("postname").innerHTML = '<a href="user.html?id=' + stuff.poster + '">' + stuff.poster + '</a><span id="verified" title="Verified user" style="display:none">' + "✔️</span>";
 	document.getElementById("dateandstuff").innerHTML = stuff.postdate;

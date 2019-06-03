@@ -1,15 +1,3 @@
-/*var toLink = function (item) {
-	var thing = new XMLHttpRequest();
-	thing.open("GET", "https://api.stibarc.gq/gettitle.sjs?id=" + item, false);
-	thing.send(null);
-	var title = thing.responseText;
-	try {
-		document.getElementById("posts").innerHTML = document.getElementById("posts").innerHTML.concat('<li><a href="post.html?id=').concat(item).concat('">').concat(title).concat("</a></li>");
-	} catch (err) {
-		console.log("Whoops");
-	}
-}*/
-
 function toLink(item) {
 	try {
 		var i = item.indexOf(':');
@@ -32,7 +20,7 @@ function getPosts(id) {
 
 function getStuff(id) {
 	var thing = new XMLHttpRequest();
-	thing.open("GET", "https://api.stibarc.gq/v2/getuser.sjs?id=" + id, false);
+	thing.open("GET", "https://api.stibarc.gq/v3/getuser.sjs?id=" + id, false);
 	thing.send(null);
 	var tmp = JSON.parse(thing.responseText);
 	var rank = tmp['rank'];
@@ -51,8 +39,28 @@ function getStuff(id) {
 	document.getElementById("bday").innerHTML = "Birthday: ".concat(birthday.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
 	//posts = posts.split(",");
 	document.getElementById("pfp").src = tmp['pfp'];
+	document.getElementById("followers").innerText = "Followers: "+tmp.followers.length;
+	document.getElementById("following").innerText = "Following: "+tmp.following.length;
+	if (localStorage.username != undefined && localStorage.sess != undefined) {
+		if (tmp.followers.indexOf(localStorage.username) != -1) {
+			document.getElementById("follow").innerText = "Following";
+			document.getElementById("follow").onclick = function(e) {
+				var xhrf = new XMLHttpRequest();
+				xhrf.open("POST", "https://api.stibarc.gq/v3/unfollow.sjs", false);
+				xhrf.send("sess="+localStorage.sess+"&id="+encodeURIComponent(id));
+				location.reload();
+			}
+		} else {
+			document.getElementById("follow").onclick = function(e) {
+				var xhrf = new XMLHttpRequest();
+				xhrf.open("POST", "https://api.stibarc.gq/v3/follow.sjs", false);
+				xhrf.send("sess="+localStorage.sess+"&id="+encodeURIComponent(id));
+				location.reload();
+			}
+		}
+	}
 	document.getElementById("posts").innerHTML = "";
-	getPosts(id);		
+	getPosts(id);
 	var showbio = false;
 	var bio = "";
 	document.getElementById("biobio").innerHTML = "";
@@ -78,7 +86,6 @@ window.onload = function () {
     var id = getAllUrlParams().id;
     document.title = id + " - STiBaRC";
 	var id = getAllUrlParams().id;
-	//var cookie = toJSON(document.cookie);
 	var sess = window.localStorage.getItem("sess");
 	if (sess != undefined && sess != "" && sess != null) {
 		document.getElementById("footerout").style.display = "none";
