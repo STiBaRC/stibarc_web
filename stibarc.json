@@ -1,9 +1,9 @@
 {
-  "version": 1,
+  "version": 1.0.1,
   "domain": "stibarc.gq",
   "display_name": "STiBaRC",
   "username": {
-    "re": "^.{1,20}$",
+    "re": "^[a-zA-Z0-9_]{1,20}$",
     "min": 1,
     "max": 20
   },
