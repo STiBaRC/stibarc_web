@@ -27,8 +27,8 @@ function getStuff(id) {
 	var name = tmp['name'];
 	var email = tmp['email'];
 	//var posts = tmp['posts'];
-    var birthday = tmp['birthday'];
-	document.getElementById("username").innerHTML = id.concat('<span id="verified" title="Verified user" style="display:none">✔️</span>');
+	var birthday = tmp['birthday'];
+	document.getElementById("username").innerHTML = id.concat('<span id="verified" title="Verified user" style="display:none"✔️</span>');
 	document.getElementById("rank").innerHTML = "Rank: ".concat(rank);
 	document.getElementById("name").innerHTML = "Real name: ".concat(name.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
 	if (email != "Not shown" && email != "Not set") {
@@ -73,8 +73,12 @@ function getStuff(id) {
 		document.getElementById("biobio").innerHTML = bio;
 	} else {
 		document.getElementById("bio").style.display = "none";
-    }
-    doneLoading();
+	}
+	if (tmp.keybase != undefined) {
+		document.getElementById("bio").style.display = "";
+		document.getElementById("biobio").innerHTML = document.getElementById("biobio").innerHTML + '<br/><img alt="Keybase proof status" src="https://keybase.io/'+tmp.keybase[0]["kb_username"]+'/proof_badge/'+tmp.keybase[0]['sig_hash']+'?domain=stibarc.gq&username="'+id+'>'
+	}
+	doneLoading();
 }
 
 function doneLoading() {
