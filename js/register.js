@@ -12,7 +12,7 @@ function register() {
 		if (password == password2) {
 			var thing = new XMLHttpRequest();
 			thing.open("POST", "https://api.stibarc.gq/createuser.sjs", false);
-			thing.send("username="+username+"&password="+password+"&password2="+password2+"&email="+email+"&showemail="+showemail+"&birthday="+bday+"&showbday="+showbday+"&name="+name);
+			thing.send("username="+encodeURIComponent(username)+"&password="+encodeURIComponent(password)+"&password2="+encodeURIComponent(password2)+"&email="+encodeURIComponent(email)+"&showemail="+showemail+"&birthday="+bday+"&showbday="+showbday+"&name="+encodeURIComponent(name));
 			if (thing.responseText == "Created\n") {
 				location.href = "login.html";
 			} else {

@@ -34,6 +34,14 @@ function getAnnounce() {
 		document.getElementById("followloadmore").onclick = function(evt) {
 			loadMoreFollow();
 		}
+		document.getElementById("global").onclick = function(evt) {
+			document.getElementById("mainblobwithlist").style.display = "";
+			document.getElementById("followblob").style.display = "none";
+		}
+		document.getElementById("followed").onclick = function(evt) {
+			document.getElementById("mainblobwithlist").style.display = "none";
+			document.getElementById("followblob").style.display = "";
+		}
 	}
 }
 
@@ -101,14 +109,6 @@ function doneLoading() {
 window.onload = function () {
 	if (localStorage.noads == "true") {
 		document.getElementById("ads").style.display = "none";
-	}
-	document.getElementById("global").onclick = function(evt) {
-		document.getElementById("mainblobwithlist").style.display = "";
-		document.getElementById("followblob").style.display = "none";
-	}
-	document.getElementById("followed").onclick = function(evt) {
-		document.getElementById("mainblobwithlist").style.display = "none";
-		document.getElementById("followblob").style.display = "";
 	}
 	var offline = false;
 	var sess = window.localStorage.getItem("sess");

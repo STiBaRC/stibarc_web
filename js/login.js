@@ -8,13 +8,17 @@ function login() {
 		//var appid = window.localStorage.getItem("appID");
 		//if (appid == "" || appid == null || appid == undefined) appid = "none";
 		xmlHttp.open("POST", "https://api.stibarc.gq/createsess.sjs", false);
-		xmlHttp.send("username=" + username + "&password=" + password);
+		xmlHttp.send("username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password));
 		sess = xmlHttp.responseText;
 		if (sess != "Invalid username or password\n") {
 			//document.cookie = "sess=" + sess;
 			window.localStorage.setItem("sess", sess.split("\n")[0]);
 			window.localStorage.setItem("username", username);
-			location.href = "index.html"
+			if (getAllUrlParams().redir != undefined && getAllUrlParams().redir.trim() != "") {
+				location.href = decodeURIComponent(getAllUrlParams().redir);
+			} else {
+				location.href = "index.html"
+			}
 		} else {
 			document.getElementById("badnamepass").style.display = "";
 		}
@@ -37,4 +41,9 @@ window.onload = function () {
 			login();
 		}
 	});
+	document.getElementById("anon").onclick = function(e) {
+		document.getElementById("username") = "Anon";
+		document.getElementById("password") = "anon";
+		document.getElementById("login").click();
+	}
 }

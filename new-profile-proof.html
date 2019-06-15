@@ -45,17 +45,7 @@ function getAllUrlParams(url) {
 <script>
 window.onload = function() {
 	if (localStorage.sess == undefined || localStorage.sess.trim() == "") {
-		var loginpopup = window.open("https://stibarc.gq/login/?perms=username", "", "menubar=no,location=no,resizable=no,scrollbars=yes,status=yes,height=360,width=500");
-		window.addEventListener("message", function(evt) {
-			if (evt.data != "Cancelled") {
-				localStorage.username = evt.data[0];
-				loginpopup.close();
-				location.reload();
-			} else {
-				loginpopup.close();
-				window.close();
-			}
-		});
+		location.href = "login.html?redir="+encodeURIComponent(location.pathname+location.search);
 	}
 	var urlstuff = getAllUrlParams();
 	var kuser = urlstuff.remote_username;
@@ -75,10 +65,14 @@ window.onload = function() {
 		if (kuinfo.status.code == 0 && suxhr.responseText.trim() != "") {
 			var suinfo = JSON.parse(suxhr.responseText);
 			document.getElementById("sicon").src = suinfo.pfp;
-			document.getElementById("kicon").src = kuinfo.them.pictures.primary.url;
+			if (kuinfo.them.pictures != undefined) {
+				document.getElementById("kicon").src = kuinfo.them.pictures.primary.url;
+			} else {
+				document.getElementById("kicon").src = "https://keybase.io/images/no-photo/placeholder-avatar-180-x-180@2x.png";
+			}
 			document.getElementById("authorize").onclick = function(e) {
 				var pxhr = new XMLHttpRequest();
-				pxhr.open("GET", "https://keybase.io/_/api/1.0/sig/proof_valid.json?domain=stibarc.gq&kb_username="+encodeURIComponent(kuser)+"&username="+encodeURIComponent(user)+"&sig_hash="+token+"&kb_ua="+ua, false);
+				pxhr.open("GET", "https://api.stibarc.gq/v3/kb-check-proxy.sjs?domain=stibarc.gq&kb_username="+encodeURIComponent(kuser)+"&username="+encodeURIComponent(user)+"&sig_hash="+token+"&kb_ua="+ua, false);
 				pxhr.send("");
 				presp = JSON.parse(pxhr.responseText);
 				if (presp["proof_valid"] == true) {
@@ -94,12 +88,15 @@ window.onload = function() {
 				window.close();
 			}
 		} else {
-			alert("Invalid user!");
+			alert("Keybase user does not exist!");
 			window.close();
 		}
 	} else {
-		alert("Wrong user!");
-		window.close();
+		var lxhr = new XMLHttpRequest();
+		lxhr.open("POST", "https://api.stibarc.gq/logout.sjs", false);
+		lxhr.send("sess="+localStorage.sess);
+		delete localStorage.sess;
+		location.href = "login.html?redir="+encodeURIComponent(location.pathname+location.search);
 	}
 }
 </script>

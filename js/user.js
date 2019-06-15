@@ -28,7 +28,7 @@ function getStuff(id) {
 	var email = tmp['email'];
 	//var posts = tmp['posts'];
 	var birthday = tmp['birthday'];
-	document.getElementById("username").innerHTML = id.concat('<span id="verified" title="Verified user" style="display:none"✔️</span>');
+	document.getElementById("username").innerHTML = id.concat('<span id="verified" title="Verified user" style="display:non✔️</span>');
 	document.getElementById("rank").innerHTML = "Rank: ".concat(rank);
 	document.getElementById("name").innerHTML = "Real name: ".concat(name.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
 	if (email != "Not shown" && email != "Not set") {
@@ -76,7 +76,10 @@ function getStuff(id) {
 	}
 	if (tmp.keybase != undefined) {
 		document.getElementById("bio").style.display = "";
-		document.getElementById("biobio").innerHTML = document.getElementById("biobio").innerHTML + '<br/><img alt="Keybase proof status" src="https://keybase.io/'+tmp.keybase[0]["kb_username"]+'/proof_badge/'+tmp.keybase[0]['sig_hash']+'?domain=stibarc.gq&username="'+id+'>'
+		document.getElementById("biobio").innerHTML = document.getElementById("biobio").innerHTML+"<br/>"
+		for (var sig in tmp.keybase) {
+			document.getElementById("biobio").innerHTML = document.getElementById("biobio").innerHTML + '<br/>'+tmp.keybase[sig]["kb_username"]+' on Keybase: <a href="https://keybase.io/'+tmp.keybase[sig]["kb_username"]+'/sigs/'+tmp.keybase[sig]['sig_hash']+'"><img alt="Keybase proof status" src="https://keybase.io/'+tmp.keybase[sig]["kb_username"]+'/proof_badge/'+tmp.keybase[sig]['sig_hash']+'?domain=stibarc.gq&username='+getAllUrlParams().id+'"></a>'
+		}
 	}
 	doneLoading();
 }
