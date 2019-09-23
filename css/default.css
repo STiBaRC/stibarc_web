@@ -5,6 +5,10 @@
 	padding: 15px;
 	border-radius: 15px;
 }
+#loadmore, #followloadmore {
+    display: block;
+    text-align: center
+}
 
 #followblob {
 	background-color: var(--mainblobwithlist);
