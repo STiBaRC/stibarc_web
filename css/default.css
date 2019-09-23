@@ -5,9 +5,10 @@
 	padding: 15px;
 	border-radius: 15px;
 }
+
 #loadmore, #followloadmore {
-    display: block;
-    text-align: center
+	display: block;
+	text-align: center
 }
 
 #followblob {
