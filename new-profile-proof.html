@@ -56,7 +56,7 @@ window.onload = function() {
 		document.getElementById("suser").innerText = user;
 		document.getElementById("kuser").innerText = kuser;
 		var suxhr = new XMLHttpRequest();
-		suxhr.open("GET", "https://api.stibarc.gq/v3/getuser.sjs?id="+user, false);
+		suxhr.open("GET", "https://api.stibarc.com/v3/getuser.sjs?id="+user, false);
 		suxhr.send(null);
 		var kuxhr = new XMLHttpRequest();
 		kuxhr.open("GET", "https://keybase.io/_/api/1.0/user/lookup.json?username="+kuser, false);
@@ -72,14 +72,14 @@ window.onload = function() {
 			}
 			document.getElementById("authorize").onclick = function(e) {
 				var pxhr = new XMLHttpRequest();
-				pxhr.open("GET", "https://api.stibarc.gq/v3/kb-check-proxy.sjs?domain=stibarc.gq&kb_username="+encodeURIComponent(kuser)+"&username="+encodeURIComponent(user)+"&sig_hash="+token+"&kb_ua="+ua, false);
+				pxhr.open("GET", "https://api.stibarc.com/v3/kb-check-proxy.sjs?domain=stibarc.com&kb_username="+encodeURIComponent(kuser)+"&username="+encodeURIComponent(user)+"&sig_hash="+token+"&kb_ua="+ua, false);
 				pxhr.send("");
 				presp = JSON.parse(pxhr.responseText);
 				if (presp["proof_valid"] == true) {
 					var sxhr = new XMLHttpRequest();
-					sxhr.open("POST", "https://api.stibarc.gq/v3/keybase-send.sjs", false);
+					sxhr.open("POST", "https://api.stibarc.com/v3/keybase-send.sjs", false);
 					sxhr.send("kb_username="+kuser+"&sess="+localStorage.sess+"&token="+token);
-					location.href = "https://keybase.io/_/proof_creation_success?domain=stibarc.gq&kb_username="+kuser+"&username="+user+"&sig_hash="+token+"&kb_ua="+ua;
+					location.href = "https://keybase.io/_/proof_creation_success?domain=stibarc.com&kb_username="+kuser+"&username="+user+"&sig_hash="+token+"&kb_ua="+ua;
 				} else {
 					alert("Something went wrong!");
 				}
@@ -93,7 +93,7 @@ window.onload = function() {
 		}
 	} else {
 		var lxhr = new XMLHttpRequest();
-		lxhr.open("POST", "https://api.stibarc.gq/logout.sjs", false);
+		lxhr.open("POST", "https://api.stibarc.com/logout.sjs", false);
 		lxhr.send("sess="+localStorage.sess);
 		delete localStorage.sess;
 		location.href = "login.html?redir="+encodeURIComponent(location.pathname+location.search);

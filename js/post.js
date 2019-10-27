@@ -13,7 +13,7 @@ function toLink(item) {
 
 function getRank() {
 	var thing = new XMLHttpRequest();
-	thing.open("GET", "https://api.stibarc.gq/getuser.sjs?id=" + window.localStorage.getItem("username"), false);
+	thing.open("GET", "https://api.stibarc.com/getuser.sjs?id=" + window.localStorage.getItem("username"), false);
 	thing.send(null);
 	var stuff = thing.responseText;
 	var tmp = stuff.split("\n");
@@ -36,7 +36,7 @@ function postcomment(id) {
 			document.getElementById("comtent").value = "";
 			var sess = window.localStorage.getItem("sess");
 			var thing = new XMLHttpRequest();
-			thing.open("POST", "https://api.stibarc.gq/newcomment.sjs", false);
+			thing.open("POST", "https://api.stibarc.com/newcomment.sjs", false);
 			thing.send("sess=" + sess + "&postid=" + id + "&content=" + encodeURIComponent(content).replace(/%0A/g, "%0D%0A"));
 			location.reload();
 		} else {
@@ -55,7 +55,7 @@ function getAttach(id) {
 	document.getElementById("viewattachment").style.display = "none";
 	//if (window.localStorage.getItem("cache"+id) == null || window.localStorage.getItem("cache"+id) == undefined) {
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("GET", "https://api.stibarc.gq/getimage.sjs?id="+id, false);
+	xmlHttp.open("GET", "https://api.stibarc.com/getimage.sjs?id="+id, false);
 	xmlHttp.send();
 	if (xmlHttp.responseText.substring(5,10) == "image") {
 		var img = document.createElement("IMG");
@@ -97,7 +97,7 @@ function replyto(guy) {
 function reloadvotes() {
 	var id = getAllUrlParams().id;
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("GET", "https://api.stibarc.gq/v2/getpost.sjs?id="+id, true);
+	xmlHttp.open("GET", "https://api.stibarc.com/v2/getpost.sjs?id="+id, true);
 	xmlHttp.onload = function(evt) {
 		var stuff = JSON.parse(xmlHttp.responseText);
 		document.getElementById("upvotes").innerHTML = stuff['upvotes'];
@@ -111,7 +111,7 @@ function upvote() {
 	var id = getAllUrlParams().id;
 	if (sess != undefined && sess != "") {
 		var xhr = new XMLHttpRequest();
-		xhr.open("post", "https://api.stibarc.gq/upvote.sjs", true);
+		xhr.open("post", "https://api.stibarc.com/upvote.sjs", true);
 		xhr.onload = function(evt) {
 			reloadvotes();
 		}
@@ -124,7 +124,7 @@ function downvote() {
 	var id = getAllUrlParams().id;
 	if (sess != undefined && sess != "") {
 		var xhr = new XMLHttpRequest();
-		xhr.open("post", "https://api.stibarc.gq/downvote.sjs", true);
+		xhr.open("post", "https://api.stibarc.com/downvote.sjs", true);
 		xhr.onload = function(evt) {
 			reloadvotes();
 		}
@@ -166,14 +166,14 @@ window.onload = function () {
 	}
 	var id = getAllUrlParams().id;
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("GET", "https://api.stibarc.gq/v2/getpost.sjs?id="+id, false);
+	xmlHttp.open("GET", "https://api.stibarc.com/v2/getpost.sjs?id="+id, false);
 	xmlHttp.send(null);
 	var stuff = JSON.parse(xmlHttp.responseText);
 	document.getElementById("title").innerHTML = stuff.title.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 	document.title = stuff.title + " - STiBaRC";
 	if (localStorage.showpfps == "true") {
 		var thing2 = new XMLHttpRequest();
-		thing2.open("GET", "https://api.stibarc.gq/v2/getuser.sjs?id=" + stuff.poster, false);
+		thing2.open("GET", "https://api.stibarc.com/v2/getuser.sjs?id=" + stuff.poster, false);
 		thing2.send(null);
 		var tmp2 = JSON.parse(thing2.responseText);
 		var posterpfp = tmp2['pfp'];
@@ -202,7 +202,7 @@ window.onload = function () {
 	}
 	document.getElementById("upvotes").innerHTML = stuff['upvotes'];
 	document.getElementById("downvotes").innerHTML = stuff['downvotes'];
-	xmlHttp.open("GET", "https://api.stibarc.gq/getcomments.sjs?id=" + id, false);
+	xmlHttp.open("GET", "https://api.stibarc.com/getcomments.sjs?id=" + id, false);
 	xmlHttp.send(null);
 	if (xmlHttp.responseText != "undefined\n") {
 		var comments = JSON.parse(xmlHttp.responseText);
@@ -210,7 +210,7 @@ window.onload = function () {
 			var image = "";
 			if (localStorage.showpfps == "true") {
 				var thing3 = new XMLHttpRequest();
-				thing3.open("GET", "https://api.stibarc.gq/v2/getuser.sjs?id=" + comments[key]['poster'], false);
+				thing3.open("GET", "https://api.stibarc.com/v2/getuser.sjs?id=" + comments[key]['poster'], false);
 				thing3.send(null);
 				var tmp3 = JSON.parse(thing3.responseText);
 				var commentpfp = tmp3['pfp'];

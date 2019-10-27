@@ -16,7 +16,7 @@ function post() {
 	var id = getAllUrlParams().id;
 	if (content != "" && content != undefined && title != "" && title != undefined) {
 		var thing = new XMLHttpRequest();
-		thing.open("POST", "https://api.stibarc.gq/editpost.sjs", false);
+		thing.open("POST", "https://api.stibarc.com/editpost.sjs", false);
 		thing.send("sess="+sess+"&id="+id+"&title="+encodeURIComponent(title)+"&content="+encodeURIComponent(content).replace(/%0A/g, "%0D%0A"));
 		location.href = "post.html?id=" + id;
 		document.getElementById("content").value = "";
@@ -34,7 +34,7 @@ window.onload = function () {
 	var id = getAllUrlParams().id;
 	if (id != "" && id != undefined) {
 		var thing = new XMLHttpRequest();
-		thing.open("GET", "https://api.stibarc.gq/getpost.sjs?id="+id, false);
+		thing.open("GET", "https://api.stibarc.com/getpost.sjs?id="+id, false);
 		thing.send(null);
 		var tmp = JSON.parse(thing.responseText);
 		document.getElementById("title").value = tmp['title'];

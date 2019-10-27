@@ -21,7 +21,7 @@ function toFollowLink(id,item) {
 function getAnnounce() {
 	var sess = window.localStorage.getItem("sess");
 	var xhr = new XMLHttpRequest();
-	xhr.open("GET","https://api.stibarc.gq/getannounce.sjs?sess="+sess,true);
+	xhr.open("GET","https://api.stibarc.com/getannounce.sjs?sess="+sess,true);
 	xhr.send(null);
 	xhr.onload = function(e) {
 		if (xhr.responseText.trim() != "") {
@@ -48,7 +48,7 @@ function getAnnounce() {
 function checkSess() {
 	var sess = window.localStorage.getItem("sess");
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("get", "https://api.stibarc.gq/checksess.sjs?sess="+sess, false);
+	xmlHttp.open("get", "https://api.stibarc.com/checksess.sjs?sess="+sess, false);
 	xmlHttp.send(null);
 	if (xmlHttp.responseText.split("\n")[0] == "bad") {
 		window.localStorage.removeItem("sess");
@@ -60,7 +60,7 @@ function checkSess() {
 function getUsername() {
 	var sess = window.localStorage.getItem("sess");
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("POST", "https://api.stibarc.gq/getusername.sjs", false);
+	xmlHttp.open("POST", "https://api.stibarc.com/getusername.sjs", false);
 	xmlHttp.send("sess="+sess);
 	window.localStorage.setItem("username", xmlHttp.responseText.split("\n")[0]);
 }
@@ -70,7 +70,7 @@ var lastfollowid = 1;
 
 function loadMore() {
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("GET", "https://api.stibarc.gq/v2/getposts.sjs?id="+lastid, false);
+	xmlHttp.open("GET", "https://api.stibarc.com/v2/getposts.sjs?id="+lastid, false);
 	xmlHttp.send(null);
 	if (xmlHttp.responseText.trim() != "") {
 		var tmp = JSON.parse(xmlHttp.responseText);
@@ -85,7 +85,7 @@ function loadMore() {
 
 function loadMoreFollow() {
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("GET", "https://api.stibarc.gq/v3/getfollowposts.sjs?sess="+localStorage.sess+"&id="+lastfollowid, false);
+	xmlHttp.open("GET", "https://api.stibarc.com/v3/getfollowposts.sjs?sess="+localStorage.sess+"&id="+lastfollowid, false);
 	xmlHttp.send(null);
 	if (xmlHttp.responseText.trim() != "No posts") {
 		var tmp = JSON.parse(xmlHttp.responseText);
@@ -120,7 +120,7 @@ window.onload = function () {
 		document.getElementById("footerin").style.display = "";
 	}
 	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("GET", "https://api.stibarc.gq/v2/getposts.sjs", false);
+	xmlHttp.open("GET", "https://api.stibarc.com/v2/getposts.sjs", false);
 	try {
 		xmlHttp.send(null);
 	} catch (err) {
@@ -141,7 +141,7 @@ window.onload = function () {
 		document.getElementById("loadmorecontainer").style.display = "";
 		if (sess != undefined && sess != null && sess != "") {
 			var xhr = new XMLHttpRequest();
-			xhr.open("get", "https://api.stibarc.gq/v3/getfollowposts.sjs?sess="+sess, false);
+			xhr.open("get", "https://api.stibarc.com/v3/getfollowposts.sjs?sess="+sess, false);
 			xhr.send(null);
 			if (xhr.responseText != "No posts\n") {
 				var followtmp = JSON.parse(xhr.responseText);

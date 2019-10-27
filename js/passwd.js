@@ -8,7 +8,7 @@ window.onload = function() {
     var npass2 = document.getElementById("npass2").value;
     if (npass == npass2 && npass != "" && npass != undefined) {
       var xhr = new XMLHttpRequest();
-      xhr.open("post","https://api.stibarc.gq/updatepasswd.sjs",true);
+      xhr.open("post","https://api.stibarc.com/updatepasswd.sjs",true);
       xhr.send("sess="+sess+"&old="+encodeURIComponent(opass)+"&new="+encodeURIComponent(npass)+"&new2="+encodeURIComponent(npass));
       xhr.onload = function(e) {
         if (xhr.responseText.split("\n")[0] == "Updated") {

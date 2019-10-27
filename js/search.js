@@ -21,7 +21,7 @@ function search() {
 	var q = document.getElementById("q").value;
 	if (q != "") {
 		var xmlHttp = new XMLHttpRequest();
-		xmlHttp.open("post", "https://api.stibarc.gq/postsearch.sjs", false);
+		xmlHttp.open("post", "https://api.stibarc.com/postsearch.sjs", false);
 		xmlHttp.send("q="+encodeURIComponent(q));
 		if (xmlHttp.responseText.split("\n")[0] != "No results" && xmlHttp.responseText != "") {
 			var tmp = xmlHttp.responseText.split("\n");

@@ -50,7 +50,7 @@ function toJSON(cookie) {
 
 var checkVerified = function(poster) {
 	var thing = new XMLHttpRequest();
-	thing.open("GET", "https://api.stibarc.gq/checkverify.sjs?id=" + poster, false);
+	thing.open("GET", "https://api.stibarc.com/checkverify.sjs?id=" + poster, false);
 	thing.send(null);
 	var stuff = thing.responseText.split("\n")[0];
 	if (stuff == "true") {

@@ -2,7 +2,7 @@ var togglechat = function() {
 	if (document.getElementById("messenger") == null && document.getElementById("messenger") == undefined) {
 		var iframe = document.createElement("IFRAME");
 		iframe.id = "messenger";
-		iframe.src = "https://messenger.stibarc.gq/";
+		iframe.src = "https://messenger.stibarc.com/";
 		document.getElementById("chatframe").appendChild(iframe);
 	} else {
 		if (document.getElementById("messenger").style.display == "none") {

@@ -43,7 +43,7 @@ window.onload = function() {
 	var sess = window.localStorage.getItem("sess");
 	if (sess != undefined && sess != "") {
 		var xhr = new XMLHttpRequest();
-		xhr.open("POST","https://api.stibarc.gq/userinfo.sjs",true);
+		xhr.open("POST","https://api.stibarc.com/userinfo.sjs",true);
 		xhr.send("sess="+sess);
 		xhr.onload = function(e) {
 			var tmp = JSON.parse(xhr.responseText);
@@ -82,7 +82,7 @@ window.onload = function() {
 	document.getElementById("submit").onclick = function(evt) {
 		var sess = window.localStorage.getItem("sess");
 		var xhr = new XMLHttpRequest();
-		xhr.open("POST","https://api.stibarc.gq/updateprofile.sjs",true);
+		xhr.open("POST","https://api.stibarc.com/updateprofile.sjs",true);
 		var showemail = document.getElementById("showemail").checked;
 		if (showemail == false) {showemail="";}
 		var showname = document.getElementById("showname").checked;
@@ -93,7 +93,7 @@ window.onload = function() {
 		if (showbio == false) {showbio="";}
 		if (pfp.trim() != "") {
 			var xhr2 = new XMLHttpRequest();
-			xhr2.open("POST","https://api.stibarc.gq/updatepfp.sjs",true);
+			xhr2.open("POST","https://api.stibarc.com/updatepfp.sjs",true);
 			xhr2.send("sess="+localStorage.sess+"&data="+encodeURIComponent(pfp));
 		}
 		xhr.send("sess="+sess+"&email="+encodeURIComponent(document.getElementById("email").value)+"&name="+encodeURIComponent(document.getElementById("name").value)+"&birthday="+encodeURIComponent(document.getElementById("birthday").value)+"&bio="+encodeURIComponent(document.getElementById("bio").value)+"&showemail="+showemail+"&showname="+showname+"&showbday="+showbday+"&showbio="+showbio);

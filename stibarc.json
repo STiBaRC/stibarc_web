@@ -1,6 +1,6 @@
 {
   "version": 1.0.2,
-  "domain": "stibarc.gq",
+  "domain": "stibarc.com",
   "display_name": "STiBaRC",
   "username": {
     "re": "^[a-zA-Z0-9_]{1,20}$",
@@ -9,13 +9,13 @@
   },
   "brand_color": "#98DFF3",
   "logo": {
-    "svg_black": "https://stibarc.gq/small-black-logo.svg",
-    "svg_full": "https://stibarc.gq/full-color-logo.svg"
+    "svg_black": "https://stibarc.com/small-black-logo.svg",
+    "svg_full": "https://stibarc.com/full-color-logo.svg"
   },
   "description": "A social media that goes back to the simpler days. No friends or categories -- just one simple thread of text posts, attachments, and comments.",
-  "prefill_url": "https://stibarc.gq/new-profile-proof.html?remote_username=%{kb_username}&username=%{username}&token=%{sig_hash}&kb_ua=%{kb_ua}",
-  "profile_url": "https://stibarc.gq/user.html?id=%{username}",
-  "check_url": "https://api.stibarc.gq/v3/keybase-proofs.sjs?username=%{username}",
+  "prefill_url": "https://stibarc.com/new-profile-proof.html?remote_username=%{kb_username}&username=%{username}&token=%{sig_hash}&kb_ua=%{kb_ua}",
+  "profile_url": "https://stibarc.com/user.html?id=%{username}",
+  "check_url": "https://api.stibarc.com/v3/keybase-proofs.sjs?username=%{username}",
   "check_path": ["signatures"],
   "contact": ["herronjo110@gmail.com", "herronjo@keybase"]
 }

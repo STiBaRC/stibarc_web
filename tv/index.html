@@ -18,10 +18,82 @@ function getTitle() {
 	}
 }
 
+function checkVideo() {
+	document.getElementById("video").style.display = "none";
+	document.getElementById("colorbars").style.display = "";
+	document.getElementById("source").src = "";
+	document.getElementById("source").src = "https://joshiepoo.gq:8443/stream";
+	document.getElementById("video").load();
+}
+
+var interval = undefined;
+
 window.onload = function() {
+	document.getElementById("video").addEventListener('error', function(e) {
+		if (interval == undefined) {
+			interval = setInterval(checkVideo, 1000);
+		}
+	});
+	document.getElementById("video").addEventListener('emptied', function(e) {
+		if (interval == undefined) {
+			interval = setInterval(checkVideo, 1000);
+		}
+	});
+	document.getElementById("video").addEventListener('ended', function(e) {
+		document.getElementById("video").pause();
+		document.getElementById("video").currentTime = 0;
+		document.getElementById("video").load();
+		if (interval == undefined) {
+			interval = setInterval(checkVideo, 1000);
+		}
+	});
+	document.getElementById("video").addEventListener('load', function(e) {
+		try {clearInterval(interval);} catch(err) {}
+		interval = undefined;
+		document.getElementById("colorbars").style.display = "none";
+		document.getElementById("video").style.display = "";
+		document.getElementById("video").play();
+	});
+	document.getElementById("video").addEventListener('canplay', function(e) {
+		try {clearInterval(interval);} catch(err) {}
+		interval = undefined;
+		document.getElementById("colorbars").style.display = "none";
+		document.getElementById("video").style.display = "";
+		document.getElementById("video").play();
+	});
+	document.getElementById("video").addEventListener('loadeddata', function(e) {
+		try {clearInterval(interval);} catch(err) {}
+		interval = undefined;
+		document.getElementById("colorbars").style.display = "none";
+		document.getElementById("video").style.display = "";
+		document.getElementById("video").play();
+	});
+	document.getElementById("video").addEventListener('loadedmetadata', function(e) {
+		try {clearInterval(interval);} catch(err) {}
+		interval = undefined;
+		document.getElementById("colorbars").style.display = "none";
+		document.getElementById("video").style.display = "";
+		document.getElementById("video").play();
+	});
+	document.getElementById("video").addEventListener('playing', function(e) {
+		try {clearInterval(interval);} catch(err) {}
+		interval = undefined;
+		document.getElementById("colorbars").style.display = "none";
+		document.getElementById("video").style.display = "";
+	});
+	document.getElementById("video").addEventListener('waiting', function(e) {
+		try {clearInterval(interval);} catch(err) {}
+		interval = undefined;
+		document.getElementById("colorbars").style.display = "none";
+		document.getElementById("video").style.display = "";
+	});
+	document.getElementById("video").onclick = function(e) {
+		document.getElementById("video").muted = false;
+	}
+	document.getElementById("video").load();
 	getTitle();
 	setInterval(getTitle, 500);
-	var ws = new WebSocket("wss://stibarc.gq:8001");
+	var ws = new WebSocket("wss://stibarc.com:8001");
 	ws.onmessage = function(evt) {
 		if (evt.data == "/identified"){
 			
@@ -84,8 +156,9 @@ window.onload = function() {
 <table>
 <tr>
 <td>
-<video controls autoplay style="width:45vw;">
-<source src="https://joshiepoo.gq:8443/stream" type="video/webm">
+<img id="colorbars" src="/tv/colorbars.jpg" style="width:45vw;"></img>
+<video id="video" controls autoplay muted style="width:45vw;display:none;" poster="/tv/colorbars.jpg">
+<source id="source" src="https://joshiepoo.gq:8443/stream" type="video/webm">
 </video><br/>
 Viewers: <span id="viewers"></span>
 </td>
