@@ -24,4 +24,7 @@
     --hrcolor: black;
     --onlitext: black;
     --button2: #bebebe;
+    --maxmarg: auto;
+    --marginlefts: 15px;
+    --marginrights: 15px;
 }

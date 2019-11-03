@@ -6,9 +6,9 @@ body {
     font-family: Verdana,sans-serif;
     line-height: 1.41;
     color: var(--textcolor);
-    max-width:1024px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: var(--maxmarg);
+    margin-left: var(--marginlefts);
+    margin-right: var(--marginrights);
 }
 
 @media only screen and (max-width: 1024px) {
@@ -49,28 +49,29 @@ body {
     color: var(--onlitext);
 }
 
-#chattoggle {
-	height: 10%;
-	width: 35%;
-	//background-color: #D7D7D7;
+##chattoggle {
+	/* height: 10%; */
+	/* width: 35%; */
+	//
+	background-color: #D7D7D7;
 	bottom: 0;
 	float: right;
 	text-decoration: none;
-    font-weight: bold;
-    padding: 8px;
-    border-radius: 5px;
-    font-weight: bold;
-    box-shadow: 0px 1px 5px rgba(77, 77, 77, 0.32);
-    transition: all 0.2s;
+	font-weight: bold;
+	padding: 8px;
+	border-radius: 5px;
+	font-weight: bold;
+	box-shadow: 0px 1px 5px rgba(77, 77, 77, 0.32);
+	transition: all 0.2s;
 	cursor: pointer;
 	background-color: var(--button2);
 	color: var(--onlitext);
 	outline: none;
 	border: none;
-    font-size: 100%;
-    margin: 0;
-
+	font-size: 100%;
+	margin: 0;
 }
+
 
 .unsel {
     background-color: rgba(0, 0, 0, 0.459);

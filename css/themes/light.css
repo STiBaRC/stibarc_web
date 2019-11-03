@@ -24,6 +24,9 @@
     --hrcolor: black;
     --onlitext: white;
     --button2: rgb(51, 128, 139);
+    --maxmarg: auto;
+    --marginlefts: 15px;
+    --marginrights: 15px;
 }
 
 
@@ -54,6 +57,9 @@
         --hrcolor: #98DFF3;
         --onlitext: white;
         --button2: #474747;
+        --maxmarg: auto;
+        --marginlefts: 15px;
+        --marginrights: 15px;
     }
     
 }
@@ -85,5 +91,8 @@
         --hrcolor: black;
         --onlitext: white;
         --button2: rgb(51, 128, 139);
+        --maxmarg: auto;
+        --marginlefts: 15px;
+        --marginrights: 15px;
     }
 }

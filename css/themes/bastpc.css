@@ -24,4 +24,7 @@
     --hrcolor: black;
     --onlitext: white;
     --button2: #af2727;
+    --maxmarg: auto;
+    --marginlefts: 15px;
+    --marginrights: 15px;
 }
