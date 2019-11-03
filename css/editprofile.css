@@ -1,7 +1,12 @@
+body {
+    transition: all 0.2s;
+}
+
 #main {
     background-color: var(--mainblobwithlist);
     text-align: center;
     word-wrap: break-word;
     padding: 15px;
     border-radius: 15px;
+    transition: all 0.2s;
 }

@@ -22,4 +22,68 @@
     --spinner2: #FFFFFF;
     --spinner3: #FFFFFF;
     --hrcolor: black;
+    --onlitext: white;
+    --button2: rgb(51, 128, 139);
+}
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --body: black;
+        --textcolor: white;
+        --buttoncolor: #262626;
+        --buttontext: white;
+        --mainblobwithlist: #171717;
+        --mainblobwithlisttext: white;
+        --header: #0e0e0e;
+        --messenger: #3c3c3c;
+        --footer: #0e0e0e;
+        --bio: #262626;
+        --post: #262626;
+        --posttext: white;
+        --link: white;
+        --visted: white;
+        --hover: white;
+        --active: white;
+        --footertext: white;
+        --comtent: #171717;
+        --comenttext: white;
+        --spinner1: #49B9CA;
+        --spinner2: #49B9CA;
+        --spinner3: #49B9CA;
+        --hrcolor: #98DFF3;
+        --onlitext: white;
+        --button2: #474747;
+    }
+    
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --body: #98DFF3;
+        --textcolor: black;
+        --buttoncolor: white;
+        --buttontext: black;
+        --mainblobwithlist: white;
+        --mainblobwithlisttext: black;
+        --header: #49B9CA;
+        --messenger: #49B9CA;
+        --footer: #49B9CA;
+        --bio: #F0F0F0;
+        --post: #98dff3;
+        --posttext: black;
+        --link: #000000;
+        --visted: #00000;
+        --hover: #000000;
+        --active: #000000;
+        --footertext: black;
+        --comtent: white;
+        --comenttext: black;
+        --spinner1: #FFFFFF;
+        --spinner2: #FFFFFF;
+        --spinner3: #FFFFFF;
+        --hrcolor: black;
+        --onlitext: white;
+        --button2: rgb(51, 128, 139);
+    }
 }

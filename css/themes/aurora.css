@@ -1,6 +1,6 @@
 :root {
     --body: #79cc3e;
-    --textcolor: black;
+    --textcolor: black
     --buttoncolor: white;
     --buttontext: black;
     --mainblobwithlist: white;
@@ -22,4 +22,7 @@
     --spinner2: #218762;
     --spinner3: #218762;
     --hrcolor: black;
+    --onlitext: white;
+    --button2: #185f45;
+
 }

@@ -4,6 +4,7 @@
 	word-wrap: break-word;
 	padding: 15px;
 	border-radius: 15px;
+	transition: all 0.2s;
 }
 
 #loadmore, #followloadmore {
@@ -52,6 +53,19 @@
 	//background-color: #D7D7D7;
 	bottom: 0;
 	float: right;
+	text-decoration: none;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 1px 5px rgba(77, 77, 77, 0.32);
+    transition: all 0.2s;
+	cursor: pointer;
+	background-color: var(--button2);
+	color: var(--onlitext);
+	outline: none;
+	border: none;
+	font-size: 100%;
 }
 
 #messenger {
@@ -66,6 +80,7 @@
 	padding: 10px;
 	border-radius: 10px;
 	color: var(--posttext);
+    box-shadow: 0px 1px 5px rgba(77, 77, 77, 0.32);
 }
 
 .buttons {
@@ -88,11 +103,11 @@
 	
 #logo {
 	display: inline-block;
-	width: 20%;
+	width: 35%;
 }
 @media only screen and (max-width: 700px) {
   #logo {
-	width: 75vw;
+	width: 50%;
   }
   #chatframe {
 	display: none;
