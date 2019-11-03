@@ -6,7 +6,17 @@ body {
     font-family: Verdana,sans-serif;
     line-height: 1.41;
     color: var(--textcolor);
+    max-width:1024px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+@media only screen and (max-width: 1024px) {
+    body {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+  }
 
 .button {
     text-decoration: none;
@@ -57,7 +67,9 @@ body {
 	color: var(--onlitext);
 	outline: none;
 	border: none;
-	font-size: 100%;
+    font-size: 100%;
+    margin: 0;
+
 }
 
 .unsel {

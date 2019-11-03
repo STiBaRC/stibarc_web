@@ -72,7 +72,7 @@
 }
 
 #comtent {
-    width: 20%;
+    width: 90%;
     height: 15vh;
     background-color: var(--comtent);
     color: var(--comtenttext);

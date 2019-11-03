@@ -37,14 +37,14 @@ function getAnnounce() {
 		document.getElementById("global").onclick = function(evt) {
 			document.getElementById("mainblobwithlist").style.display = "";
 			document.getElementById("followblob").style.display = "none";
-			document.getElementById("global").className = "sel";
-			document.getElementById("followed").className = "unsel";
+			document.getElementById("global").className = "unsel";
+			document.getElementById("followed").className = "sel";
 		}
 		document.getElementById("followed").onclick = function(evt) {
 			document.getElementById("mainblobwithlist").style.display = "none";
 			document.getElementById("followblob").style.display = "";
-			document.getElementById("followed").className = "sel";
-			document.getElementById("global").className = "unsel";
+			document.getElementById("followed").className = "unsel";
+			document.getElementById("global").className = "sel";
 		}
 	}
 }
