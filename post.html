@@ -54,11 +54,10 @@
                 Loading...
             </div>
             <div id="attachment" style="display:none">
-                <br /><button id="viewattachment">View attachment</button>
+                <br /><a class="button onli" id="viewattachment">View attachment</a>
             </div><br />
-            <a href="javascript:upvote()" class="button">&#8679; <span id="upvotes">0</span></a> <a href="javascript:downvote()" class="button">&#8681; <span id="downvotes">0</span></a>
+            <a class="button onli" id="editlink" style="display:none">Edit post</a> <a class="button onli" href="javascript:upvote()">&#8679; <span id="upvotes">0</span></a> <a class="button onli" href="javascript:downvote()">&#8681; <span id="downvotes">0</span></a>
             <span id="client" style="display:none"></span>
-            <br /><button id="editlink" style="display:none">Edit post</button>
             <br />
             <div id="comments">
                 <h4>Comments:</h4>
@@ -69,8 +68,8 @@
             <div id="postin" style="display:none">
                 <div id="wait" style="display: none">Please wait x more seconds before commenting again<br /><br /></div>
                 <h4>New comment:</h4>
-                <textarea id="comtent" name="comtent"></textarea><br />
-                <button id="commentbutton">Submit</button>
+                <textarea id="comtent" name="comtent"></textarea><br /><br>
+                <a class="button onli" id="commentbutton">Submit</a><br><br>
             </div>
         </div>
         <br />
@@ -83,7 +82,7 @@
             Notice: this is intended to be a clone of Reddit, made just for fun and as a tribute to my friend Andrew.<br />
             Icon by Alex Savon<br />
             <div id="ads"><iframe width="288" height="72" src="https://ads.stibarc.com/getad.sjs" frameBorder="0" scrolling="no"></iframe> <iframe width="288" height="72" src="https://ads.stibarc.com/getad.sjs" frameBorder="0" scrolling="no"></iframe></div>
-            &copy; 2019 STiBaRC
+            &copy; 2019 <a href="https://team.stibarc.com" target="_none">STiBaRC Team</a>
         </footer>
         <div id="chatframe">
             <button id="chattoggle" onclick="togglechat()">Messenger</button>

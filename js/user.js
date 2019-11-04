@@ -2,7 +2,7 @@ function toLink(item) {
 	try {
 		var i = item.indexOf(':');
 		var splits = [item.slice(0, i), item.slice(i + 1)];
-		document.getElementById("posts").innerHTML = document.getElementById("posts").innerHTML.concat('<li><a href="post.html?id=').concat(splits[0]).concat('">').concat(splits[1].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")).concat("</a></li>");
+		document.getElementById("posts").innerHTML = document.getElementById("posts").innerHTML.concat('<div class="posts"><a class="nodec" href="post.html?id=').concat(splits[0]).concat('">').concat(splits[1].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")).concat("</a></div><br>");
 	} catch (err) {
 		console.log("Whoops");
 	}
