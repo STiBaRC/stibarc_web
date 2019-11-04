@@ -170,7 +170,7 @@ hr {
     color: var(--hrcolor);
 }
 
-input {
+input:not(.unstyle) {
     outline: none;
     border: 2px solid gray;
     background-color: var(--mainblobwithlist);
@@ -181,16 +181,16 @@ input {
     transition: all 0.2s;
 }
 
-input:focus {
+input:not(.unstyle):focus {
     border: 2px solid var(--body);
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.77);
 }
 
-input:hover {
+input:not(.unstyle):hover {
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.77);
 }
 
-select {
+select:not(.unstyle) {
     font-weight: bold;
     background-color: var(--footer);
     color: var(--onlitext);
@@ -208,11 +208,11 @@ select {
     outline: 0;
     border: none;
 }
-select:focus {
+select:not(.unstyle):focus {
     box-shadow: 0 0 2px var(--footer);
 }
 
-textarea {
+textarea:not(.unstyle) {
     outline: none;
     border: 2px solid gray;
     background-color: var(--mainblobwithlist);
@@ -223,11 +223,11 @@ textarea {
     transition: all 0.2s;
 }
 
-textarea:focus {
+textarea:not(.unstyle):focus {
     border: 2px solid var(--body);
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.77);
 }
 
-textarea:hover {
+textarea:not(.unstyle):hover {
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.77);
 }
