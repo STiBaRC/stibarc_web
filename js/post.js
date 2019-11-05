@@ -195,7 +195,7 @@ window.onload = function () {
 		document.getElementById("edited").style.display = "";
 	}
 	if (stuff.poster == window.localStorage.getItem("username") && getRank() != "User") {
-		document.getElementById("editlink").style.display = "";
+		document.getElementById("editlinkcontainer").style.display = "";
 	}
 	if (stuff["attachment"] != "none" && stuff["attachment"] != undefined && stuff["attachment"] != null) {
 		document.getElementById("attachment").style.display = "";
@@ -230,7 +230,7 @@ window.onload = function () {
 		document.location.href = "editpost.html?id=" + id;
 	}
 	if (stuff.client != undefined) {
-		document.getElementById("client").innerHTML = "<br/><br/><i>Posted using "+stuff.client+"</i>";
+		document.getElementById("client").innerHTML = "<i>Posted using "+stuff.client+"</i>";
 		document.getElementById("client").style.display = "";
 	}
 	document.getElementById("viewattachment").onclick = function (evt) {

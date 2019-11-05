@@ -49,6 +49,14 @@ body {
     color: var(--onlitext);
 }
 
+#submit:active, #searchbutton:active, #send:active, #login:active, #follow:active, #viewattachment:active, #commentbutton:active {
+    color: var(--onlitext);
+}
+
+#submit:focus, #searchbutton:focus, #send:focus, #login:focus, #follow:focus, #viewattachment:focus, #commentbutton:focus {
+    color: var(--onlitext);
+}
+
 ##chattoggle {
 	/* height: 10%; */
 	/* width: 35%; */
