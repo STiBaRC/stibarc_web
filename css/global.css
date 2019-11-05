@@ -45,7 +45,7 @@ body {
     color: var(--onlitext);
 }
 
-#submit:hover, #searchbutton:hover, #editlink:hover, #send:hover, #login:hover, #follow:hover, #viewattachment:hover, #commentbutton:hover {
+#submit:hover, #searchbutton:hover, #send:hover, #login:hover, #follow:hover, #viewattachment:hover, #commentbutton:hover {
     color: var(--onlitext);
 }
 
