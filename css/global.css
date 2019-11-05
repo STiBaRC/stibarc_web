@@ -186,7 +186,7 @@ input:not(.unstyle):focus {
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.77);
 }
 
-input:not(.unstyle):hover {
+input:not(.unstyle):not([type="file"]):hover {
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.77);
 }
 
@@ -194,7 +194,7 @@ select:not(.unstyle) {
     font-weight: bold;
     background-color: var(--footer);
     color: var(--onlitext);
-    padding: .6em 1.4em .5em .8em;
+    padding: .75em 1.65em .75em .85em;
     box-sizing: border-box;
     margin: 0;
     border-radius: .5em;
@@ -207,9 +207,10 @@ select:not(.unstyle) {
     background-size: .65em auto, 100%;
     outline: 0;
     border: none;
+    box-shadow: 0px 1px 5px rgba(77, 77, 77, 0.32);
 }
 select:not(.unstyle):focus {
-    box-shadow: 0 0 2px var(--footer);
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.77);
 }
 
 textarea:not(.unstyle) {
