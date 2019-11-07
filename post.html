@@ -47,7 +47,9 @@
     <div id="page" style="display: none;">
         <div id="poststuff">
             <h2 id="title">Loading...</h2>
+            <div style="margin-bottom: .75rem;">
             <img id="postpfp" style="width:55px;height:55px;border-radius:50%;vertical-align:middle;" /><span id="postname" style="margin-left:10px;">Loading...</span>
+            </div>
             <div id="dateandstuff">Loading...</div>
             <div id="edited" style="display:none"><i>Edited</i></div><br />
             <div id="content">
@@ -56,9 +58,10 @@
             <div id="attachment" style="display:none">
                 <br /><a class="button onli" id="viewattachment">View attachment</a>
             </div><br />
-            <a class="button onli" id="editlink" style="display:none">Edit post</a> <a class="button onli" href="javascript:upvote()">&#8679; <span id="upvotes">0</span></a> <a class="button onli" href="javascript:downvote()">&#8681; <span id="downvotes">0</span></a>
-            <span id="client" style="display:none"></span>
+            <div><a class="button onli" href="javascript:upvote()">&#8679; <span id="upvotes">0</span></a> <a class="button onli" href="javascript:downvote()">&#8681; <span id="downvotes">0</span></a></div>
+            <div id="editlinkcontainer" style="display:none"><br /><a class="button" id="editlink">Edit post</a></div>
             <br />
+            <div id="client" style="display:none"></div>
             <div id="comments">
                 <h4>Comments:</h4>
             </div>

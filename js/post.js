@@ -195,7 +195,7 @@ window.onload = function () {
 		document.getElementById("edited").style.display = "";
 	}
 	if (stuff.poster == window.localStorage.getItem("username") && getRank() != "User") {
-		document.getElementById("editlink").style.display = "";
+		document.getElementById("editlinkcontainer").style.display = "";
 	}
 	if (stuff["attachment"] != "none" && stuff["attachment"] != undefined && stuff["attachment"] != null) {
 		document.getElementById("attachment").style.display = "";
@@ -216,7 +216,7 @@ window.onload = function () {
 				var commentpfp = tmp3['pfp'];
 				image = '<img src="' + commentpfp + '"style="width:48px;height:48px;border-radius:50%;vertical-align:middle;margin-right:5px;" />';
 			}
-			document.getElementById("comments").innerHTML = document.getElementById("comments").innerHTML + '<div id="comment"><a href="user.html?id=' + comments[key]['poster'] + '">'+image+comments[key]['poster'].replace(/&/g, "&amp;") + '</a><br/>' + comments[key]['content'].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r\n/g, "<br/>") + '<br/><a class="replyto" href="javascript:replyto('+"'"+comments[key]['poster']+"'"+')"><i>Reply</i></a></div><br/>';
+			document.getElementById("comments").innerHTML = document.getElementById("comments").innerHTML + '<div id="comment"><a class="comment-username" href="user.html?id=' + comments[key]['poster'] + '">'+image+comments[key]['poster'].replace(/&/g, "&amp;") + '</a>' + comments[key]['content'].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r\n/g, "<br/>") + '<br/><a class="replyto" href="javascript:replyto('+"'"+comments[key]['poster']+"'"+')"><i>Reply</i></a></div><br/>';
 		}
 	} else {
 		document.getElementById("comments").innerHTML = document.getElementById("comments").innerHTML + '<div id="comment">No comments</div>';
@@ -230,7 +230,7 @@ window.onload = function () {
 		document.location.href = "editpost.html?id=" + id;
 	}
 	if (stuff.client != undefined) {
-		document.getElementById("client").innerHTML = "<br/><br/><i>Posted using "+stuff.client+"</i>";
+		document.getElementById("client").innerHTML = "<i>Posted using "+stuff.client+"</i>";
 		document.getElementById("client").style.display = "";
 	}
 	document.getElementById("viewattachment").onclick = function (evt) {
