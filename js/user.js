@@ -1,8 +1,10 @@
+var posts = '';
+
 function toLink(item) {
 	try {
 		var i = item.indexOf(':');
 		var splits = [item.slice(0, i), item.slice(i + 1)];
-		document.getElementById("posts").innerHTML = document.getElementById("posts").innerHTML.concat('<div class="posts"><a class="nodec" href="post.html?id=').concat(splits[0]).concat('">').concat(splits[1].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")).concat("</a></div><br>");
+		posts += document.getElementById("posts").innerHTML.concat('<div class="posts"><a class="nodec" href="post.html?id=').concat(splits[0]).concat('">').concat(splits[1].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")).concat("</a></div><br>");
 	} catch (err) {
 		console.log("Whoops");
 	}
@@ -16,6 +18,7 @@ function getPosts(id) {
 	for (i = 0; i < tmp.length - 1; i++) {
 		toLink(tmp[i]);
 	}
+    document.getElementById('posts').innerHTML = posts;
 }
 
 function getStuff(id) {
