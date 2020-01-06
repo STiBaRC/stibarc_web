@@ -45,15 +45,15 @@ body {
     color: var(--onlitext);
 }
 
-#submit:hover, #searchbutton:hover, #send:hover, #login:hover, #follow:hover, #viewattachment:hover, #commentbutton:hover {
+#submit:hover, #searchbutton:hover, #send:hover, #login:hover:not(.login-page), #follow:hover, #viewattachment:hover, #commentbutton:hover {
     color: var(--onlitext);
 }
 
-#submit:active, #searchbutton:active, #send:active, #login:active, #follow:active, #viewattachment:active, #commentbutton:active {
+#submit:active, #searchbutton:active, #send:active, #login:active:not(.login-page), #follow:active, #viewattachment:active, #commentbutton:active {
     color: var(--onlitext);
 }
 
-#submit:focus, #searchbutton:focus, #send:focus, #login:focus, #follow:focus, #viewattachment:focus, #commentbutton:focus {
+#submit:focus, #searchbutton:focus, #send:focus, #login:focus:not(.login-page), #follow:focus, #viewattachment:focus, #commentbutton:focus {
     color: var(--onlitext);
 }
 
