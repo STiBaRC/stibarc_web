@@ -2,7 +2,7 @@ function toLink(id,item) {
 	try {
 		if (item['deleted']) {item['title'] = "Post deleted"}
 		var title = item['title'].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        document.getElementById("list").innerHTML += '<div class="post"><a class="overlay" style="font-size:100%;text-decoration:none;" href="post.html?id='+id+'"><b>'+title+'</b></a><div class="inner"><br>Posted by: <a href="user.html?id='+item['poster']+'">'+item['poster']+'</a><br>&#8679; '+item['upvotes']+' &#8681; '+item['downvotes']+'</a></div></div>';
+        document.getElementById("list").innerHTML += '<div class="post"><a class="overlay" style="font-size:100%;text-decoration:none;" href="post.html?id='+id+'"><b>'+title+'</b></a><div class="inner" style="margin-top:3px;"><br>Posted by: <a href="user.html?id='+item['poster']+'">'+item['poster']+'</a><br>&#8679; '+item['upvotes']+' &#8681; '+item['downvotes']+'</a></div></div>';
 		lastid = id;
 	} catch (err) {
 		console.log(err);
@@ -13,7 +13,7 @@ function toFollowLink(id,item) {
 	try {
 		if (item['deleted']) {item['title'] = "Post deleted"}
 		var title = item['title'].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        document.getElementById("followlist").innerHTML += '<div class="post"><a class="overlay" style="font-size:100%;text-decoration:none;" href="post.html?id='+id+'"><b>'+title+'</b></a><div class="inner"><br>Posted by: <a href="user.html?id='+item['poster']+'">'+item['poster']+'</a><br>&#8679; '+item['upvotes']+' &#8681; '+item['downvotes']+'</a></div></div>';
+        document.getElementById("followlist").innerHTML += '<div class="post"><a class="overlay" style="font-size:100%;text-decoration:none;" href="post.html?id='+id+'"><b>'+title+'</b></a><div class="inner" style="margin-top:3px;"><br>Posted by: <a href="user.html?id='+item['poster']+'">'+item['poster']+'</a><br>&#8679; '+item['upvotes']+' &#8681; '+item['downvotes']+'</a></div></div>';
 		lastfollowid = id;
 	} catch (err) {
 		console.log(err);
