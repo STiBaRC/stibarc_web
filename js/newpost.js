@@ -147,6 +147,8 @@ function readFile(evt) {
 }
 
 window.onload = function () {
+	document.getElementById("title").value = decodeURIComponent(getAllUrlParams().title);
+	document.getElementById("content").value = decodeURIComponent(getAllUrlParams().content);
 	document.getElementById("file").addEventListener('change',readFile,false);
 	document.getElementById("removeimage").onclick = function (evt) {
 			attachedfile = "none";
