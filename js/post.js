@@ -206,6 +206,7 @@ window.onload = function () {
 	xmlHttp.send(null);
 	if (xmlHttp.responseText != "undefined\n") {
 		var comments = JSON.parse(xmlHttp.responseText);
+		var tmphtml = "";
 		for (var key in comments) {
 			var image = "";
 			if (localStorage.showpfps == "true") {
@@ -216,8 +217,9 @@ window.onload = function () {
 				var commentpfp = tmp3['pfp'];
 				image = '<img src="' + commentpfp + '"style="width:48px;height:48px;border-radius:50%;vertical-align:middle;margin-right:5px;" />';
 			}
-			document.getElementById("comments").innerHTML = document.getElementById("comments").innerHTML + '<div id="comment"><a class="comment-username" href="user.html?id=' + comments[key]['poster'] + '">'+image+comments[key]['poster'].replace(/&/g, "&amp;") + '</a>' + comments[key]['content'].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r\n/g, "<br/>") + '<br/><a class="replyto" href="javascript:replyto('+"'"+comments[key]['poster']+"'"+')"><i>Reply</i></a></div><br/>';
+			tmphtml = tmphtml + '<div id="comment"><a class="comment-username" href="user.html?id=' + comments[key]['poster'] + '">'+image+comments[key]['poster'].replace(/&/g, "&amp;") + '</a>' + comments[key]['content'].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r\n/g, "<br/>") + '<br/><a class="replyto" href="javascript:replyto('+"'"+comments[key]['poster']+"'"+')"><i>Reply</i></a></div><br/>';
 		}
+		document.getElementById("comments").innerHTML = tmphtml;
 	} else {
 		document.getElementById("comments").innerHTML = document.getElementById("comments").innerHTML + '<div id="comment">No comments</div>';
 	}
