@@ -199,6 +199,7 @@ hr {
 }
 
 input:not(.unstyle) {
+    box-sizing: border-box;
     outline: none;
     border: 2px solid gray;
     background-color: var(--mainblobwithlist);
@@ -242,6 +243,8 @@ select:not(.unstyle):focus {
 }
 
 textarea:not(.unstyle) {
+    box-sizing: border-box;
+    max-width: 100%;
     outline: none;
     border: 2px solid gray;
     background-color: var(--mainblobwithlist);
