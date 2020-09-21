@@ -10,3 +10,8 @@ body {
     border-radius: 15px;
     transition: all 0.2s;
 }
+
+#bio {
+    min-width: 30%;
+    height: 30vh;
+}
