@@ -182,7 +182,7 @@ window.onload = function () {
 		document.getElementById("postpfp").style.display = "none";
 		document.getElementById("postname").style.marginLeft = "0px";
 	}
-	document.getElementById("postname").innerHTML = '<a href="user.html?id=' + stuff.poster + '">' + stuff.poster + '</a><span id="verified" title="Verified user" style="display:none">' + "âœ”ï¸</span>";
+	document.getElementById("postname").innerHTML = '<a href="user.html?id=' + stuff.poster + '">' + stuff.poster + '</a><span id="verified" title="Verified user" style="display:none">' + "&#10004;&#65039;</span>";
 	document.getElementById("dateandstuff").innerHTML = stuff.postdate;
 	checkVerified(stuff.poster);
 	if (stuff.poster == "herronjo" || stuff.poster == "DomHupp" || stuff.poster == "Aldeenyo" || stuff.poster == "savaka" || stuff.poster == "alluthus" || stuff.poster == "Bunnbuns" || stuff.poster == "Merkle") {
