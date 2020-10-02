@@ -213,9 +213,8 @@ window.onload = function () {
 			var image = "";
 			if (localStorage.showpfps == "true") {
 				var commentpfp;
-				thing3.open("GET", "https://api.stibarc.com/v2/getuser.sjs?id=" + comments[key]['poster'], false);
 				if (pfps[comments[key].poster] == undefined) {
-					thing3.send(null);
+					pfpXHR.send(null);
 					var thing3 = new XMLHttpRequest();
 					var tmp3 = JSON.parse(thing3.responseText);
 					thing3.open("GET", "https://api.stibarc.com/v2/getuser.sjs?id=" + comments[key]['poster'], false);
