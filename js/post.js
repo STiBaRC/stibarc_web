@@ -214,11 +214,8 @@ window.onload = function () {
 			if (localStorage.showpfps == "true") {
 				var commentpfp;
 				if (pfps[comments[key].poster] == undefined) {
-					pfpXHR.send(null);
 					var thing3 = new XMLHttpRequest();
-					var tmp3 = JSON.parse(thing3.responseText);
 					thing3.open("GET", "https://api.stibarc.com/v2/getuser.sjs?id=" + comments[key]['poster'], false);
-					var commentpfp = tmp3['pfp'];
 					thing3.send(null);
 					var tmp3 = JSON.parse(thing3.responseText);
 					commentpfp = tmp3['pfp'];
