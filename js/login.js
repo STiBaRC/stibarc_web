@@ -41,9 +41,4 @@ window.onload = function () {
 			login();
 		}
 	});
-	document.getElementById("anon").onclick = function(e) {
-		document.getElementById("username").value = "Anon";
-		document.getElementById("password").value = "anon";
-		document.getElementById("login").click();
-	}
 }
