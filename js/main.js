@@ -1,19 +1,23 @@
+var toLinkHTML = "";
+
 function toLink(id,item) {
 	try {
 		if (item['deleted']) {item['title'] = "Post deleted"}
 		var title = item['title'].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        document.getElementById("list").innerHTML += '<div class="post"><a class="overlay" style="font-size:100%;text-decoration:none;" href="post.html?id='+id+'"><b>'+title+'</b></a><div class="inner" style="margin-top:3px;"><br>Posted by: <a href="user.html?id='+item['poster']+'">'+item['poster']+'</a><br>&#8679; '+item['upvotes']+' &#8681; '+item['downvotes']+'</a></div></div>';
+        	toLinkHTML += '<div class="post"><a class="overlay" style="font-size:100%;text-decoration:none;" href="post.html?id='+id+'"><b>'+title+'</b></a><div class="inner" style="margin-top:3px;"><br>Posted by: <a href="user.html?id='+item['poster']+'">'+item['poster']+'</a><br>&#8679; '+item['upvotes']+' &#8681; '+item['downvotes']+'</a></div></div>';
 		lastid = id;
 	} catch (err) {
 		console.log(err);
 	}
 }
 
+var toFollowHTML = "";
+
 function toFollowLink(id,item) {
 	try {
 		if (item['deleted']) {item['title'] = "Post deleted"}
 		var title = item['title'].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-        document.getElementById("followlist").innerHTML += '<div class="post"><a class="overlay" style="font-size:100%;text-decoration:none;" href="post.html?id='+id+'"><b>'+title+'</b></a><div class="inner" style="margin-top:3px;"><br>Posted by: <a href="user.html?id='+item['poster']+'">'+item['poster']+'</a><br>&#8679; '+item['upvotes']+' &#8681; '+item['downvotes']+'</a></div></div>';
+        	toFollowHTML += '<div class="post"><a class="overlay" style="font-size:100%;text-decoration:none;" href="post.html?id='+id+'"><b>'+title+'</b></a><div class="inner" style="margin-top:3px;"><br>Posted by: <a href="user.html?id='+item['poster']+'">'+item['poster']+'</a><br>&#8679; '+item['upvotes']+' &#8681; '+item['downvotes']+'</a></div></div>';
 		lastfollowid = id;
 	} catch (err) {
 		console.log(err);
@@ -84,6 +88,7 @@ function loadMore() {
 		for (var i = tmp2; i > tmp2-20; i--) {
 			toLink(i,tmp[i]);
 		}
+		document.getElementById("list").innerHTML = toLinkHTML;
 	} else {
 		document.getElementById("loadmorecontainer").style.display = "none";
 	}
@@ -102,6 +107,7 @@ function loadMoreFollow() {
 		for (var i = tmp2.length-1; i >= 0; i--) {
 			toFollowLink(tmp2[i],tmp[tmp2[i]]);
 		}
+		document.getElementById("followlist").innerHTML = toFollowHTML;
 	} else {
 		document.getElementById("followloadmorecontainer").style.display = "none";
 	}
@@ -143,7 +149,8 @@ window.onload = function () {
 		document.getElementById("list").innerHTML = "";
 		for (var i = tmp['totalposts']; i > tmp['totalposts']-20; i--) {
 			toLink(i,tmp[i]);
-        }
+        	}
+		document.getElementById("list").innerHTML = toLinkHTML;
 		document.getElementById("loadmorecontainer").style.display = "";
 		if (sess != undefined && sess != null && sess != "") {
 			var xhr = new XMLHttpRequest();
