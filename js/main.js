@@ -166,6 +166,7 @@ window.onload = function () {
 				for (var i = tmpposts.length-1; i >= 0; i--) {
 					toFollowLink(tmpposts[i], followtmp[tmpposts[i]]);
 				}
+				document.getElementById("followlist").innerHTML = toFollowHTML;
 				document.getElementById("followloadmorecontainer").style.display = "";
 			} else {
 				document.getElementById("followlist").innerHTML = "It looks like you aren't following anyone, or nobody has posted anything.<br/><br/>";
