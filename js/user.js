@@ -77,13 +77,6 @@ function getStuff(id) {
 	} else {
 		document.getElementById("bio").style.display = "none";
 	}
-	if (tmp.keybase != undefined) {
-		document.getElementById("bio").style.display = "";
-		document.getElementById("biobio").innerHTML = document.getElementById("biobio").innerHTML+"<br/>"
-		for (var sig in tmp.keybase) {
-			document.getElementById("biobio").innerHTML = document.getElementById("biobio").innerHTML + '<br/>'+tmp.keybase[sig]["kb_username"]+' on Keybase: <a href="https://keybase.io/'+tmp.keybase[sig]["kb_username"]+'/sigs/'+tmp.keybase[sig]['sig_hash']+'"><img alt="Keybase proof status" src="https://keybase.io/'+tmp.keybase[sig]["kb_username"]+'/proof_badge/'+tmp.keybase[sig]['sig_hash']+'?domain=stibarc.com&username='+getAllUrlParams().id+'"></a>'
-		}
-	}
 	doneLoading();
 }
 
