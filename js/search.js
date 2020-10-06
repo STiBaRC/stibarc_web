@@ -3,7 +3,7 @@ function toLink(item) {
 	try {
 		var i = item.indexOf(':');
 		var splits = [item.slice(0, i), item.slice(i + 1)];
-		toLinkHTML = document.getElementById("list").innerHTML.concat('<div><a class="posts nodec" href="post.html?id=').concat(splits[0]).concat('">').concat(splits[1].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")).concat("</a></div>");
+		toLinkHTML += document.getElementById("list").innerHTML.concat('<div><a class="posts nodec" href="post.html?id=').concat(splits[0]).concat('">').concat(splits[1].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")).concat("</a></div>");
 	} catch (err) {
 		console.log("Whoops");
 	}
