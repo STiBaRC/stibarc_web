@@ -1,5 +1,4 @@
 var pushed = false;
-var pfps = {};
 
 function toLink(item) {
 	try {
@@ -178,13 +177,12 @@ window.onload = function () {
 		thing2.send(null);
 		var tmp2 = JSON.parse(thing2.responseText);
 		var posterpfp = tmp2['pfp'];
-		pfps[stuff.poster] = tmp2['pfp'];
 		document.getElementById("postpfp").src = posterpfp + ' ';
 	} else {
 		document.getElementById("postpfp").style.display = "none";
 		document.getElementById("postname").style.marginLeft = "0px";
 	}
-	document.getElementById("postname").innerHTML = '<a href="user.html?id=' + stuff.poster + '">' + stuff.poster + '</a><span id="verified" title="Verified user" style="display:none">' + "âœ”ï¸</span>";
+	document.getElementById("postname").innerHTML = '<a href="user.html?id=' + stuff.poster + '">' + stuff.poster + '</a><span id="verified" title="Verified user" style="display:none">' + "&#10004;&#65039;</span>";
 	document.getElementById("dateandstuff").innerHTML = stuff.postdate;
 	checkVerified(stuff.poster);
 	if (stuff.poster == "herronjo" || stuff.poster == "DomHupp" || stuff.poster == "Aldeenyo" || stuff.poster == "savaka" || stuff.poster == "alluthus" || stuff.poster == "Bunnbuns" || stuff.poster == "Merkle") {
@@ -212,22 +210,7 @@ window.onload = function () {
 		for (var key in comments) {
 			var image = "";
 			if (localStorage.showpfps == "true") {
-				var commentpfp;
-				thing3.open("GET", "https://api.stibarc.com/v2/getuser.sjs?id=" + comments[key]['poster'], false);
-				if (pfps[comments[key].poster] == undefined) {
-					thing3.send(null);
-					var thing3 = new XMLHttpRequest();
-					var tmp3 = JSON.parse(thing3.responseText);
-					thing3.open("GET", "https://api.stibarc.com/v2/getuser.sjs?id=" + comments[key]['poster'], false);
-					var commentpfp = tmp3['pfp'];
-					thing3.send(null);
-					var tmp3 = JSON.parse(thing3.responseText);
-					commentpfp = tmp3['pfp'];
-					pfps[comments[key].poster] = tmp3.pfp;
-				} else {
-					commentpfp = pfps[comments[key].poster];
-				}
-				image = '<img src="' + commentpfp + '"style="width:48px;height:48px;border-radius:50%;vertical-align:middle;margin-right:5px;" />';
+				image = '<img src="' + comments[key].pfp + '"style="width:48px;height:48px;border-radius:50%;vertical-align:middle;margin-right:5px;" />';
 			}
 			commentsHTML += '<div id="comment"><a class="comment-username" href="user.html?id=' + comments[key]['poster'] + '">'+image+comments[key]['poster'].replace(/&/g, "&amp;") + '</a>' + comments[key]['content'].replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\r\n/g, "<br/>") + '<br/><a class="replyto" href="javascript:replyto('+"'"+comments[key]['poster']+"'"+')"><i>Reply</i></a></div><br/>';
 		}
