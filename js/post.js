@@ -51,37 +51,73 @@ function postcomment(id) {
 	}
 }
 
-function getAttach(id) {
+function getAttach(stuff) {
+	var images = ["png","jpg","gif","webp","svg"];
+	var videos = ["mov","mp4","m4a","webm"];
+	var audio = ["spx","m3a","wma","wav","mp3"];
 	document.getElementById("viewattachment").style.display = "none";
-	//if (window.localStorage.getItem("cache"+id) == null || window.localStorage.getItem("cache"+id) == undefined) {
-	var xmlHttp = new XMLHttpRequest();
-	xmlHttp.open("GET", "https://api.stibarc.com/getimage.sjs?id="+id, false);
-	xmlHttp.send();
-	if (xmlHttp.responseText.substring(5,10) == "image") {
-		var img = document.createElement("IMG");
-		img.setAttribute("id", "image");
-		img.setAttribute("src", xmlHttp.responseText);
-		document.getElementById("attachment").appendChild(img);
-	} else if (xmlHttp.responseText.substring(5,10) == "video" || xmlHttp.responseText.substring(5,20) == "application/mp4") {
-		var video = document.createElement("VIDEO");
-		video.setAttribute("controls", null);
-		video.setAttribute("autoplay", null);
-		video.setAttribute("id", "image");
-		var source = document.createElement("SOURCE");
-		source.setAttribute("src", xmlHttp.responseText);
-		video.appendChild(source);
-		document.getElementById("attachment").appendChild(video);
-	} else if (xmlHttp.responseText.substring(5,10) == "audio" || xmlHttp.responseText.substring(5,20) == "application/mp3" || xmlHttp.responseText.substring(5,20) == "application/wav") {
-		var audio = document.createElement("AUDIO");
-		audio.setAttribute("controls", null);
-		audio.setAttribute("autoplay", null);
-		audio.setAttribute("id", "image");
-		var source = document.createElement("SOURCE");
-		source.setAttribute("src", xmlHttp.responseText);
-		audio.appendChild(source);
-		document.getElementById("attachment").appendChild(audio);
+	if (stuff['real_attachment'] != undefined && stuff['real_attachment'] != "" && stuff['real_attachment'] != "none") {
+		var ext = stuff['real_attachment'].split(".")[1];
+		if (images.indexOf(ext) != -1) {
+			var img = document.createElement("IMG");
+			img.setAttribute("id", "image");
+			img.setAttribute("src", "https://cdn.stibarc.com/images/"+stuff['real_attachment']);
+			document.getElementById("attachment").appendChild(img);
+		} else if (videos.indexOf(ext) != -1) {
+			var video = document.createElement("VIDEO");
+			video.setAttribute("controls", null);
+			video.setAttribute("autoplay", null);
+			video.setAttribute("id", "image");
+			var source = document.createElement("SOURCE");
+			source.setAttribute("src", "https://cdn.stibarc.com/images/"+stuff['real_attachment']);
+			video.appendChild(source);
+			document.getElementById("attachment").appendChild(video);
+		} else if (audio.indexOf(ext) != -1) {
+			var audio = document.createElement("AUDIO");
+			audio.setAttribute("controls", null);
+			audio.setAttribute("autoplay", null);
+			audio.setAttribute("id", "image");
+			var source = document.createElement("SOURCE");
+			source.setAttribute("src", "https://cdn.stibarc.com/images/"+stuff['real_attachment']);
+			audio.appendChild(source);
+			document.getElementById("attachment").appendChild(audio);
+		} else {
+			document.getElementById("viewattachment").style.display = "";
+			window.open("https://cdn.stibarc.com/images/"+stuff['real_attachment']);
+		}
+	} else {
+		var xmlHttp = new XMLHttpRequest();
+		xmlHttp.open("GET", "https://api.stibarc.com/getimage.sjs?id="+id, false);
+		xmlHttp.send();
+		if (xmlHttp.responseText.substring(5,10) == "image") {
+			var img = document.createElement("IMG");
+			img.setAttribute("id", "image");
+			img.setAttribute("src", xmlHttp.responseText);
+			document.getElementById("attachment").appendChild(img);
+		} else if (xmlHttp.responseText.substring(5,10) == "video" || xmlHttp.responseText.substring(5,20) == "application/mp4") {
+			var video = document.createElement("VIDEO");
+			video.setAttribute("controls", null);
+			video.setAttribute("autoplay", null);
+			video.setAttribute("id", "image");
+			var source = document.createElement("SOURCE");
+			source.setAttribute("src", xmlHttp.responseText);
+			video.appendChild(source);
+			document.getElementById("attachment").appendChild(video);
+		} else if (xmlHttp.responseText.substring(5,10) == "audio" || xmlHttp.responseText.substring(5,20) == "application/mp3" || xmlHttp.responseText.substring(5,20) == "application/wav") {
+			var audio = document.createElement("AUDIO");
+			audio.setAttribute("controls", null);
+			audio.setAttribute("autoplay", null);
+			audio.setAttribute("id", "image");
+			var source = document.createElement("SOURCE");
+			source.setAttribute("src", xmlHttp.responseText);
+			audio.appendChild(source);
+			document.getElementById("attachment").appendChild(audio);
+		} else {
+			document.getElementById("viewattachment").style.display = "";
+			window.open(xmlHttp.responseText);
+		}
+		var tmp = xmlHttp.responseText.split("");
 	}
-	var tmp = xmlHttp.responseText.split("");
 }
 
 function replyto(guy) {
@@ -231,7 +267,7 @@ window.onload = function () {
 		document.getElementById("client").style.display = "";
 	}
 	document.getElementById("viewattachment").onclick = function (evt) {
-		getAttach(stuff["attachment"]);
+		getAttach(stuff);
 	}
 	doneLoading();
 }
