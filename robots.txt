@@ -1,8 +1,2 @@
 User-agent: *
-Disallow: /
-Allow: /index.html
-Allow: /post.html
-Allow: /user.html
-Allow: /search.html
-Allow: /user.sjs
-Allow: /post.sjs
+Allow: /
